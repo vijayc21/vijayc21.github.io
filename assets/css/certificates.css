@@ -1,0 +1,149 @@
+body{
+background:#f4f7fb;
+}
+
+.page-header{
+    padding-top: 150px;
+    padding-bottom: 70px;
+    background: linear-gradient(135deg,#0B3D91,#1E5BC6);
+    color:#fff;
+    text-align:center;
+}
+
+.certificate-hero{
+padding:150px 0 70px;
+background:linear-gradient(135deg,#0B3D91,#1f5dc9);
+color:white;
+text-align:center;
+}
+
+.certificate-hero h1{
+font-size:56px;
+font-weight:700;
+margin:10px 0;
+}
+
+.certificate-section{
+padding:70px 0;
+}
+
+.certificate-card{
+background:white;
+border-radius:22px;
+padding:40px;
+margin-bottom:50px;
+box-shadow:0 12px 35px rgba(0,0,0,.08);
+transition:.3s;
+}
+
+.certificate-card:hover{
+transform:translateY(-6px);
+}
+
+.certificate-preview{
+width:100%;
+border-radius:16px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 10px 25px rgba(0,0,0,.18);
+}
+
+.certificate-preview:hover{
+transform:scale(1.02);
+}
+
+.certificate-card h2{
+font-size:40px;
+color:#0B3D91;
+font-weight:700;
+margin:15px 0;
+}
+
+.meta{
+font-weight:600;
+color:#666;
+margin-bottom:20px;
+}
+
+.tags{
+margin-top:15px;
+}
+
+.tags span{
+display:inline-block;
+background:#edf3ff;
+color:#0B3D91;
+padding:8px 16px;
+border-radius:30px;
+margin:5px;
+font-weight:600;
+}
+
+.btn-primary{
+padding:12px 30px;
+border-radius:40px;
+font-weight:600;
+}
+
+.modal-content{
+border-radius:18px;
+}
+
+.modal-body img{
+border-radius:12px;
+transition:.3s;
+cursor:pointer;
+}
+
+.modal-body img:hover{
+transform:scale(1.02);
+}
+
+@media(max-width:992px){
+
+.certificate-card{
+padding:25px;
+}
+
+.certificate-card h2{
+font-size:30px;
+margin-top:25px;
+}
+
+.certificate-hero h1{
+font-size:42px;
+}
+
+}
+/* ==========================================
+   Carousel Controls
+========================================== */
+
+.carousel-control-prev,
+.carousel-control-next{
+    width:60px;
+    opacity:1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon{
+    background-color:rgba(11,61,145,0.85);
+    background-size:55%;
+    border-radius:50%;
+    width:50px;
+    height:50px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.25);
+}
+
+.carousel-control-prev{
+    left:-25px;
+}
+
+.carousel-control-next{
+    right:-25px;
+}
+
+.carousel-control-prev:hover .carousel-control-prev-icon,
+.carousel-control-next:hover .carousel-control-next-icon{
+    background-color:#0B3D91;
+}

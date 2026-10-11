@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Battery SOC Estimator — Coulomb Counting | Vijay</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+    <!-- SheetJS: CSV / Excel import -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+    <!-- Website CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- SOC Estimator CSS -->
+    <link rel="stylesheet" href="../../assets/css/soc-estimator.css">
+
+    <link rel="icon" href="../../assets/images/logo/iitk.png">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar-pages"></div>
+
+    <!-- =====================================================
+         SOC ESTIMATOR
+    ====================================================== -->
+    <section class="tool-section">
+
+        <div class="soc-page-title">
+            <span>BATTERY TOOL</span>
+            <h1>Battery <strong>SOC Estimator</strong></h1>
+            <p>
+                Estimate battery state of charge using Coulomb counting
+                for constant-current operation and real drive-cycle data.
+            </p>
+        </div>
+
+        <div class="soc-tool-container">
+
+            <!-- =================================================
+                 LEFT: INPUTS
+            ================================================== -->
+            <div class="soc-input-card">
+
+                <div class="card-header">
+                    <i class="bi bi-battery-half"></i>
+                    <div>
+                        <h3>SOC Estimation</h3>
+                        <p>Coulomb Counting Method</p>
+                    </div>
+                </div>
+
+                <!-- MODE SELECTOR -->
+                <div class="mode-switch-wrap">
+                    <label class="section-label">Calculation Mode</label>
+
+                    <div class="mode-switch">
+                        <button type="button"
+                                id="manualModeBtn"
+                                class="mode-btn active"
+                                onclick="setSOCMode('manual')">
+                            <i class="bi bi-lightning-charge"></i>
+                            Mode A — Manual Current
+                        </button>
+
+                        <button type="button"
+                                id="driveCycleModeBtn"
+                                class="mode-btn"
+                                onclick="setSOCMode('drive')">
+                            <i class="bi bi-graph-up"></i>
+                            Mode B — Drive Cycle
+                        </button>
+                    </div>
+                </div>
+
+                <!-- COMMON INPUTS -->
+                <div class="form-group">
+                    <label for="chemistry">Battery Chemistry</label>
+
+                    <select id="chemistry">
+                        <option value="LFP">LFP — 18650</option>
+                        <option value="NMC">NMC — 18650</option>
+                        <option value="LCO">LCO — 18650</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="capacity">Cell Capacity</label>
+
+                    <div class="input-unit">
+                        <input
+                            type="number"
+                            id="capacity"
+                            value="1"
+                            min="0.001"
+                            step="0.01">
+                        <span>Ah</span>
+                    </div>
+
+                    <small class="field-help">
+                        Enter the usable/rated capacity used for Coulomb counting.
+                    </small>
+                </div>
+
+                <div class="form-group">
+                    <label for="initialSOC">Initial SOC</label>
+
+                    <div class="input-unit">
+                        <input
+                            type="number"
+                            id="initialSOC"
+                            value="100"
+                            min="0"
+                            max="100"
+                            step="0.1">
+                        <span>%</span>
+                    </div>
+
+                    <small class="field-help">
+                        User-defined initial SOC for the calculation.
+                    </small>
+                </div>
+
+                <!-- MODE A -->
+                <div id="manualInputs" class="mode-panel">
+
+                    <div class="panel-heading">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                        Manual Current Input
+                    </div>
+
+                    <div class="form-group">
+                        <label for="current">
+                            Current
+                        </label>
+
+                        <div class="input-unit">
+                            <input
+                                type="number"
+                                id="current"
+                                value="-1"
+                                step="0.001">
+                            <span>A</span>
+                        </div>
+
+                        <small class="field-help">
+                            <strong>+ current = charge</strong> &nbsp;|&nbsp;
+                            <strong>− current = discharge</strong>
+                        </small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="timeStep">Time Step</label>
+
+                        <div class="input-unit">
+                            <input
+                                type="number"
+                                id="timeStep"
+                                value="1"
+                                min="0.001"
+                                step="0.001">
+                            <span>s</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- MODE B -->
+                <div id="driveInputs" class="mode-panel hidden">
+
+                    <div class="panel-heading">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        Drive-Cycle Input
+                    </div>
+
+                    <div class="form-group">
+                        <label for="drivePreset">Drive-Cycle Preset</label>
+
+                        <select id="drivePreset">
+                            <option value="FUDS">FUDS — 1 Ah LFP (Default)</option>
+                            <option value="upload">Uploaded profile</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="profileFile">
+                            Upload Current Profile
+                        </label>
+
+                        <input
+                            type="file"
+                            id="profileFile"
+                            accept=".csv,.xlsx,.xls">
+
+                        <small class="field-help">
+                            Supported: CSV, XLSX and XLS. The profile should contain
+                            time and current columns.
+                        </small>
+                    </div>
+
+                    <div id="columnMapping" class="column-mapping hidden">
+
+                        <div class="form-group">
+                            <label for="timeColumn">Time Column</label>
+                            <select id="timeColumn"></select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="currentColumn">Current Column</label>
+                            <select id="currentColumn"></select>
+                        </div>
+
+                    </div>
+
+                    <div id="driveInfo" class="drive-info">
+                        <i class="bi bi-info-circle-fill"></i>
+                        <div>
+                            <strong>FUDS preset loaded</strong>
+                            <p>
+                                1 Ah LFP cell with the supplied FUDS
+                                time-current profile.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- SIGN CONVENTION -->
+                <div class="sign-convention">
+                    <div class="sign-item charge">
+                        <span>+</span>
+                        <div>
+                            <strong>Charging</strong>
+                            <small>SOC increases</small>
+                        </div>
+                    </div>
+
+                    <div class="sign-item discharge">
+                        <span>−</span>
+                        <div>
+                            <strong>Discharging</strong>
+                            <small>SOC decreases</small>
+                        </div>
+                    </div>
+                </div>
+
+                <button
+                    class="btn btn-primary w-100"
+                    onclick="calculateSOC()">
+                    <i class="bi bi-calculator"></i>
+                    Calculate SOC
+                </button>
+
+                <button
+                    class="btn btn-outline-secondary w-100 mt-2"
+                    onclick="resetSOC()">
+                    <i class="bi bi-arrow-counterclockwise"></i>
+                    Reset
+                </button>
+
+                <div id="socMessage" class="soc-message hidden"></div>
+
+            </div>
+
+
+            <!-- =================================================
+                 RIGHT: RESULTS
+            ================================================== -->
+            <div class="soc-result-card">
+
+                <div class="result-label">
+                    ESTIMATED STATE OF CHARGE
+                </div>
+
+                <div class="soc-value">
+                    <span id="socValue">100.00</span>
+                    <small>%</small>
+                </div>
+
+                <div class="soc-gauge">
+                    <div
+                        id="socGaugeFill"
+                        class="soc-gauge-fill">
+                    </div>
+                </div>
+
+                <div class="soc-status" id="socStatus">
+                    READY
+                </div>
+
+                <div class="result-grid">
+
+                    <div>
+                        <span>Initial SOC</span>
+                        <strong id="resultInitialSOC">100.00 %</strong>
+                    </div>
+
+                    <div>
+                        <span>Final SOC</span>
+                        <strong id="resultFinalSOC">100.00 %</strong>
+                    </div>
+
+                    <div>
+                        <span>Current / Profile</span>
+                        <strong id="resultCurrent">−1.000 A</strong>
+                    </div>
+
+                    <div>
+                        <span>Capacity</span>
+                        <strong id="resultCapacity">1.00 Ah</strong>
+                    </div>
+
+                    <div>
+                        <span>Total Time</span>
+                        <strong id="resultTime">1.00 s</strong>
+                    </div>
+
+                    <div>
+                        <span>Net Charge</span>
+                        <strong id="resultNetCharge">−0.0007 Ah</strong>
+                    </div>
+
+                </div>
+
+                <!-- CHARTS -->
+                <div id="chartSection" class="chart-section hidden">
+
+                    <div class="chart-card">
+                        <div class="chart-title">
+                            <i class="bi bi-battery-half"></i>
+                            SOC vs Time
+                        </div>
+                        <div id="socChart"></div>
+                    </div>
+
+                    <div class="chart-card">
+                        <div class="chart-title">
+                            <i class="bi bi-activity"></i>
+                            Current vs Time
+                        </div>
+                        <div id="currentChart"></div>
+                    </div>
+
+                </div>
+
+                <div id="resultNote" class="result-note">
+                    Enter operating conditions and calculate SOC.
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <!-- Component Loader -->
+    <script src="../../assets/js/include.js"></script>
+
+    <!-- Default FUDS dataset -->
+    <script src="../../assets/data/fuds-drive-cycle.js"></script>
+
+    <!-- SOC Estimator -->
+    <script src="../../assets/js/soc-estimator.js"></script>
+
+</body>
+</html>

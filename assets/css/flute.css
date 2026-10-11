@@ -1,0 +1,1206 @@
+/* =========================================================
+   FLUTE PAGE
+   Vijay Kumar Personal Website
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.flute-hero,
+.flute-journey,
+.flute-setup,
+.flute-techniques,
+.raag-section,
+.flute-videos,
+.flute-quote {
+    font-family: "Poppins", sans-serif;
+}
+
+
+/* =========================================================
+   FLUTE HERO
+========================================================= */
+
+.flute-hero {
+
+    padding-top: 150px;
+    padding-bottom: 100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f8fc 0%,
+            #ffffff 55%,
+            #eef4ff 100%
+        );
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.flute-hero-content {
+
+    position: relative;
+    z-index: 2;
+
+}
+
+
+.flute-tag {
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    color: #164997;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 22px;
+
+}
+
+
+.flute-tag i {
+
+    font-size: 15px;
+
+}
+
+
+.flute-hero h1 {
+
+    color: #164997;
+
+    font-size: clamp(48px, 6vw, 76px);
+
+    line-height: 1.08;
+
+    font-weight: 700;
+
+    margin-bottom: 28px;
+
+}
+
+
+.flute-hero p {
+
+    max-width: 700px;
+
+    color: #626a75;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   HERO PHOTO
+========================================================= */
+
+.flute-hero-photo {
+
+    position: relative;
+
+    width: 100%;
+
+    padding: 10px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-radius: 28px;
+
+    box-shadow:
+        0 20px 50px rgba(20, 73, 151, 0.14);
+
+}
+
+
+.flute-hero-photo img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+    border-radius: 22px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .flute-hero {
+
+        padding-top: 130px;
+        padding-bottom: 80px;
+
+    }
+
+    .flute-hero-content {
+
+        text-align: center;
+
+    }
+
+    .flute-hero p {
+
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .flute-hero-photo {
+
+        max-width: 600px;
+
+        margin: 20px auto 0;
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .flute-hero {
+
+        padding-top: 115px;
+        padding-bottom: 65px;
+
+    }
+
+    .flute-hero h1 {
+
+        font-size: 42px;
+
+    }
+
+    .flute-hero p {
+
+        font-size: 16px;
+
+    }
+
+    .flute-hero-photo {
+
+        border-radius: 22px;
+
+    }
+
+    .flute-hero-photo img {
+
+        border-radius: 17px;
+
+    }
+
+}
+
+
+/* =========================================================
+   COMMON SECTION HEADING
+========================================================= */
+
+.flute-section-heading {
+    max-width: 760px;
+    margin: 0 auto 60px;
+}
+
+.flute-section-label {
+    display: block;
+    color: #164997;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.flute-section-heading h2 {
+    color: #164997;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.flute-section-heading p {
+    color: #6b7078;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   MY PRACTICE PHOTO + STORY
+========================================================= */
+
+.flute-practice-story {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+
+/* PHOTO */
+
+.practice-story-photo {
+    position: relative;
+    max-width: 470px;
+    margin: 0 auto;
+    border-radius: 28px;
+    overflow: hidden;
+    background: #f5f7fb;
+    box-shadow: 0 20px 50px rgba(22, 73, 151, 0.14);
+    border: 1px solid rgba(22, 73, 151, 0.08);
+}
+
+.practice-story-photo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+
+/* PHOTO LABEL */
+
+.practice-photo-label {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    background: rgba(11, 61, 145, 0.92);
+    color: #ffffff;
+
+    border-radius: 30px;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+
+    backdrop-filter: blur(6px);
+}
+
+.practice-photo-label i {
+    font-size: 15px;
+}
+
+
+/* TEXT */
+
+.practice-story-content {
+    max-width: 650px;
+}
+
+.practice-story-content .section-label {
+    display: inline-block;
+    margin-bottom: 14px;
+
+    color: #164997;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+}
+
+.practice-story-content h2 {
+    margin-bottom: 24px;
+
+    color: #17345f;
+
+    font-size: 42px;
+    font-weight: 700;
+
+    line-height: 1.15;
+}
+
+.practice-story-content p {
+    margin-bottom: 18px;
+
+    color: #68758a;
+
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.practice-story-content strong {
+    color: #17345f;
+    font-weight: 600;
+}
+
+
+/* HIGHLIGHT */
+
+.practice-story-highlight {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    margin-top: 28px;
+    padding: 18px 22px;
+
+    background: #f4f7fc;
+
+    border-left: 4px solid #164997;
+    border-radius: 12px;
+
+    color: #36557f;
+
+    font-size: 15px;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.practice-story-highlight i {
+    flex-shrink: 0;
+
+    color: #164997;
+
+    font-size: 24px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .flute-practice-story {
+        padding: 60px 0;
+    }
+
+    .practice-story-photo {
+        max-width: 500px;
+        margin-bottom: 10px;
+    }
+
+    .practice-story-content {
+        max-width: 100%;
+    }
+
+    .practice-story-content h2 {
+        font-size: 36px;
+    }
+}
+
+
+@media (max-width: 576px) {
+
+    .flute-practice-story {
+        padding: 45px 0;
+    }
+
+    .practice-story-photo {
+        border-radius: 20px;
+    }
+
+    .practice-photo-label {
+        left: 14px;
+        bottom: 14px;
+    }
+
+    .practice-story-content h2 {
+        font-size: 30px;
+    }
+
+    .practice-story-content p {
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+    .practice-story-highlight {
+        padding: 15px 17px;
+    }
+}
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.flute-journey {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.journey-intro {
+    max-width: 900px;
+    margin: 0 auto 70px;
+    text-align: center;
+}
+
+.journey-intro p {
+    color: #626871;
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 18px;
+}
+
+.journey-intro strong {
+    color: #164997;
+}
+
+
+/* =========================================================
+   TIMELINE
+========================================================= */
+
+.flute-timeline {
+    position: relative;
+    max-width: 950px;
+    margin: auto;
+}
+
+.flute-timeline::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #dce5f3;
+    transform: translateX(-50%);
+}
+
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 0 50px 55px;
+}
+
+.timeline-item:nth-child(odd) {
+    left: 0;
+    text-align: right;
+}
+
+.timeline-item:nth-child(even) {
+    left: 50%;
+    text-align: left;
+}
+
+.timeline-number {
+    position: absolute;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #164997;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(20, 73, 151, 0.18);
+    z-index: 2;
+}
+
+.timeline-item:nth-child(odd) .timeline-number {
+    right: -24px;
+}
+
+.timeline-item:nth-child(even) .timeline-number {
+    left: -24px;
+}
+
+.timeline-content {
+    padding: 30px;
+    background: #f8faff;
+    border: 1px solid #e5ebf4;
+    border-radius: 18px;
+    transition: 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(20, 73, 151, 0.08);
+}
+
+.timeline-label {
+    display: block;
+    color: #164997;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.timeline-content h3 {
+    color: #20242a;
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.timeline-content p {
+    color: #6b7078;
+    font-size: 14px;
+    line-height: 1.75;
+    margin: 0;
+}
+
+
+/* =========================================================
+   FLUTE SETUP
+========================================================= */
+
+.flute-setup {
+    padding: 100px 0;
+    background: #f6f8fb;
+}
+
+.setup-card {
+    height: 100%;
+    padding: 40px 32px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e7ebf1;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.setup-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(20, 73, 151, 0.10);
+}
+
+.setup-icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 22px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eef4ff;
+    color: #164997;
+    font-size: 26px;
+}
+
+.setup-label {
+    display: block;
+    color: #164997;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+
+.setup-card h3 {
+    color: #20242a;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.setup-card p {
+    color: #6b7078;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+
+/* =========================================================
+   ORNAMENTATION
+========================================================= */
+
+.flute-ornamentation {
+
+    padding: 105px 0;
+
+    background: #ffffff;
+}
+
+
+.ornament-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+
+.ornament-card {
+
+    position: relative;
+
+    padding: 28px;
+
+    border: 1px solid #f0e7ec;
+
+    border-radius: 18px;
+
+    transition: .3s ease;
+}
+
+
+.ornament-card:hover {
+
+    border-color: #164997;
+
+    transform: translateY(-5px);
+}
+
+
+.ornament-card > span {
+
+    color: #164997;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.ornament-card h3 {
+
+    color: #242930;
+
+    font-size: 20px;
+
+    margin: 12px 0 8px;
+}
+
+
+.ornament-card p {
+
+    color: #707780;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   RAAG SECTION
+========================================================= */
+
+.raag-section {
+    padding: 100px 0;
+    background: #f6f8fb;
+}
+
+.raag-card {
+    position: relative;
+    height: 100%;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 22px;
+    border: 1px solid #e6ebf2;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: 0.3s ease;
+}
+
+.raag-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(20, 73, 151, 0.10);
+}
+
+.raag-number {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    color: #dfe6f0;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.raag-tag {
+    display: inline-block;
+    padding: 6px 11px;
+    border-radius: 30px;
+    background: #eef4ff;
+    color: #164997;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.raag-card h3 {
+    color: #20242a;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.raag-card p {
+    color: #6b7078;
+    font-size: 14px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.raag-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #164997;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.raag-status i {
+    font-size: 7px;
+}
+
+
+/* =========================================================
+   VIDEO SECTION
+========================================================= */
+
+.flute-videos {
+    padding: 100px 0;
+    background: #ffffff;
+}
+
+.video-card {
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid #e5e9ef;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.video-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px rgba(20, 73, 151, 0.10);
+}
+
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background: #eef2f7;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+    transform: scale(1.04);
+}
+
+.video-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 73, 151, 0.95);
+    color: #ffffff;
+    text-decoration: none;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+    transition: 0.3s ease;
+}
+
+.video-play:hover {
+    background: #123f87;
+    color: #ffffff;
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+.video-play i {
+    margin-left: 3px;
+}
+
+.video-content {
+    padding: 25px;
+}
+
+.video-content > span {
+    display: block;
+    color: #164997;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    margin-bottom: 10px;
+}
+
+.video-content h3 {
+    color: #20242a;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.video-content p {
+    color: #6b7078;
+    font-size: 13px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================================================
+   CLOSING QUOTE
+========================================================= */
+
+.flute-quote {
+    padding: 100px 0;
+    background: #f6f8fb;
+}
+
+.flute-quote-box {
+    max-width: 850px;
+    margin: auto;
+    padding: 65px 45px;
+    text-align: center;
+    border-radius: 25px;
+    color: #ffffff;
+    background:
+        linear-gradient(
+            135deg,
+            #123f87,
+            #164997
+        );
+    box-shadow: 0 20px 50px rgba(20, 73, 151, 0.18);
+}
+
+.flute-quote-icon {
+    font-size: 38px;
+    opacity: 0.45;
+    margin-bottom: 18px;
+}
+
+.flute-quote-box h2 {
+    max-width: 700px;
+    margin: 0 auto 18px;
+    font-size: 30px;
+    line-height: 1.45;
+    font-weight: 600;
+}
+
+.flute-quote-box p {
+    max-width: 650px;
+    margin: auto;
+    font-size: 14px;
+    line-height: 1.8;
+    opacity: 0.85;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .flute-hero {
+        padding-top: 110px;
+        padding-bottom: 85px;
+    }
+
+    .flute-hero h1 {
+        font-size: 55px;
+    }
+
+    .flute-section-heading h2 {
+        font-size: 36px;
+    }
+
+    .technique-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .flute-timeline {
+        max-width: 850px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .flute-hero {
+        padding-top: 100px;
+        padding-bottom: 70px;
+    }
+
+    .flute-hero h1 {
+        font-size: 42px;
+    }
+
+    .flute-hero p {
+        font-size: 16px;
+    }
+
+    .flute-journey,
+    .flute-setup,
+    .flute-techniques,
+    .raag-section,
+    .flute-videos,
+    .flute-quote {
+        padding: 70px 0;
+    }
+
+    .flute-section-heading {
+        margin-bottom: 45px;
+    }
+
+    .flute-section-heading h2 {
+        font-size: 32px;
+    }
+
+    /* Timeline becomes single column */
+
+    .flute-timeline::before {
+        left: 23px;
+        transform: none;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        left: 0;
+        padding-left: 75px;
+        padding-right: 0;
+        text-align: left;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-number,
+    .timeline-item:nth-child(even) .timeline-number {
+        left: 0;
+        right: auto;
+    }
+
+    .timeline-content {
+        padding: 25px;
+    }
+
+    .technique-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .raag-card {
+        padding: 32px;
+    }
+
+    .video-thumbnail {
+        height: 240px;
+    }
+
+    .flute-quote-box {
+        padding: 50px 25px;
+    }
+
+    .flute-quote-box h2 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .flute-hero h1 {
+        font-size: 36px;
+    }
+
+    .flute-section-heading h2 {
+        font-size: 29px;
+    }
+
+    .journey-intro p {
+        font-size: 14px;
+    }
+
+    .timeline-content h3 {
+        font-size: 19px;
+    }
+
+    .timeline-content p {
+        font-size: 13px;
+    }
+
+    .setup-card {
+        padding: 32px 25px;
+    }
+
+    .video-thumbnail {
+        height: 210px;
+    }
+
+}
+
+/* =========================================================
+   FLUTE VIDEO DEMONSTRATIONS
+========================================================= */
+
+.flute-videos {
+    padding: 100px 0;
+    background: #f6f8fc;
+}
+
+
+/* VIDEO CARD */
+
+.video-card {
+    height: 100%;
+    background: #ffffff;
+    border: 1px solid #e3e8ef;
+    border-radius: 22px;
+    overflow: hidden;
+
+    box-shadow: 0 10px 30px rgba(20, 73, 151, 0.08);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.video-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(20, 73, 151, 0.14);
+}
+
+
+/* =========================================================
+   VERTICAL FLUTE VIDEOS
+========================================================= */
+
+/* =========================================
+   FLUTE VIDEO
+========================================= */
+
+.video-wrapper {
+    width: 100%;
+    background: #ffffff;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.video-wrapper video {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* =========================================================
+   VIDEO INFORMATION
+========================================================= */
+
+.video-content {
+    padding: 25px 28px 28px;
+}
+
+
+.video-content > span {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #164997;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+}
+
+
+.video-content h3 {
+    margin-bottom: 10px;
+
+    color: #20242a;
+
+    font-size: 24px;
+    font-weight: 700;
+
+    line-height: 1.3;
+}
+
+
+.video-content p {
+    margin: 0;
+
+    color: #69717c;
+
+    font-size: 14px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .flute-videos {
+        padding: 70px 0;
+    }
+
+    .video-content {
+        padding: 22px;
+    }
+
+    .video-content h3 {
+        font-size: 21px;
+    }
+
+}

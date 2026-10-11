@@ -1,0 +1,325 @@
+
+/* =====================================================
+   ABOUT PAGE
+===================================================== */
+
+body{
+    background:#f5f7fb;
+}
+
+.about-hero{
+    padding:70px 0 40px;
+}
+
+.section-title{
+    font-size:2.4rem;
+    font-weight:700;
+    color:#0B3D91;
+}
+
+.section-subtitle{
+    color:#6c757d;
+    max-width:750px;
+    margin:auto;
+}
+
+.profile-card,
+.content-card,
+.prof-card,
+.summary-card{
+    background:#fff;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.35s;
+}
+
+.profile-card:hover,
+.content-card:hover,
+.prof-card:hover,
+.summary-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(0,0,0,.14);
+}
+
+.profile-card{
+    padding:30px;
+}
+
+.profile-photo{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid #0B3D91;
+}
+
+.designation{
+    color:#0B3D91;
+    font-weight:600;
+}
+
+.profile-info p{
+    margin-bottom:14px;
+    color:#555;
+}
+
+.profile-info i{
+    color:#0B3D91;
+}
+
+.content-card{
+    padding:35px;
+    height:100%;
+}
+
+.content-card h2{
+    color:#0B3D91;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.content-card p{
+    line-height:1.9;
+    text-align:justify;
+}
+
+.working-section{
+    padding:70px 0;
+}
+
+.prof-card{
+    padding:30px;
+    text-align:center;
+    border-top:5px solid #0B3D91;
+    height:100%;
+}
+
+.prof-img{
+    width:170px;
+    height:170px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid #0B3D91;
+    margin-bottom:20px;
+}
+
+.prof-card h4{
+    color:#0B3D91;
+    font-weight:700;
+}
+
+.prof-card ul{
+    margin-top:20px;
+    text-align:left;
+    line-height:2;
+}
+
+.research-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+    justify-content:center;
+}
+
+.research-tag{
+    background:#0B3D91;
+    color:#fff;
+    padding:10px 18px;
+    border-radius:50px;
+    font-size:.95rem;
+    transition:.3s;
+}
+
+.research-tag:hover{
+    background:#ffc107;
+    color:#000;
+    transform:translateY(-3px);
+}
+
+.summary-card{
+    padding:30px;
+    border-left:6px solid #0B3D91;
+    margin-bottom:25px;
+}
+
+.summary-card h3{
+    color:#0B3D91;
+    margin-bottom:15px;
+    font-weight:700;
+}
+
+.badge-item{
+    display:inline-block;
+    background:#eef4ff;
+    color:#0B3D91;
+    padding:6px 12px;
+    border-radius:30px;
+    margin:4px;
+    font-size:.85rem;
+    font-weight:600;
+}
+
+@media(max-width:992px){
+
+.profile-photo{
+    width:180px;
+    height:180px;
+}
+
+.content-card{
+    margin-top:20px;
+}
+
+.section-title{
+    font-size:2rem;
+}
+
+}
+.profile-photo{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    object-fit:cover;
+
+    /* Move image downward inside the circle */
+    object-position:center 20%;
+
+    border:5px solid #0B3D91;
+}
+
+.research-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:20px;
+}
+
+.research-tags span{
+    background:#eef4ff;
+    color:#0B3D91;
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:500;
+}
+
+/*====================================================
+RESEARCH INTERESTS
+====================================================*/
+
+.research-interest-section{
+
+    padding:90px 0;
+
+    background:#f8f9fc;
+
+}
+
+.interest-card{
+
+    background:#ffffff;
+
+    border-radius:18px;
+
+    padding:30px 25px;
+
+    text-align:center;
+
+    height:100%;
+
+    transition:.35s;
+
+    border-top:5px solid #0B3D91;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.interest-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.15);
+
+}
+
+.interest-icon{
+
+    font-size:48px;
+
+    margin-bottom:20px;
+
+}
+
+.interest-card h5{
+
+    font-weight:700;
+
+    color:#0B3D91;
+
+    margin-bottom:15px;
+
+}
+
+.interest-card p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    font-size:15px;
+
+}
+
+/*==================================================
+PAGE HEADER
+==================================================*/
+
+.page-header{
+
+    padding-top:140px;
+    padding-bottom:70px;
+
+    background:#f8f9fc;
+
+    text-align:center;
+
+}
+
+.page-header h1{
+
+    font-size:52px;
+
+    font-weight:700;
+
+    color:#0B3D91;
+
+    margin-bottom:15px;
+
+}
+
+.page-header p{
+
+    font-size:20px;
+
+    color:#666;
+
+    max-width:850px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+.about-hero{
+    padding-top:130px;
+    padding-bottom:70px;
+    background:#f5f8fc;
+    min-height:100vh;
+}
+
+.working-section{
+    padding:80px 0;
+    background:#ffffff;
+}

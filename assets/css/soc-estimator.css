@@ -1,0 +1,553 @@
+/* =========================================================
+   BATTERY SOC ESTIMATOR
+   Coulomb Counting Tool
+   Mode A: Manual Current
+   Mode B: Drive Cycle
+   ========================================================= */
+
+.tool-section {
+    padding: 105px 20px 70px;
+    min-height: calc(100vh - 70px);
+    background: #f5f8fc;
+}
+
+.soc-page-title {
+    max-width: 900px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.soc-page-title > span {
+    color: #1553a0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.soc-page-title h1 {
+    margin: 5px 0 8px;
+    color: #182235;
+    font-size: clamp(32px, 4vw, 46px);
+    font-weight: 700;
+}
+
+.soc-page-title h1 strong {
+    color: #1d5db1;
+}
+
+.soc-page-title p {
+    max-width: 760px;
+    margin: 0 auto;
+    color: #66758e;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.soc-tool-container {
+    width: min(1180px, 100%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(350px, 0.9fr) minmax(500px, 1.1fr);
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* ---------- Cards ---------- */
+
+.soc-input-card,
+.soc-result-card {
+    background: #ffffff;
+    border: 1px solid #dce5f0;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(25, 55, 95, 0.07);
+    overflow: hidden;
+}
+
+.soc-input-card {
+    padding: 0 28px 28px;
+}
+
+.soc-input-card .card-header {
+    margin: 0 -28px 25px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #ffffff;
+    background: linear-gradient(135deg, #194f9f, #276dcc);
+}
+
+.soc-input-card .card-header > i {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.14);
+    font-size: 22px;
+}
+
+.soc-input-card .card-header h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.25;
+}
+
+.soc-input-card .card-header p {
+    margin: 3px 0 0;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* ---------- Mode switch ---------- */
+
+.mode-switch-wrap {
+    margin-bottom: 22px;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34435b;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.mode-switch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 5px;
+    border: 1px solid #d8e2ef;
+    border-radius: 12px;
+    background: #f4f7fb;
+}
+
+.mode-btn {
+    min-height: 43px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 9px;
+    background: transparent;
+    color: #596a83;
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.mode-btn:hover {
+    color: #174f98;
+    background: #eaf1fb;
+}
+
+.mode-btn.active {
+    color: #ffffff;
+    background: #1f62b5;
+    box-shadow: 0 3px 10px rgba(31, 98, 181, 0.20);
+}
+
+/* ---------- Form ---------- */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #34435b;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-group select,
+.form-group input[type="number"],
+.form-group input[type="file"] {
+    width: 100%;
+    min-height: 46px;
+    padding: 0 13px;
+    border: 1px solid #cbd8e8;
+    border-radius: 10px;
+    outline: none;
+    background: #ffffff;
+    color: #26364e;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group input[type="file"] {
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    border-color: #2167c5;
+    box-shadow: 0 0 0 3px rgba(33, 103, 197, 0.10);
+}
+
+.input-unit {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-unit input {
+    padding-right: 55px !important;
+}
+
+.input-unit span {
+    position: absolute;
+    right: 14px;
+    color: #61728b;
+    font-size: 12px;
+    font-weight: 600;
+    pointer-events: none;
+}
+
+.field-help {
+    display: block;
+    margin-top: 6px;
+    color: #7788a1;
+    font-size: 10.5px;
+    line-height: 1.5;
+}
+
+/* ---------- Mode panels ---------- */
+
+.mode-panel {
+    margin-bottom: 18px;
+    padding: 16px;
+    border: 1px solid #dbe6f2;
+    border-radius: 13px;
+    background: #f8fafd;
+}
+
+.mode-panel.hidden,
+.hidden {
+    display: none !important;
+}
+
+.panel-heading {
+    margin-bottom: 15px;
+    color: #1b579f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.panel-heading i {
+    margin-right: 6px;
+}
+
+/* ---------- Drive-cycle info ---------- */
+
+.drive-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    padding: 11px 12px;
+    border: 1px solid #cfe1f8;
+    border-radius: 10px;
+    background: #eef6ff;
+    color: #245488;
+}
+
+.drive-info > i {
+    margin-top: 2px;
+}
+
+.drive-info strong {
+    display: block;
+    font-size: 11px;
+}
+
+.drive-info p {
+    margin: 3px 0 0;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.column-mapping {
+    padding-top: 4px;
+}
+
+/* ---------- Sign convention ---------- */
+
+.sign-convention {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9px;
+    margin: 8px 0 20px;
+}
+
+.sign-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px;
+    border-radius: 10px;
+    background: #f6f8fb;
+}
+
+.sign-item > span {
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.sign-item.charge > span {
+    background: #22a861;
+}
+
+.sign-item.discharge > span {
+    background: #e5484d;
+}
+
+.sign-item strong,
+.sign-item small {
+    display: block;
+}
+
+.sign-item strong {
+    color: #34435b;
+    font-size: 10.5px;
+}
+
+.sign-item small {
+    margin-top: 2px;
+    color: #7a899f;
+    font-size: 9px;
+}
+
+/* ---------- Buttons ---------- */
+
+.soc-input-card .btn {
+    min-height: 46px;
+    border-radius: 10px;
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.soc-input-card .btn-primary {
+    border: none;
+    background: #1f62b5;
+}
+
+.soc-input-card .btn-primary:hover {
+    background: #174f98;
+}
+
+/* ---------- Messages ---------- */
+
+.soc-message {
+    margin-top: 12px;
+    padding: 10px 12px;
+    border-radius: 9px;
+    background: #fff4f4;
+    color: #a1272c;
+    font-size: 10.5px;
+}
+
+/* ---------- Result card ---------- */
+
+.soc-result-card {
+    padding: 34px;
+    text-align: center;
+}
+
+.result-label {
+    margin-bottom: 5px;
+    color: #1553a0;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.soc-value {
+    margin: 0 0 20px;
+    color: #194f9f;
+    font-size: clamp(50px, 6vw, 70px);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.soc-value small {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* ---------- Gauge ---------- */
+
+.soc-gauge {
+    width: min(100%, 500px);
+    height: 18px;
+    margin: 0 auto 12px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #e8edf3;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.10);
+}
+
+.soc-gauge-fill {
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: #22c55e;
+    transition: width 0.45s ease, background 0.3s ease;
+}
+
+/* ---------- Status ---------- */
+
+.soc-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 110px;
+    margin: 8px auto 25px;
+    padding: 7px 18px;
+    border-radius: 999px;
+    background: #eef4fb;
+    color: #315071;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+/* ---------- Result grid ---------- */
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 8px;
+}
+
+.result-grid > div {
+    min-height: 76px;
+    padding: 13px 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 12px;
+    background: #f6f8fb;
+}
+
+.result-grid span {
+    margin-bottom: 5px;
+    color: #71819a;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.result-grid strong {
+    color: #34435b;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ---------- Charts ---------- */
+
+.chart-section {
+    margin-top: 22px;
+    text-align: left;
+}
+
+.chart-card {
+    margin-top: 13px;
+    padding: 13px 13px 5px;
+    border: 1px solid #e0e7f0;
+    border-radius: 13px;
+    background: #ffffff;
+}
+
+.chart-title {
+    padding: 2px 4px 5px;
+    color: #234b7e;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.chart-title i {
+    margin-right: 5px;
+}
+
+#socChart,
+#currentChart {
+    width: 100%;
+    height: 260px;
+}
+
+.result-note {
+    margin-top: 15px;
+    padding: 10px 13px;
+    border-radius: 10px;
+    background: #f3f7fc;
+    color: #64758e;
+    font-size: 10.5px;
+    line-height: 1.5;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 980px) {
+    .soc-tool-container {
+        grid-template-columns: 1fr;
+        max-width: 760px;
+    }
+
+    .soc-result-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .tool-section {
+        padding: 90px 12px 40px;
+    }
+
+    .soc-input-card {
+        padding: 0 18px 22px;
+    }
+
+    .soc-input-card .card-header {
+        margin-left: -18px;
+        margin-right: -18px;
+        padding: 18px;
+    }
+
+    .soc-result-card {
+        padding: 26px 18px;
+    }
+
+    .mode-switch,
+    .sign-convention,
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .soc-value {
+        font-size: 52px;
+    }
+}
+
+body {
+    overflow-x: hidden;
+}
+
+#navbar-pages {
+    position: relative;
+    z-index: 1000;
+}

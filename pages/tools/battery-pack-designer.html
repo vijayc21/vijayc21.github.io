@@ -1,0 +1,1793 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Battery Pack Designer | Vijay</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main Website CSS -->
+    <link
+        rel="stylesheet"
+        href="../../assets/css/style.css"
+    >
+
+    <!-- Battery Pack Designer CSS -->
+    <link
+        rel="stylesheet"
+        href="../../assets/css/battery-pack-designer.css"
+    >
+
+    <link
+        rel="icon"
+        href="../../assets/images/logo/iitk.png"
+    >
+
+</head>
+
+
+<body>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<div id="navbar-pages"></div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="pack-hero">
+
+    <div class="pack-hero-content">
+
+        <div class="pack-tag">
+            BATTERY DESIGN TOOL
+        </div>
+
+        <h1>
+            Battery Pack
+            <span>Designer</span>
+        </h1>
+
+        <p>
+            Design battery packs using cell-level electrical
+            parameters and evaluate voltage, capacity, energy,
+            power, current capability and EV requirements.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DESIGN MODE
+===================================================== -->
+
+<section class="pack-tool-section">
+
+    <div class="pack-container">
+
+        <div class="mode-card">
+
+            <div class="mode-title">
+
+                <i class="bi bi-battery-charging"></i>
+
+                <div>
+
+                    <h2>
+                        Battery Pack Designer
+                    </h2>
+
+                    <p>
+                        Select the design mode
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="mode-selector">
+
+                <label class="mode-option active">
+
+                    <input
+                        type="radio"
+                        name="designMode"
+                        value="basic"
+                        checked
+                    >
+
+                    <div class="mode-option-content">
+
+                        <i class="bi bi-grid-3x3-gap-fill"></i>
+
+                        <div>
+
+                            <strong>
+                                Basic Pack Design
+                            </strong>
+
+                            <span>
+                                Series-parallel battery pack calculation
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </label>
+
+
+                <label class="mode-option">
+
+                    <input
+                        type="radio"
+                        name="designMode"
+                        value="ev"
+                    >
+
+                    <div class="mode-option-content">
+
+                        <i class="bi bi-car-front-fill"></i>
+
+                        <div>
+
+                            <strong>
+                                EV Battery Pack Design
+                            </strong>
+
+                            <span>
+                                Preliminary EV battery sizing and performance
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+<!-- =================================================
+     BASIC PACK MODE
+================================================== -->
+
+<div
+    id="basicMode"
+    class="design-mode"
+>
+
+    <div class="designer-grid">
+
+        <!-- =========================================
+             LEFT INPUT CARD
+        ========================================== -->
+
+        <div class="input-card">
+
+            <div class="card-header">
+
+                <i class="bi bi-sliders"></i>
+
+                <div>
+
+                    <h3>
+                        Cell & Pack Parameters
+                    </h3>
+
+                    <p>
+                        Define the battery cell and pack configuration
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="card-body">
+
+
+                <!-- =====================================
+                     CELL PARAMETERS
+                ====================================== -->
+
+                <div class="section-label">
+                    CELL PARAMETERS
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Cell Nominal Voltage
+                    </label>
+
+                    <div class="input-unit">
+
+                        <input
+                            type="number"
+                            id="basicCellVoltage"
+                            value="3.2"
+                            min="0.1"
+                            step="0.01"
+                        >
+
+                        <span>V</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Lower Cutoff Voltage
+                    </label>
+
+                    <div class="input-unit">
+
+                        <input
+                            type="number"
+                            id="basicLowerCutoff"
+                            value="2.5"
+                            min="0.1"
+                            step="0.01"
+                        >
+
+                        <span>V</span>
+
+                    </div>
+
+                    <small class="input-help">
+                        Minimum recommended cell voltage.
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Upper Cutoff Voltage
+                    </label>
+
+                    <div class="input-unit">
+
+                        <input
+                            type="number"
+                            id="basicUpperCutoff"
+                            value="3.65"
+                            min="0.1"
+                            step="0.01"
+                        >
+
+                        <span>V</span>
+
+                    </div>
+
+                    <small class="input-help">
+                        Maximum recommended cell voltage.
+                    </small>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Cell Capacity
+                    </label>
+
+                    <div class="input-unit">
+
+                        <input
+                            type="number"
+                            id="basicCellCapacity"
+                            value="100"
+                            min="0.01"
+                            step="0.01"
+                        >
+
+                        <span>Ah</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Maximum Continuous Cell Current
+                    </label>
+
+                    <div class="input-unit">
+
+                        <input
+                            type="number"
+                            id="basicCellCurrent"
+                            value="100"
+                            min="0"
+                            step="0.1"
+                        >
+
+                        <span>A</span>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================================
+                     PACK CONFIGURATION
+                ====================================== -->
+
+                <div class="section-label">
+                    PACK CONFIGURATION
+                </div>
+
+
+                <div class="series-parallel-grid">
+
+                    <div class="form-group">
+
+                        <label>
+                            Series Cells (Ns)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="basicNs"
+                            value="8"
+                            min="1"
+                            step="1"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Parallel Cells (Np)
+                        </label>
+
+                        <input
+                            type="number"
+                            id="basicNp"
+                            value="2"
+                            min="1"
+                            step="1"
+                        >
+
+                    </div>
+
+                </div>
+
+
+
+
+<!-- =========================================
+     LOAD CALCULATOR
+========================================== -->
+
+<div class="load-calculator">
+
+    <div class="section-label">
+        LOAD CALCULATOR
+    </div>
+
+    <p class="load-description">
+        Add appliances or electrical loads to automatically
+        calculate the total continuous power requirement.
+    </p>
+
+
+    <!-- =========================================
+         QUICK ADD APPLIANCE
+    ========================================== -->
+
+    <div class="quick-add-load">
+
+        <div class="quick-add-header">
+
+            <i class="bi bi-lightning-charge-fill"></i>
+
+            <div>
+
+                <strong>
+                    Quick Add Appliance
+                </strong>
+
+                <span>
+                    Select an appliance to add it to the load table.
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <select
+            id="quickAppliance"
+            class="quick-appliance-select"
+            onchange="quickAddAppliance()"
+        >
+
+            <option value="">
+                Select Appliance
+            </option>
+
+            <option value="fan">
+                Fan
+            </option>
+
+            <option value="led">
+                LED Light
+            </option>
+
+            <option value="tube">
+                Tube Light
+            </option>
+
+            <option value="tv">
+                TV
+            </option>
+
+            <option value="refrigerator">
+                Refrigerator
+            </option>
+
+            <option value="laptop">
+                Laptop
+            </option>
+
+            <option value="router">
+                Wi-Fi Router
+            </option>
+
+            <option value="cooler">
+                Cooler
+            </option>
+
+            <option value="cctv">
+                CCTV
+            </option>
+
+            <option value="pump">
+                Pump
+            </option>
+
+            <option value="custom">
+                Custom
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- =========================================
+         LOAD TABLE
+    ========================================== -->
+
+    <div class="load-table-wrapper">
+
+        <table class="load-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>Appliance / Load</th>
+
+                    <th>Quantity</th>
+
+                    <th>Power (W)</th>
+
+                    <th>Total (W)</th>
+
+                    <th></th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody id="loadTableBody">
+
+                <!-- First default row -->
+
+                <tr class="load-row">
+
+                    <td>
+
+                        <input
+                            type="text"
+                            class="load-name"
+                            value="Fan"
+                            placeholder="e.g. Fan"
+                        >
+
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="number"
+                            class="load-quantity"
+                            value="2"
+                            min="1"
+                            step="1"
+                        >
+
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="number"
+                            class="load-power"
+                            value="70"
+                            min="0"
+                            step="1"
+                        >
+
+                    </td>
+
+                    <td>
+
+                        <strong class="load-total">
+                            140 W
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        <button
+                            type="button"
+                            class="remove-load"
+                            onclick="removeLoadRow(this)"
+                            title="Remove load"
+                        >
+
+                            <i class="bi bi-trash3"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- Second default row -->
+
+                <tr class="load-row">
+
+                    <td>
+
+                        <input
+                            type="text"
+                            class="load-name"
+                            value="LED Light"
+                            placeholder="e.g. LED Light"
+                        >
+
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="number"
+                            class="load-quantity"
+                            value="5"
+                            min="1"
+                            step="1"
+                        >
+
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="number"
+                            class="load-power"
+                            value="10"
+                            min="0"
+                            step="1"
+                        >
+
+                    </td>
+
+                    <td>
+
+                        <strong class="load-total">
+                            50 W
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        <button
+                            type="button"
+                            class="remove-load"
+                            onclick="removeLoadRow(this)"
+                            title="Remove load"
+                        >
+
+                            <i class="bi bi-trash3"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- Third default row -->
+
+                <tr class="load-row">
+
+                    <td>
+
+                        <input
+                            type="text"
+                            class="load-name"
+                            value="TV"
+                            placeholder="e.g. TV"
+                        >
+
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="number"
+                            class="load-quantity"
+                            value="1"
+                            min="1"
+                            step="1"
+                        >
+
+                    </td>
+
+                    <td>
+
+                        <input
+                            type="number"
+                            class="load-power"
+                            value="100"
+                            min="0"
+                            step="1"
+                        >
+
+                    </td>
+
+                    <td>
+
+                        <strong class="load-total">
+                            100 W
+                        </strong>
+
+                    </td>
+
+                    <td>
+
+                        <button
+                            type="button"
+                            class="remove-load"
+                            onclick="removeLoadRow(this)"
+                            title="Remove load"
+                        >
+
+                            <i class="bi bi-trash3"></i>
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <!-- ADD LOAD BUTTON -->
+
+    <button
+        type="button"
+        class="add-load-btn"
+        onclick="addLoadRow()"
+    >
+
+        <i class="bi bi-plus-circle"></i>
+
+        Add Appliance
+
+    </button>
+
+
+    <!-- TOTAL LOAD -->
+
+    <div class="load-total-card">
+
+        <div>
+
+            <span>
+                Total Continuous Load
+            </span>
+
+            <small>
+                Sum of all connected loads
+            </small>
+
+        </div>
+
+        <strong id="totalLoadPower">
+            290 W
+        </strong>
+
+    </div>
+
+
+    <!-- PEAK LOAD -->
+
+    <div class="form-group">
+
+        <label>
+            Peak Load Factor
+        </label>
+
+        <div class="input-unit">
+
+            <input
+                type="number"
+                id="basicPeakFactor"
+                value="1.5"
+                min="1"
+                step="0.1"
+            >
+
+            <span>×</span>
+
+        </div>
+
+        <small class="input-help">
+            Used to estimate short-duration peak load.
+        </small>
+
+    </div>
+
+</div>
+
+
+    <!-- EFFICIENCY -->
+
+    <div class="form-group">
+
+        <label>
+            Inverter / System Efficiency
+        </label>
+
+        <div class="input-unit">
+
+            <input
+                type="number"
+                id="basicEfficiency"
+                value="90"
+                min="1"
+                max="100"
+                step="0.1"
+            >
+
+            <span>%</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- BACKUP -->
+
+    <div class="form-group">
+
+        <label>
+            Required Backup Time
+        </label>
+
+        <div class="input-unit">
+
+            <input
+                type="number"
+                id="basicBackupTime"
+                value="8"
+                min="0"
+                step="0.1"
+            >
+
+            <span>h</span>
+
+        </div>
+
+    </div>
+
+
+
+
+ 
+                <!-- =====================================
+                     BUTTONS
+                ====================================== -->
+
+                <button
+                    class="btn-design"
+                    onclick="calculateBasicPack()"
+                >
+
+                    <i class="bi bi-calculator"></i>
+
+                    Calculate Pack
+
+                </button>
+
+
+                <button
+                    class="btn-reset"
+                    onclick="resetBasicPack()"
+                >
+
+                    <i class="bi bi-arrow-counterclockwise"></i>
+
+                    Reset
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================
+             RIGHT RESULT CARD
+        ========================================== -->
+
+        <div class="result-card">
+
+            <div class="result-header">
+
+                <span>
+                    BASIC PACK DESIGN
+                </span>
+
+                <i class="bi bi-battery-full"></i>
+
+            </div>
+
+
+            <div class="pack-configuration">
+
+                <strong id="basicConfiguration">
+                    8S2P
+                </strong>
+
+                <span>
+                    Battery Configuration
+                </span>
+
+            </div>
+
+
+            <!-- =====================================
+                 VOLTAGE WINDOW
+            ====================================== -->
+
+            <div class="voltage-window">
+
+                <div>
+
+                    <span>
+                        Lower Cutoff
+                    </span>
+
+                    <strong id="basicPackMinVoltage">
+                        20.00 V
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Nominal
+                    </span>
+
+                    <strong id="basicPackVoltage">
+                        25.60 V
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Upper Cutoff
+                    </span>
+
+                    <strong id="basicPackMaxVoltage">
+                        29.20 V
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 PACK RESULTS
+            ====================================== -->
+
+            <div class="result-grid">
+
+                <div class="result-box">
+
+                    <span>
+                        Pack Capacity
+                    </span>
+
+                    <strong id="basicPackCapacity">
+                        200.00 Ah
+                    </strong>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <span>
+                        Pack Energy
+                    </span>
+
+                    <strong id="basicPackEnergy">
+                        5.12 kWh
+                    </strong>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <span>
+                        Usable Energy
+                    </span>
+
+                    <strong id="basicUsableEnergy">
+                        4.10 kWh
+                    </strong>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <span>
+                        Maximum Pack Current
+                    </span>
+
+                    <strong id="basicPackCurrent">
+                        200.00 A
+                    </strong>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <span>
+                        Maximum Power
+                    </span>
+
+                    <strong id="basicPackPower">
+                        5.12 kW
+                    </strong>
+
+                </div>
+
+
+                <div class="result-box">
+
+                    <span>
+                        Total Cells
+                    </span>
+
+                    <strong id="basicTotalCells">
+                        16
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 LOAD ANALYSIS
+            ====================================== -->
+
+            <div class="analysis-section">
+
+                <div class="analysis-title">
+
+                    <i class="bi bi-lightning-charge-fill"></i>
+
+                    Load & Backup Analysis
+
+                </div>
+
+
+                <div class="analysis-grid">
+
+                    <div class="analysis-box">
+
+                        <span>
+                            Load Current
+                        </span>
+
+                        <strong id="basicLoadCurrent">
+                            21.70 A
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analysis-box">
+
+                        <span>
+                            Peak Current
+                        </span>
+
+                        <strong id="basicPeakCurrent">
+                            32.55 A
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analysis-box">
+
+                        <span>
+                            Required Energy
+                        </span>
+
+                        <strong id="basicRequiredEnergy">
+                            4.44 kWh
+                        </strong>
+
+                    </div>
+
+
+                    <div class="analysis-box">
+
+                        <span>
+                            Estimated Backup
+                        </span>
+
+                        <strong id="basicEstimatedBackup">
+                            9.84 h
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 BMS REQUIREMENT
+            ====================================== -->
+
+            <div class="bms-section">
+
+                <div class="analysis-title">
+
+                    <i class="bi bi-cpu-fill"></i>
+
+                    Preliminary BMS Requirement
+
+                </div>
+
+
+                <div class="bms-grid">
+
+                    <div>
+
+                        <span>
+                            Continuous BMS Current
+                        </span>
+
+                        <strong id="basicBMSContinuous">
+                            ≥ 21.70 A
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Peak BMS Current
+                        </span>
+
+                        <strong id="basicBMSPeak">
+                            ≥ 32.55 A
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="capability-status"
+                    id="basicCapabilityStatus"
+                >
+
+                    <i class="bi bi-check-circle-fill"></i>
+
+                    <div>
+
+                        <strong>
+                            Pack current capability is adequate
+                        </strong>
+
+                        <p>
+                            The calculated load current is within
+                            the maximum continuous current capability.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =====================================
+                 INFORMATION
+            ====================================== -->
+
+            <div class="pack-note">
+
+                <i class="bi bi-info-circle"></i>
+
+                <div>
+
+                    <strong>
+                        Pack calculation
+                    </strong>
+
+                    <p>
+                        Series cells increase voltage, while
+                        parallel cells increase capacity and
+                        current capability. Cutoff voltages are
+                        calculated directly from the cell limits.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+        <!-- =================================================
+             EV MODE
+        ================================================== -->
+
+        <div
+            id="evMode"
+            class="design-mode hidden"
+        >
+
+            <div class="designer-grid">
+
+
+                <!-- EV INPUTS -->
+
+                <div class="input-card">
+
+                    <div class="card-header ev-header">
+
+                        <i class="bi bi-car-front-fill"></i>
+
+                        <div>
+
+                            <h3>
+                                EV Pack Requirements
+                            </h3>
+
+                            <p>
+                                Preliminary EV battery sizing
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-body">
+
+
+                        <div class="section-label">
+                            CELL PARAMETERS
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Cell Nominal Voltage
+                            </label>
+
+                            <div class="input-unit">
+
+                                <input
+                                    type="number"
+                                    id="evCellVoltage"
+                                    value="3.2"
+                                    min="0.1"
+                                    step="0.01"
+                                >
+
+                                <span>V</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Cell Capacity
+                            </label>
+
+                            <div class="input-unit">
+
+                                <input
+                                    type="number"
+                                    id="evCellCapacity"
+                                    value="100"
+                                    min="0.01"
+                                    step="0.01"
+                                >
+
+                                <span>Ah</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Cell Maximum Continuous Current
+                            </label>
+
+                            <div class="input-unit">
+
+                                <input
+                                    type="number"
+                                    id="evCellCurrent"
+                                    value="100"
+                                    min="0"
+                                    step="0.1"
+                                >
+
+                                <span>A</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="section-label">
+                            BATTERY REQUIREMENTS
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Target Pack Voltage
+                            </label>
+
+                            <div class="input-unit">
+
+                                <input
+                                    type="number"
+                                    id="evTargetVoltage"
+                                    value="300"
+                                    min="1"
+                                    step="1"
+                                >
+
+                                <span>V</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Required Battery Energy
+                            </label>
+
+                            <div class="input-unit">
+
+                                <input
+                                    type="number"
+                                    id="evTargetEnergy"
+                                    value="60"
+                                    min="0.1"
+                                    step="0.1"
+                                >
+
+                                <span>kWh</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="section-label">
+                            EV PERFORMANCE
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Peak Motor Power
+                            </label>
+
+                            <div class="input-unit">
+
+                                <input
+                                    type="number"
+                                    id="evMotorPower"
+                                    value="80"
+                                    min="0"
+                                    step="1"
+                                >
+
+                                <span>kW</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Drivetrain Efficiency
+                            </label>
+
+                            <div class="input-unit">
+
+                                <input
+                                    type="number"
+                                    id="evEfficiency"
+                                    value="92"
+                                    min="1"
+                                    max="100"
+                                    step="0.1"
+                                >
+
+                                <span>%</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Energy Consumption
+                            </label>
+
+                            <div class="input-unit">
+
+                                <input
+                                    type="number"
+                                    id="evConsumption"
+                                    value="150"
+                                    min="1"
+                                    step="1"
+                                >
+
+                                <span>Wh/km</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            class="btn-design"
+                            onclick="calculateEVPack()"
+                        >
+
+                            <i class="bi bi-lightning-charge-fill"></i>
+
+                            Design EV Pack
+
+                        </button>
+
+
+                        <button
+                            class="btn-reset"
+                            onclick="resetEVPack()"
+                        >
+
+                            <i class="bi bi-arrow-counterclockwise"></i>
+
+                            Reset
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EV RESULTS -->
+
+                <div class="result-card">
+
+                    <div class="result-header ev-result-header">
+
+                        <span>
+                            EV BATTERY PACK DESIGN
+                        </span>
+
+                        <i class="bi bi-car-front-fill"></i>
+
+                    </div>
+
+
+                    <div class="pack-configuration">
+
+                        <strong id="evConfiguration">
+                            94S2P
+                        </strong>
+
+                        <span>
+                            Automatically Sized Configuration
+                        </span>
+
+                    </div>
+
+
+                    <div class="voltage-window">
+
+                        <div>
+
+                            <span>
+                                Minimum
+                            </span>
+
+                            <strong id="evVmin">
+                                235.00 V
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Nominal
+                            </span>
+
+                            <strong id="evVnom">
+                                300.80 V
+                            </strong>
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                Maximum*
+                            </span>
+
+                            <strong id="evVmax">
+                                342.20 V
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="result-grid">
+
+                        <div class="result-box">
+
+                            <span>
+                                Pack Capacity
+                            </span>
+
+                            <strong id="evPackCapacity">
+                                200 Ah
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-box">
+
+                            <span>
+                                Pack Energy
+                            </span>
+
+                            <strong id="evPackEnergy">
+                                60.16 kWh
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-box">
+
+                            <span>
+                                Continuous Current
+                            </span>
+
+                            <strong id="evContinuousCurrent">
+                                200 A
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-box">
+
+                            <span>
+                                Continuous Power
+                            </span>
+
+                            <strong id="evContinuousPower">
+                                60.16 kW
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-box">
+
+                            <span>
+                                Peak Battery Current
+                            </span>
+
+                            <strong id="evPeakCurrent">
+                                289 A
+                            </strong>
+
+                        </div>
+
+
+                        <div class="result-box">
+
+                            <span>
+                                Pack C-rate
+                            </span>
+
+                            <strong id="evCRate">
+                                1.45 C
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="ev-analysis-grid">
+
+                        <div class="analysis-box">
+
+                            <i class="bi bi-speedometer2"></i>
+
+                            <div>
+
+                                <span>
+                                    Estimated Range
+                                </span>
+
+                                <strong id="evRange">
+                                    401 km
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="analysis-box">
+
+                            <i class="bi bi-lightning-charge"></i>
+
+                            <div>
+
+                                <span>
+                                    Motor Current Required
+                                </span>
+
+                                <strong id="evMotorCurrent">
+                                    289 A
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            class="analysis-box"
+                            id="currentCheck"
+                        >
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <div>
+
+                                <span>
+                                    Current Capability
+                                </span>
+
+                                <strong id="currentCheckText">
+                                    Within cell capability
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="analysis-box">
+
+                            <i class="bi bi-cpu"></i>
+
+                            <div>
+
+                                <span>
+                                    Preliminary BMS Current
+                                </span>
+
+                                <strong id="evBMSCurrent">
+                                    ≥ 200 A
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="pack-warning">
+
+                        <i class="bi bi-exclamation-triangle"></i>
+
+                        <div>
+
+                            <strong>
+                                Preliminary engineering calculation
+                            </strong>
+
+                            <p>
+                                This tool provides preliminary pack sizing.
+                                Final EV battery design requires validation
+                                of cell limits, thermal behaviour, BMS,
+                                contactors, fusing, insulation, mechanical
+                                design and applicable safety requirements.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<div id="footer"></div>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Website Component Loader -->
+
+<script
+    src="../../assets/js/include.js">
+</script>
+
+
+<!-- Battery Pack Designer JS -->
+
+<script
+    src="../../assets/js/battery-pack-designer.js">
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,1116 @@
+/* =========================================================
+   THESIS PAGE
+   Vijay Kumar Chauhan
+========================================================= */
+
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #ffffff;
+    color: #1f2937;
+}
+
+section {
+    position: relative;
+}
+
+.section-heading {
+    max-width: 850px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    color: #12469b;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-top: 14px;
+    margin-bottom: 18px;
+}
+
+.section-heading p {
+    color: #667085;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 0;
+}
+
+.section-badge {
+    display: inline-block;
+    background: #eaf2ff;
+    color: #12469b;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.thesis-hero {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(
+            circle at 88% 20%,
+            rgba(255, 255, 255, 0.10) 0,
+            rgba(255, 255, 255, 0.10) 150px,
+            transparent 151px
+        ),
+        linear-gradient(
+            120deg,
+            #0c3f91 0%,
+            #1556b5 48%,
+            #3478df 100%
+        );
+
+    padding: 105px 0 115px;
+    color: #ffffff;
+}
+
+
+/* Decorative background circle */
+
+.thesis-hero::before {
+    content: "";
+    position: absolute;
+
+    width: 420px;
+    height: 420px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.045);
+
+    right: -120px;
+    bottom: -180px;
+}
+
+
+/* Decorative line */
+
+.thesis-hero::after {
+    content: "";
+    position: absolute;
+
+    width: 240px;
+    height: 240px;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    border-radius: 50%;
+
+    right: 12%;
+    top: 50px;
+}
+
+
+.thesis-hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Badge */
+
+.thesis-badge {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 9px 20px;
+
+    margin-bottom: 24px;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    border-radius: 40px;
+
+    font-size: 0.88rem;
+    font-weight: 600;
+
+    backdrop-filter: blur(8px);
+}
+
+
+/* Main heading */
+
+.thesis-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+
+/* Thesis title */
+
+.thesis-hero h2 {
+    max-width: 900px;
+
+    font-size: 1.55rem;
+    font-weight: 500;
+
+    line-height: 1.55;
+
+    color: #dceaff;
+
+    margin-bottom: 24px;
+}
+
+
+/* Hero paragraph */
+
+.hero-description {
+    max-width: 820px;
+
+    font-size: 1.05rem;
+    line-height: 1.9;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    margin-bottom: 30px;
+}
+
+
+/* Hero tags */
+
+.hero-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+
+.hero-tags span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 16px;
+
+    background: #ffffff;
+
+    color: #12469b;
+
+    border-radius: 30px;
+
+    font-size: 0.85rem;
+    font-weight: 600;
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.08);
+}
+
+
+.hero-tags i {
+    font-size: 1rem;
+}
+
+
+/* =========================================================
+   HERO THESIS ICON
+========================================================= */
+
+.thesis-icon {
+    position: relative;
+
+    width: 250px;
+    height: 250px;
+
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.15);
+
+    backdrop-filter: blur(10px);
+}
+
+
+.thesis-icon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 195px;
+    height: 195px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.10);
+}
+
+
+.thesis-icon i {
+    position: relative;
+    z-index: 2;
+
+    font-size: 7rem;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   THESIS INFORMATION
+========================================================= */
+
+.thesis-info {
+    position: relative;
+
+    margin-top: -48px;
+
+    z-index: 5;
+}
+
+
+.info-panel {
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 28px 35px;
+
+    box-shadow:
+        0 15px 45px rgba(16, 63, 135, 0.13);
+
+    border: 1px solid #edf2f8;
+}
+
+
+.info-item {
+    display: flex;
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.info-item > i {
+    width: 50px;
+    height: 50px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf2ff;
+
+    color: #12469b;
+
+    border-radius: 12px;
+
+    font-size: 1.25rem;
+}
+
+
+.info-item small {
+    display: block;
+
+    color: #8a94a5;
+
+    font-size: 0.76rem;
+    font-weight: 500;
+
+    margin-bottom: 3px;
+}
+
+
+.info-item strong {
+    display: block;
+
+    color: #1f2937;
+
+    font-size: 0.91rem;
+    font-weight: 600;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESEARCH OVERVIEW
+========================================================= */
+
+.thesis-overview {
+    padding: 120px 0 100px;
+
+    background: #ffffff;
+}
+
+
+.overview-content p {
+    color: #4b5563;
+
+    font-size: 1rem;
+    line-height: 1.9;
+
+    margin-bottom: 20px;
+}
+
+
+.overview-content strong {
+    color: #12469b;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RESEARCH FOCUS BOX
+========================================================= */
+
+.research-focus-box {
+    position: relative;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0d4294,
+            #2368ce
+        );
+
+    padding: 35px;
+
+    border-radius: 20px;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 18px 45px rgba(18, 70, 155, 0.20);
+
+    overflow: hidden;
+}
+
+
+.research-focus-box::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    right: -70px;
+    top: -70px;
+}
+
+
+.research-focus-box h4 {
+    position: relative;
+    z-index: 2;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    margin-bottom: 28px;
+}
+
+
+.focus-item {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 13px 0;
+
+    border-bottom:
+        1px solid rgba(255, 255, 255, 0.13);
+}
+
+
+.focus-item:last-child {
+    border-bottom: none;
+}
+
+
+.focus-item span {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    border-radius: 50%;
+
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+
+.focus-item p {
+    color: rgba(255, 255, 255, 0.92);
+
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    margin: 5px 0 0;
+}
+
+
+/* =========================================================
+   RESEARCH PILLARS
+========================================================= */
+
+.research-pillars {
+    padding: 100px 0;
+
+    background: #f6f9fd;
+}
+
+
+.pillar-card {
+    position: relative;
+
+    height: 100%;
+
+    background: #ffffff;
+
+    padding: 38px 32px;
+
+    border-radius: 20px;
+
+    border: 1px solid #edf1f7;
+
+    box-shadow:
+        0 10px 35px rgba(15, 50, 100, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+    overflow: hidden;
+}
+
+
+.pillar-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #cfe0ff;
+
+    box-shadow:
+        0 20px 45px rgba(18, 70, 155, 0.13);
+}
+
+
+/* Number in background */
+
+.pillar-number {
+    position: absolute;
+
+    top: 18px;
+    right: 25px;
+
+    color: #edf3fc;
+
+    font-size: 4.5rem;
+    font-weight: 700;
+
+    line-height: 1;
+}
+
+
+/* Icon */
+
+.pillar-icon {
+    position: relative;
+    z-index: 2;
+
+    width: 62px;
+    height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #12469b,
+            #3277df
+        );
+
+    color: #ffffff;
+
+    border-radius: 16px;
+
+    font-size: 1.6rem;
+
+    box-shadow:
+        0 10px 25px rgba(18, 70, 155, 0.18);
+}
+
+
+.pillar-card h3 {
+    position: relative;
+    z-index: 2;
+
+    color: #153b73;
+
+    font-size: 1.3rem;
+    font-weight: 600;
+
+    line-height: 1.45;
+
+    margin-bottom: 18px;
+}
+
+
+.pillar-card > p {
+    color: #667085;
+
+    font-size: 0.92rem;
+    line-height: 1.75;
+
+    margin-bottom: 22px;
+}
+
+
+.pillar-card ul {
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+
+.pillar-card li {
+    position: relative;
+
+    color: #4b5563;
+
+    font-size: 0.88rem;
+
+    padding: 7px 0 7px 26px;
+}
+
+
+.pillar-card li::before {
+    content: "\F26A";
+
+    font-family: "bootstrap-icons";
+
+    position: absolute;
+
+    left: 0;
+    top: 7px;
+
+    color: #2165c7;
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   KEY FINDINGS
+========================================================= */
+
+.key-findings {
+    padding: 100px 0;
+
+    background: #ffffff;
+}
+
+
+.finding-card {
+    height: 100%;
+
+    text-align: center;
+
+    padding: 35px 24px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    border: 1px solid #e7edf5;
+
+    box-shadow:
+        0 8px 30px rgba(15, 50, 100, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.finding-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 16px 40px rgba(18, 70, 155, 0.12);
+}
+
+
+.finding-value {
+    color: #1554ad;
+
+    font-size: 2.25rem;
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+.finding-card h5 {
+    color: #1f2937;
+
+    font-size: 1rem;
+    font-weight: 600;
+
+    margin-bottom: 12px;
+}
+
+
+.finding-card p {
+    color: #737d8c;
+
+    font-size: 0.85rem;
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   RESEARCH SUPERVISION
+========================================================= */
+
+.supervision-section {
+    padding: 100px 0 110px;
+    background: #ffffff;
+}
+
+
+/* ---------------------------------------------------------
+   Supervisor Card
+--------------------------------------------------------- */
+
+.supervisor-card {
+
+    position: relative;
+
+    height: 100%;
+
+    text-align: center;
+
+    padding: 42px 35px 38px;
+
+    background: #ffffff;
+
+    border: 1px solid #e2eaf5;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 12px 35px rgba(18, 70, 155, 0.08);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+}
+
+
+/* Hover */
+
+.supervisor-card:hover {
+
+    transform: translateY(-8px);
+
+    border-color: #c9daf4;
+
+    box-shadow:
+        0 22px 50px rgba(18, 70, 155, 0.15);
+}
+
+
+/* =========================================================
+   PROFESSOR PHOTO
+========================================================= */
+
+.supervisor-photo-wrapper {
+
+    width: 155px;
+    height: 155px;
+
+    margin: 0 auto 24px;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #12469b,
+            #3d82e5
+        );
+
+    box-shadow:
+        0 10px 28px rgba(18, 70, 155, 0.18);
+}
+
+
+.supervisor-photo {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 50%;
+
+    border: 4px solid #ffffff;
+}
+
+
+/* =========================================================
+   SUPERVISOR ROLE
+========================================================= */
+
+.supervisor-role {
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-bottom: 16px;
+
+    padding: 7px 15px;
+
+    background: #edf4ff;
+
+    color: #12469b;
+
+    border-radius: 25px;
+
+    font-size: 0.76rem;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.6px;
+}
+
+
+.supervisor-role i {
+
+    font-size: 0.9rem;
+}
+
+
+/* =========================================================
+   PROFESSOR NAME
+========================================================= */
+
+.supervisor-card h4 {
+
+    color: #173f7b;
+
+    font-size: 1.35rem;
+
+    font-weight: 700;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   DESIGNATION
+========================================================= */
+
+.supervisor-designation {
+
+    color: #12469b !important;
+
+    font-size: 0.95rem !important;
+
+    font-weight: 600;
+
+    margin-bottom: 6px !important;
+}
+
+
+/* =========================================================
+   DEPARTMENT
+========================================================= */
+
+.supervisor-department {
+
+    color: #606b7c !important;
+
+    font-size: 0.9rem !important;
+
+    line-height: 1.6;
+
+    margin-bottom: 10px !important;
+}
+
+
+/* =========================================================
+   INSTITUTE
+========================================================= */
+
+.supervisor-institute {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    color: #7a8493 !important;
+
+    font-size: 0.86rem !important;
+
+    margin-bottom: 0 !important;
+}
+
+
+.supervisor-institute i {
+
+    color: #12469b;
+
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .supervision-section {
+        padding: 85px 0;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .supervisor-card {
+        padding: 35px 25px;
+    }
+
+    .supervisor-photo-wrapper {
+        width: 140px;
+        height: 140px;
+    }
+
+    .supervisor-card h4 {
+        font-size: 1.2rem;
+    }
+
+}
+
+
+@media (max-width: 575px) {
+
+    .supervision-section {
+        padding: 70px 0;
+    }
+
+    .supervisor-photo-wrapper {
+        width: 125px;
+        height: 125px;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .thesis-hero {
+        padding: 85px 0 95px;
+        text-align: center;
+    }
+
+    .thesis-hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .thesis-hero h2 {
+        font-size: 1.3rem;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-tags {
+        justify-content: center;
+    }
+
+    .thesis-icon {
+        margin-top: 55px;
+    }
+
+    .thesis-info {
+        margin-top: -30px;
+    }
+
+    .info-item {
+        justify-content: flex-start;
+    }
+
+    .research-focus-box {
+        margin-top: 20px;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .section-heading h2 {
+        font-size: 2rem;
+    }
+
+    .thesis-hero {
+        padding: 70px 0 80px;
+    }
+
+    .thesis-hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .thesis-hero h2 {
+        font-size: 1.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.93rem;
+    }
+
+    .thesis-icon {
+        width: 190px;
+        height: 190px;
+    }
+
+    .thesis-icon::before {
+        width: 145px;
+        height: 145px;
+    }
+
+    .thesis-icon i {
+        font-size: 5rem;
+    }
+
+    .info-panel {
+        padding: 25px;
+    }
+
+    .thesis-overview,
+    .research-pillars,
+    .key-findings,
+    .synopsis-section,
+    .supervision-section {
+        padding: 75px 0;
+    }
+
+    .synopsis-card {
+        padding: 40px 30px;
+    }
+
+    .synopsis-icon {
+        margin-top: 25px;
+    }
+
+}
+
+
+@media (max-width: 575px) {
+
+    .thesis-hero h1 {
+        font-size: 1.95rem;
+    }
+
+    .thesis-hero h2 {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    .hero-tags span {
+        font-size: 0.76rem;
+        padding: 8px 12px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.75rem;
+    }
+
+    .pillar-card {
+        padding: 32px 25px;
+    }
+
+    .research-focus-box {
+        padding: 30px 24px;
+    }
+
+    .synopsis-card {
+        padding: 35px 24px;
+    }
+
+    .synopsis-buttons {
+        flex-direction: column;
+    }
+
+    .synopsis-buttons .btn {
+        width: 100%;
+    }
+
+}

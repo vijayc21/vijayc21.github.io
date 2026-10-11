@@ -1,0 +1,1344 @@
+/* =========================================================
+   BATTERY THERMAL MANAGEMENT PAGE
+========================================================= */
+
+.btms-page {
+    background: #ffffff;
+    color: #4f5d73;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.btms-page .section-heading {
+    margin-bottom: 45px;
+}
+
+.btms-page .section-heading h2 {
+    color: #124a9e;
+    font-weight: 700;
+    font-size: 42px;
+    margin-top: 12px;
+    margin-bottom: 15px;
+}
+
+.btms-page .section-subtitle {
+    max-width: 850px;
+    margin: 0 auto;
+    font-size: 17px;
+    line-height: 1.8;
+    color: #687386;
+}
+
+.section-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 18px;
+    border-radius: 30px;
+    background: #edf4ff;
+    color: #1452a4;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.btms-intro {
+    padding: 80px 0 60px;
+}
+
+.btms-text-card {
+    background: #f8fbff;
+    border-left: 4px solid #1554a5;
+    border-radius: 0 15px 15px 0;
+    padding: 35px 40px;
+    box-shadow: 0 10px 30px rgba(20, 74, 158, 0.06);
+}
+
+.btms-text-card p {
+    font-size: 17px;
+    line-height: 1.9;
+    margin-bottom: 20px;
+}
+
+.btms-text-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   FIGURE SECTIONS
+========================================================= */
+
+.btms-figure-section {
+    padding: 70px 0;
+}
+
+.btms-image-card {
+    background: #f8fafc;
+    border: 1px solid #e3eaf4;
+    border-radius: 22px;
+    padding: 18px;
+    box-shadow: 0 15px 35px rgba(20, 50, 90, 0.08);
+}
+
+.btms-main-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 14px;
+}
+
+.image-caption {
+    text-align: center;
+    font-size: 14px;
+    color: #718096;
+    margin-top: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   THERMAL POINTS
+========================================================= */
+
+.thermal-points {
+    margin-top: 25px;
+}
+
+.thermal-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 16px;
+    margin-bottom: 12px;
+    background: #f8fbff;
+    border-radius: 12px;
+}
+
+.point-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #e7f0ff;
+    color: #1452a4;
+    font-size: 19px;
+}
+
+.thermal-point h5 {
+    margin: 0 0 5px;
+    color: #164b94;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.thermal-point p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   CLASSIFICATION
+========================================================= */
+
+.btms-classification {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.classification-image-card {
+    max-width: 1050px;
+    margin: 0 auto 40px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 15px 35px rgba(20, 50, 90, 0.08);
+}
+
+.classification-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+}
+
+
+/* =========================================================
+   BTMS METHOD CARDS
+========================================================= */
+
+.btms-method-card {
+    height: 100%;
+    background: #ffffff;
+    padding: 35px 30px;
+    border: 1px solid #e2eaf4;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(20, 50, 90, 0.06);
+    transition: 0.3s ease;
+}
+
+.btms-method-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(20, 50, 90, 0.10);
+}
+
+.method-icon {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: #eaf2ff;
+    color: #1554a5;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.btms-method-card h3 {
+    color: #164b94;
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.btms-method-card p {
+    line-height: 1.7;
+}
+
+.btms-method-card ul {
+    padding-left: 20px;
+    margin-top: 20px;
+}
+
+.btms-method-card li {
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   PROJECT SECTION
+========================================================= */
+
+.btms-project {
+    padding: 85px 0;
+}
+
+.project-overview-card {
+    background: #f8fbff;
+    border: 1px solid #e1eaf5;
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 15px 35px rgba(20, 50, 90, 0.07);
+}
+
+.project-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 17px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.10);
+}
+
+.project-content h3 {
+    color: #164b94;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.project-content p {
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   MODULE SPECIFICATIONS
+========================================================= */
+
+.module-specifications {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.spec-item {
+    padding: 15px 18px;
+    background: #ffffff;
+    border: 1px solid #dce6f2;
+    border-radius: 12px;
+}
+
+.spec-item span {
+    display: block;
+    font-size: 12px;
+    color: #758195;
+    margin-bottom: 5px;
+}
+
+.spec-item strong {
+    color: #164b94;
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   HEAT GENERATION
+========================================================= */
+
+.heat-generation {
+    padding: 80px 0;
+    background: #f8fafc;
+}
+
+.process-card {
+    display: flex;
+    gap: 25px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    border: 1px solid #e2eaf4;
+}
+
+.process-number {
+    width: 55px;
+    height: 55px;
+    min-width: 55px;
+    border-radius: 50%;
+    background: #1554a5;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.process-card h3 {
+    color: #164b94;
+    margin-bottom: 15px;
+}
+
+.process-card p {
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   HIGHLIGHT BOX
+========================================================= */
+
+.research-highlight {
+    height: 100%;
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    background: #eaf2ff;
+    border-radius: 18px;
+    border-left: 4px solid #1554a5;
+}
+
+.highlight-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #1554a5;
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 21px;
+}
+
+.research-highlight h4 {
+    color: #164b94;
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.research-highlight p {
+    line-height: 1.7;
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   WORKFLOW
+========================================================= */
+
+.workflow-line {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.workflow-step {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    background: #ffffff;
+    border: 1px solid #dce6f2;
+    border-radius: 30px;
+}
+
+.workflow-step span {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e8f0ff;
+    color: #1554a5;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.workflow-step strong {
+    color: #344054;
+    font-size: 14px;
+}
+
+.workflow-line > i {
+    color: #1554a5;
+    font-size: 20px;
+}
+
+/* =========================================================
+   INFRARED THERMOGRAPHY
+========================================================= */
+
+.ir-thermography-section {
+
+    padding: 100px 0;
+
+    background: #f7f9fc;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.ir-heading {
+
+    max-width: 850px;
+
+    margin: 0 auto 45px;
+}
+
+.ir-heading .section-badge {
+
+    display: inline-block;
+
+    padding: 7px 16px;
+
+    margin-bottom: 15px;
+
+    border-radius: 30px;
+
+    background: #eaf1ff;
+
+    color: #164997;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.ir-heading h2 {
+
+    margin-bottom: 15px;
+
+    color: #164997;
+
+    font-size: 42px;
+
+    font-weight: 700;
+}
+
+.ir-heading p {
+
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #626a75;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   EXPERIMENTAL INFORMATION BAR
+========================================================= */
+
+.ir-info-bar {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    margin-bottom: 45px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5eaf1;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.04);
+
+    overflow: hidden;
+}
+
+
+.ir-info-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    padding: 22px 25px;
+
+    border-right: 1px solid #e8edf3;
+}
+
+.ir-info-item:last-child {
+
+    border-right: none;
+}
+
+
+.ir-info-item i {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eef4ff;
+
+    color: #164997;
+
+    font-size: 20px;
+}
+
+
+.ir-info-item small {
+
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: #7a828d;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+.ir-info-item strong {
+
+    color: #20242a;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FEATURED IMAGE
+========================================================= */
+
+.ir-featured {
+
+    background: #ffffff;
+
+    border: 1px solid #e5eaf1;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.07);
+}
+
+
+.ir-featured-image {
+
+    width: 100%;
+
+    background: #111;
+
+    text-align: center;
+}
+
+
+.ir-featured-image img {
+
+    display: block;
+
+    width: 100%;
+
+    max-height: 560px;
+
+    object-fit: contain;
+
+    margin: auto;
+}
+
+
+/* =========================================================
+   FEATURED CAPTION
+========================================================= */
+
+.ir-featured-caption {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding: 28px 32px;
+}
+
+
+.ir-number {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 32px;
+
+    height: 32px;
+
+    margin-bottom: 10px;
+
+    border-radius: 50%;
+
+    background: #eef4ff;
+
+    color: #164997;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+.ir-featured-caption h3 {
+
+    margin-bottom: 8px;
+
+    color: #20242a;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+
+.ir-featured-caption p {
+
+    max-width: 720px;
+
+    margin: 0;
+
+    color: #68717d;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   TEMPERATURE
+========================================================= */
+
+.ir-temperature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    min-width: 190px;
+
+    padding: 15px 18px;
+
+    border-radius: 14px;
+
+    background: #f7f9fc;
+}
+
+
+.ir-temperature i {
+
+    color: #164997;
+
+    font-size: 22px;
+}
+
+
+.ir-temperature small {
+
+    display: block;
+
+    color: #7a828d;
+
+    font-size: 10px;
+
+    margin-bottom: 3px;
+}
+
+
+.ir-temperature strong {
+
+    color: #164997;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SMALL IMAGE CARDS
+========================================================= */
+
+.ir-small-card {
+
+    background: #ffffff;
+
+    border: 1px solid #e5eaf1;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.ir-small-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 15px 35px rgba(20, 73, 151, 0.10);
+}
+
+
+.ir-small-image {
+
+    position: relative;
+
+    background: #111;
+
+    overflow: hidden;
+}
+
+
+.ir-small-image img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 300px;
+
+    object-fit: contain;
+}
+
+
+.ir-small-image span {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 15px;
+
+    width: 38px;
+
+    height: 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    color: #164997;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   SMALL IMAGE CONTENT
+========================================================= */
+
+.ir-small-content {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 22px 25px;
+}
+
+
+.ir-small-content h4 {
+
+    margin-bottom: 6px;
+
+    color: #20242a;
+
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.ir-small-content p {
+
+    margin: 0;
+
+    color: #68717d;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+
+.small-temperature {
+
+    flex-shrink: 0;
+
+    color: #164997;
+
+    font-size: 18px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   OBSERVATION
+========================================================= */
+
+.ir-observation {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-top: 45px;
+
+    padding: 28px 32px;
+
+    background: #ffffff;
+
+    border-left: 4px solid #164997;
+
+    border-radius: 0 16px 16px 0;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.04);
+}
+
+
+.ir-observation-icon {
+
+    width: 48px;
+
+    height: 48px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #eef4ff;
+
+    color: #164997;
+
+    font-size: 20px;
+}
+
+
+.ir-observation span {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #164997;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.2px;
+}
+
+
+.ir-observation p {
+
+    max-width: 950px;
+
+    margin: 0;
+
+    color: #626a75;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .ir-info-bar {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .ir-info-item:nth-child(2) {
+
+        border-right: none;
+    }
+
+    .ir-info-item:nth-child(-n+2) {
+
+        border-bottom: 1px solid #e8edf3;
+    }
+
+    .ir-featured-caption {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .ir-temperature {
+
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .ir-thermography-section {
+
+        padding: 70px 0;
+    }
+
+    .ir-heading h2 {
+
+        font-size: 32px;
+    }
+
+    .ir-info-bar {
+
+        grid-template-columns: 1fr;
+    }
+
+    .ir-info-item {
+
+        border-right: none;
+
+        border-bottom: 1px solid #e8edf3;
+    }
+
+    .ir-info-item:last-child {
+
+        border-bottom: none;
+    }
+
+    .ir-featured-caption {
+
+        padding: 22px;
+    }
+
+    .ir-small-image img {
+
+        height: 250px;
+    }
+
+    .ir-small-content {
+
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .small-temperature {
+
+        font-size: 17px;
+    }
+
+    .ir-observation {
+
+        padding: 22px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .ir-heading h2 {
+
+        font-size: 28px;
+    }
+
+    .ir-heading p {
+
+        font-size: 14px;
+    }
+
+    .ir-featured-caption h3 {
+
+        font-size: 19px;
+    }
+
+}
+/* =========================================================
+   PCM-NCL
+========================================================= */
+
+.pcm-ncl-section {
+    padding: 85px 0;
+}
+
+.pcm-content h3 {
+    color: #164b94;
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.pcm-content p {
+    line-height: 1.85;
+}
+
+.pcm-features {
+    margin-top: 25px;
+}
+
+.pcm-feature {
+    display: flex;
+    gap: 15px;
+    padding: 15px;
+    margin-bottom: 12px;
+    background: #f8fbff;
+    border-radius: 12px;
+}
+
+.pcm-feature > i {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    background: #e8f0ff;
+    color: #1554a5;
+}
+
+.pcm-feature h5 {
+    color: #164b94;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.pcm-feature p {
+    font-size: 14px;
+    margin: 0;
+}
+
+
+/* =========================================================
+   ONGOING STATUS
+========================================================= */
+
+.project-status {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    padding: 25px 30px;
+    background: #fff8e8;
+    border-left: 4px solid #e4a300;
+    border-radius: 12px;
+}
+
+.project-status > i {
+    font-size: 28px;
+    color: #d49500;
+}
+
+.project-status h4 {
+    margin-bottom: 8px;
+    color: #765400;
+}
+
+.project-status p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   BATTERY SAFETY
+========================================================= */
+
+.battery-safety {
+    padding: 85px 0;
+    background: #f8fafc;
+}
+
+.safety-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.10);
+}
+
+.abuse-card {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.abuse-item {
+    display: flex;
+    gap: 18px;
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #e2eaf4;
+    border-radius: 15px;
+}
+
+.abuse-icon {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    font-size: 21px;
+}
+
+.abuse-icon.thermal {
+    background: #fff0eb;
+    color: #d94a24;
+}
+
+.abuse-icon.electrical {
+    background: #fff8df;
+    color: #c18a00;
+}
+
+.abuse-icon.mechanical {
+    background: #edf2f7;
+    color: #46566d;
+}
+
+.abuse-item h4 {
+    color: #164b94;
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.abuse-item p {
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================================================
+   RESEARCH STATUS
+========================================================= */
+
+.research-status {
+    padding: 75px 0;
+}
+
+.status-card {
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    padding: 35px;
+    background: linear-gradient(135deg, #124a9e, #2164c2);
+    color: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 20px 40px rgba(18, 74, 158, 0.18);
+}
+
+.status-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    font-size: 25px;
+}
+
+.status-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: 0.8;
+}
+
+.status-card h3 {
+    margin: 8px 0 15px;
+    font-size: 25px;
+}
+
+.status-card p {
+    line-height: 1.8;
+    opacity: 0.95;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .btms-page .section-heading h2 {
+        font-size: 34px;
+    }
+
+    .module-specifications {
+        grid-template-columns: 1fr;
+    }
+
+    .workflow-line > i {
+        display: none;
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .btms-intro,
+    .btms-figure-section,
+    .btms-classification,
+    .btms-project,
+    .heat-generation,
+    .pcm-ncl-section,
+    .battery-safety,
+    .research-status {
+        padding: 55px 0;
+    }
+
+    .btms-page .section-heading h2 {
+        font-size: 29px;
+    }
+
+    .btms-text-card {
+        padding: 25px;
+    }
+
+    .project-overview-card {
+        padding: 20px;
+    }
+
+    .status-card {
+        flex-direction: column;
+    }
+
+    .process-card,
+    .research-highlight,
+    .project-status {
+        flex-direction: column;
+    }
+
+}

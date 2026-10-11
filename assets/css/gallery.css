@@ -1,0 +1,623 @@
+/* =========================================================
+   GALLERY PAGE
+   Vijay Kumar Chauhan
+========================================================= */
+
+.gallery-page {
+    font-family: "Poppins", sans-serif;
+    background: #f5f8fc;
+    color: #202b3c;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.gallery-hero {
+    padding: 150px 20px 85px;
+    text-align: center;
+    background:
+        linear-gradient(
+            135deg,
+            #f5f8fc 0%,
+            #ffffff 55%,
+            #eef4ff 100%
+        );
+}
+
+.gallery-hero-inner {
+    max-width: 850px;
+    margin: auto;
+}
+
+.gallery-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 18px;
+
+    color: #164997;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.gallery-hero h1 {
+    margin: 0 0 18px;
+
+    color: #164997;
+    font-size: clamp(40px, 6vw, 68px);
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.gallery-hero p {
+    max-width: 720px;
+    margin: auto;
+
+    color: #68758a;
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   CATEGORY NAVIGATION
+========================================================= */
+
+.gallery-category-nav {
+    padding: 25px 20px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e4eaf2;
+}
+
+.gallery-category-nav-inner {
+    max-width: 1180px;
+    margin: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.gallery-category-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+
+    padding: 10px 18px;
+
+    border: 1px solid #d7e1ee;
+    border-radius: 30px;
+
+    background: #ffffff;
+    color: #42526a;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.gallery-category-btn:hover {
+    transform: translateY(-2px);
+
+    background: #eef4ff;
+    border-color: #bcd1ed;
+    color: #164997;
+}
+
+.gallery-category-btn.active {
+    background: #164997;
+    border-color: #164997;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   GALLERY SECTION
+========================================================= */
+
+.gallery-section {
+    padding: 85px 20px;
+}
+
+.gallery-container {
+    width: min(1180px, 100%);
+    margin: auto;
+}
+
+.gallery-section-heading {
+    margin-bottom: 40px;
+}
+
+.gallery-section-heading .section-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #164997;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.gallery-section-heading h2 {
+    margin: 0 0 12px;
+
+    color: #202b3c;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.gallery-section-heading p {
+    max-width: 720px;
+    margin: 0;
+
+    color: #718096;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   PHOTO GRID
+========================================================= */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   PHOTO CARD
+========================================================= */
+
+.gallery-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e0e7f0;
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 28px rgba(25, 55, 95, 0.07);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 18px 40px rgba(25, 55, 95, 0.14);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.gallery-image-wrapper {
+    position: relative;
+
+    width: 100%;
+    height: 300px;
+
+    overflow: hidden;
+
+    background: #edf2f8;
+}
+
+.gallery-image-wrapper img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.45s ease;
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.gallery-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        rgba(10, 35, 75, 0.42);
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease;
+}
+
+.gallery-card:hover .gallery-overlay {
+    opacity: 1;
+}
+
+.gallery-overlay i {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #164997;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   PHOTO INFORMATION
+========================================================= */
+
+.gallery-card-content {
+    padding: 18px 20px 20px;
+}
+
+.gallery-card-content h3 {
+    margin: 0 0 6px;
+
+    color: #26354b;
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.gallery-card-content p {
+    margin: 0;
+
+    color: #7a8799;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.gallery-location {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+
+    margin-bottom: 8px;
+
+    color: #164997;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   AWARD FEATURE CARD
+========================================================= */
+
+.award-gallery-grid {
+    display: flex;
+    justify-content: center;
+}
+
+.award-gallery-grid .gallery-card {
+    width: min(520px, 100%);
+}
+
+.award-gallery-grid .gallery-image-wrapper {
+    height: 520px;
+}
+
+
+/* =========================================================
+   GALLERY COUNT
+========================================================= */
+
+.gallery-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-top: 20px;
+    padding: 7px 13px;
+
+    border-radius: 30px;
+
+    background: #eef4ff;
+    color: #164997;
+
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.gallery-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        rgba(5, 17, 35, 0.92);
+}
+
+.gallery-lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+
+    width: min(1100px, 95vw);
+    max-height: 90vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 70px rgba(0, 0, 0, 0.4);
+}
+
+.lightbox-close {
+    position: absolute;
+
+    top: -45px;
+    right: 0;
+
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #164997;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+.lightbox-prev,
+.lightbox-next {
+    position: fixed;
+
+    top: 50%;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: #164997;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transform: translateY(-50%);
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.lightbox-prev {
+    left: 25px;
+}
+
+.lightbox-next {
+    right: 25px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background: #ffffff;
+    transform: translateY(-50%) scale(1.08);
+}
+
+.lightbox-caption {
+    position: absolute;
+
+    left: 50%;
+    bottom: -45px;
+
+    transform: translateX(-50%);
+
+    width: max-content;
+    max-width: 90vw;
+
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.gallery-footer-note {
+    padding: 35px 20px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e6ebf2;
+
+    text-align: center;
+
+    color: #7b8798;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .gallery-hero {
+        padding-top: 130px;
+    }
+
+    .gallery-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .gallery-image-wrapper {
+        height: 280px;
+    }
+}
+
+
+@media (max-width: 767px) {
+
+    .gallery-hero {
+        padding: 115px 18px 65px;
+    }
+
+    .gallery-hero h1 {
+        font-size: 42px;
+    }
+
+    .gallery-hero p {
+        font-size: 15px;
+    }
+
+    .gallery-section {
+        padding: 65px 15px;
+    }
+
+    .gallery-section-heading h2 {
+        font-size: 30px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-image-wrapper {
+        height: 300px;
+    }
+
+    .gallery-category-nav-inner {
+        justify-content: flex-start;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .gallery-category-btn {
+        flex-shrink: 0;
+    }
+
+    .lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-next {
+        right: 10px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    .gallery-hero h1 {
+        font-size: 34px;
+    }
+
+    .gallery-image-wrapper {
+        height: 260px;
+    }
+
+    .award-gallery-grid .gallery-image-wrapper {
+        height: 400px;
+    }
+}

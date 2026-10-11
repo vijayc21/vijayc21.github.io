@@ -1,0 +1,2492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Battery HGR Predictor | Vijay
+    </title>
+
+
+    <!-- Bootstrap -->
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+
+    <!-- Bootstrap Icons -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <!-- Existing Website CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/style.css">
+
+
+    <!-- HGR Predictor CSS -->
+
+    <link
+        rel="stylesheet"
+        href="../../assets/css/hgr-predictor.css">
+
+
+    <!-- Favicon -->
+
+    <link
+        rel="icon"
+        href="../../assets/images/logo/iitk.png">
+
+
+    <!-- MathJax -->
+
+    <script>
+    window.MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+
+    <!-- Plotly -->
+    <script
+        src="https://cdn.plot.ly/plotly-2.35.2.min.js">
+    </script>
+
+</head>
+
+
+
+<body>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <div id="navbar-pages"></div>
+
+
+
+    <!-- =========================================
+         HGR PREDICTOR
+    ========================================== -->
+
+    <main class="hgr-page">
+
+
+    <!-- =====================================
+         PAGE INTRODUCTION
+    ====================================== -->
+
+    <section class="hgr-hero">
+
+        <div class="hgr-hero-content">
+
+            <div class="hgr-eyebrow">
+                <i class="bi bi-thermometer-half"></i>
+                BATTERY RESEARCH TOOL
+            </div>
+
+            <h1>
+                Battery Heat Generation Rate
+                <span>Predictor</span>
+            </h1>
+
+            <p>
+                Estimate the heat generation rate of 18650
+                lithium-ion cells directly from C-rate, current,
+                depth of discharge and temperature.
+            </p>
+
+            <div class="hgr-hero-badges">
+
+                <span>
+                    <i class="bi bi-battery-half"></i>
+                    LFP
+                </span>
+
+                <span>
+                    <i class="bi bi-battery-half"></i>
+                    NMC
+                </span>
+
+                <span>
+                    <i class="bi bi-battery-half"></i>
+                    LCO
+                </span>
+
+                <span>
+                    <i class="bi bi-graph-up"></i>
+                    PySR Correlation
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================
+         CALCULATOR SECTION
+    ====================================== -->
+
+    <section class="hgr-calculator-section">
+
+        <div class="section-heading">
+
+            <div class="section-kicker">
+                HGR CALCULATOR
+            </div>
+
+            <h2>
+                Enter Operating Conditions
+            </h2>
+
+            <p>
+                Select the battery chemistry and enter the
+                operating conditions to estimate HGR.
+            </p>
+
+        </div>
+
+
+        <div class="hgr-calculator-grid">
+
+
+            <!-- =================================
+                 INPUT CARD
+            ================================== -->
+
+            <div class="hgr-input-card">
+
+                <div class="hgr-card-header">
+
+                    <div class="hgr-card-icon">
+                        <i class="bi bi-sliders"></i>
+                    </div>
+
+                    <div>
+                        <h3>
+                            Operating Conditions
+                        </h3>
+
+                        <p>
+                            Model inputs
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="hgr-card-body">
+
+
+                    <!-- Chemistry -->
+
+                    <div class="hgr-form-group">
+
+                        <label for="chemistry">
+                            Battery Chemistry
+                        </label>
+
+                        <select
+                            id="chemistry"
+                            class="form-select">
+
+                            <option value="LFP">
+                                LFP — 18650
+                            </option>
+
+                            <option value="NMC">
+                                NMC — 18650
+                            </option>
+
+                            <option value="LCO">
+                                LCO — 18650
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <!-- C-rate -->
+
+                    <div class="hgr-form-group">
+
+                        <label for="cRate">
+                            C-rate
+                        </label>
+
+                        <div class="input-with-unit">
+
+                            <input
+                                type="number"
+                                id="cRate"
+                                class="form-control"
+                                value="2"
+                                min="0.5"
+                                step="0.1">
+
+                            <span>C</span>
+
+                        </div>
+
+                        <small id="crateRange">
+                            Validated range: 0.5C – 6C
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- Current -->
+
+                    <div class="hgr-form-group">
+
+                        <label>
+                            Current
+                        </label>
+
+                        <div class="calculated-input">
+
+                            <span id="currentValue">
+                                2.000
+                            </span>
+
+                            <span>
+                                A
+                            </span>
+
+                        </div>
+
+                        <small>
+                            Automatically calculated from
+                            C-rate and cell capacity.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- DOD -->
+
+                    <div class="hgr-form-group">
+
+                        <label for="dod">
+                            Depth of Discharge (DOD)
+                        </label>
+
+                        <div class="input-with-unit">
+
+                            <input
+                                type="number"
+                                id="dod"
+                                class="form-control"
+                                value="80"
+                                min="0"
+                                max="100"
+                                step="0.1">
+
+                            <span>%</span>
+
+                        </div>
+
+                        <small>
+                            DOD is entered as percentage.
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- Temperature -->
+
+                    <div class="hgr-form-group">
+
+                        <label for="temperature">
+                            Temperature
+                        </label>
+
+                        <div class="input-with-unit">
+
+                            <input
+                                type="number"
+                                id="temperature"
+                                class="form-control"
+                                value="25"
+                                min="10"
+                                max="60"
+                                step="1">
+
+                            <span>°C</span>
+
+                        </div>
+
+                        <small id="temperatureRange">
+                            Validated range: 10–60 °C
+                        </small>
+
+                    </div>
+
+
+
+                    <!-- Cell information -->
+
+                    <div class="cell-model-info">
+
+                        <div class="cell-model-title">
+                            <i class="bi bi-info-circle"></i>
+                            Correlation Reference Cell
+                        </div>
+
+                        <div
+                            id="cellModelInfo">
+
+                            LFP 18650 · 1.0 Ah
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Calculate -->
+
+                    <button
+                        type="button"
+                        id="calculateHGR"
+                        class="btn-calculate-hgr">
+
+                        <i class="bi bi-calculator"></i>
+
+                        Calculate HGR
+
+                    </button>
+
+
+                    <!-- Reset -->
+
+                    <button
+                        type="button"
+                        id="resetHGR"
+                        class="btn-reset-hgr">
+
+                        <i class="bi bi-arrow-counterclockwise"></i>
+
+                        Reset
+
+                    </button>
+
+
+                    <!-- Validation message -->
+
+                    <div
+                        id="hgrMessage"
+                        class="hgr-message">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 RESULT CARD
+            ================================== -->
+
+            <div class="hgr-result-panel">
+
+
+                <div class="hgr-result-card">
+
+
+                    <div class="result-card-header">
+
+                        <div>
+
+                            <div class="result-kicker">
+                                PREDICTED HEAT GENERATION
+                            </div>
+
+                            <h3>
+                                Heat Generation Rate
+                            </h3>
+
+                        </div>
+
+                        <div class="result-icon">
+                            <i class="bi bi-fire"></i>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- HGR value -->
+
+                    <div class="hgr-main-value">
+
+                        <span id="hgrValue">
+                            0.0000
+                        </span>
+
+                        <span class="hgr-unit">
+                            W
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Heat intensity -->
+
+                    <div class="heat-visual-wrapper">
+
+                        <div
+                            id="heatVisual"
+                            class="heat-visual">
+
+                            <div class="heat-visual-center">
+
+                                <div class="heat-icon">
+                                    <i class="bi bi-fire"></i>
+                                </div>
+
+                                <div
+                                    id="heatLevel"
+                                    class="heat-level-label">
+
+                                    READY
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="heat-caption">
+                        HGR Intensity Visualization
+                    </div>
+
+
+
+                    <!-- HGR scale -->
+
+<div class="hgr-scale">
+
+    <div class="scale-labels">
+        <span>Low</span>
+        <span>High</span>
+    </div>
+
+    <div class="intensity-scale"></div>
+
+</div>
+
+
+
+                    <!-- Result summary -->
+
+                    <div class="hgr-summary">
+
+
+                        <div class="summary-item">
+
+                            <span>
+                                Chemistry
+                            </span>
+
+                            <strong id="resultChemistry">
+                                LFP
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span>
+                                C-rate
+                            </span>
+
+                            <strong id="resultC">
+                                2.00 C
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span>
+                                Current
+                            </span>
+
+                            <strong id="resultCurrent">
+                                2.00 A
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span>
+                                DOD
+                            </span>
+
+                            <strong id="resultDOD">
+                                80 %
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-item">
+
+                            <span>
+                                Temperature
+                            </span>
+
+                            <strong id="resultTemp">
+                                25 °C
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Validity status -->
+
+                    <div
+                        id="validityStatus"
+                        class="validity-status">
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <div>
+
+                            <strong>
+                                Correlation Ready
+                            </strong>
+
+                            <p>
+                                Enter operating conditions
+                                and calculate HGR.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<!-- =====================================
+     HGR CORRELATION
+====================================== -->
+
+<section class="hgr-correlation-section">
+
+    <div class="section-heading">
+
+        <div class="section-kicker">
+            ANALYTICAL MODEL
+        </div>
+
+        <h2>
+            View HGR Correlation
+        </h2>
+
+        <p>
+            Compact symbolic-regression correlations developed
+            from experimentally measured heat generation data.
+        </p>
+
+    </div>
+
+
+    <!-- =================================
+         CORRELATION TABS
+    ================================== -->
+
+    <div class="correlation-container">
+
+
+        <!-- Tab buttons -->
+
+        <div
+    class="correlation-tabs"
+    role="tablist">
+
+    <button
+        class="correlation-tab active"
+        type="button"
+        data-target="lfpCorrelation">
+
+        <i class="bi bi-battery-half"></i>
+        LFP
+
+    </button>
+
+
+    <button
+        class="correlation-tab"
+        type="button"
+        data-target="nmcCorrelation">
+
+        <i class="bi bi-battery-half"></i>
+        NMC
+
+    </button>
+
+
+    <button
+        class="correlation-tab"
+        type="button"
+        data-target="lcoCorrelation">
+
+        <i class="bi bi-battery-half"></i>
+        LCO
+
+    </button>
+
+</div>
+
+
+
+        <!-- =================================
+             LFP
+        ================================== -->
+
+        <div
+            id="lfpCorrelation"
+            class="correlation-panel active">
+
+
+            <div class="correlation-header">
+
+                <div>
+
+                    <span class="chemistry-label lfp-label">
+                        LFP
+                    </span>
+
+                    <h3>
+                        18650 LFP Heat Generation Correlation
+                    </h3>
+
+                    <p>
+                        Compact correlation obtained through
+                        SVM, polynomial regression and symbolic
+                        regression.
+                    </p>
+
+                </div>
+
+                <div class="equation-number">
+                    Eq. (16)
+                </div>
+
+            </div>
+
+
+
+            <!-- Equation -->
+
+            <div class="equation-box">
+
+                $$
+                HGR =
+                \left[
+                (a_0-a_1D)
+                \left(
+                \frac{C}{T+I+a_2}
+                \right)
+                a_3\sqrt{I}
+                +
+                \left(
+                \frac{C}{T-\sqrt{a_4D}}
+                \right)
+                -
+                a_5
+                \right]
+                $$
+
+            </div>
+
+
+
+            <!-- Variables -->
+
+            <div class="variables-grid">
+
+                <div class="variable-item">
+
+                    <strong>
+                        $I$
+                    </strong>
+
+                    <span>
+                        Current (A)
+                    </span>
+
+                </div>
+
+                <div class="variable-item">
+
+                    <strong>
+                        $C$
+                    </strong>
+
+                    <span>
+                        Discharge rate (C)
+                    </span>
+
+                </div>
+
+                <div class="variable-item">
+
+                    <strong>
+                        $D$
+                    </strong>
+
+                    <span>
+                        DOD (%)
+                    </span>
+
+                </div>
+
+                <div class="variable-item">
+
+                    <strong>
+                        $T$
+                    </strong>
+
+                    <span>
+                        Temperature (°C)
+                    </span>
+
+                </div>
+
+                <div class="variable-item">
+
+                    <strong>
+                        $HGR$
+                    </strong>
+
+                    <span>
+                        Heat generation rate (W)
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Coefficients -->
+
+            <div class="coefficient-section">
+
+                <h4>
+                    Correlation Coefficients
+                </h4>
+
+                <div class="coefficient-grid">
+
+                    <div>
+                        <span>$a_0$</span>
+                        <strong>2.5293524</strong>
+                    </div>
+
+                    <div>
+                        <span>$a_1$</span>
+                        <strong>0.6289797</strong>
+                    </div>
+
+                    <div>
+                        <span>$a_2$</span>
+                        <strong>0.59593695</strong>
+                    </div>
+
+                    <div>
+                        <span>$a_3$</span>
+                        <strong>−0.10941234</strong>
+                    </div>
+
+                    <div>
+                        <span>$a_4$</span>
+                        <strong>0.13735075</strong>
+                    </div>
+
+                    <div>
+                        <span>$a_5$</span>
+                        <strong>0.025670875</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Range -->
+
+            <div class="correlation-range">
+
+                <div>
+
+                    <i class="bi bi-thermometer-half"></i>
+
+                    <span>
+                        Temperature
+                    </span>
+
+                    <strong>
+                        10–60 °C
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <i class="bi bi-speedometer2"></i>
+
+                    <span>
+                        Discharge rate
+                    </span>
+
+                    <strong>
+                        0.5–6 C
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             NMC
+        ================================== -->
+
+        <div
+            id="nmcCorrelation"
+            class="correlation-panel">
+
+
+            <div class="correlation-header">
+
+                <div>
+
+                    <span class="chemistry-label nmc-label">
+                        NMC
+                    </span>
+
+                    <h3>
+                        18650 NMC Heat Generation Correlation
+                    </h3>
+
+                    <p>
+                        Compact symbolic-regression correlation
+                        developed for direct HGR estimation.
+                    </p>
+
+                </div>
+
+                <div class="equation-number">
+                    Eq. (14)
+                </div>
+
+            </div>
+
+
+
+            <!-- Equation -->
+
+            <div class="equation-box equation-nmc">
+
+                \[
+HGR =
+\left\{
+b_0 I +
+\left[
+\frac{
+(b_1DI)
+\left(
+\frac{C}{b_2}
++\cos(T)
++\sin(\tan(T))
+\right)
+}{
+\tan(I)\sin(b_3T)-T
+}
++b_4
+\right]
+\ln(T)
+\right\}
+\tanh(b_5D)
+\]
+
+            </div>
+
+
+
+            <!-- Variables -->
+
+            <div class="variables-grid">
+
+                <div class="variable-item">
+
+                    <strong>
+                        $I$
+                    </strong>
+
+                    <span>
+                        Current (A)
+                    </span>
+
+                </div>
+
+                <div class="variable-item">
+
+                    <strong>
+                        $C$
+                    </strong>
+
+                    <span>
+                        Discharge rate (C)
+                    </span>
+
+                </div>
+
+                <div class="variable-item">
+
+                    <strong>
+                        $D$
+                    </strong>
+
+                    <span>
+                        DOD (%)
+                    </span>
+
+                </div>
+
+                <div class="variable-item">
+
+                    <strong>
+                        $T$
+                    </strong>
+
+                    <span>
+                        Temperature (°C)
+                    </span>
+
+                </div>
+
+                <div class="variable-item">
+
+                    <strong>
+                        $HGR$
+                    </strong>
+
+                    <span>
+                        Heat generation rate (W)
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Coefficients -->
+
+            <div class="coefficient-section">
+
+                <h4>
+                    Correlation Coefficients
+                </h4>
+
+                <div class="coefficient-grid">
+
+                    <div>
+                        <span>$b_0$</span>
+                        <strong>−0.093846105</strong>
+                    </div>
+
+                    <div>
+                        <span>$b_1$</span>
+                        <strong>0.002619058</strong>
+                    </div>
+
+                    <div>
+                        <span>$b_2$</span>
+                        <strong>0.6424564</strong>
+                    </div>
+
+                    <div>
+                        <span>$b_3$</span>
+                        <strong>−0.54009145</strong>
+                    </div>
+
+                    <div>
+                        <span>$b_4$</span>
+                        <strong>0.04576035</strong>
+                    </div>
+
+                    <div>
+                        <span>$b_5$</span>
+                        <strong>−0.06274791</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Range -->
+
+            <div class="correlation-range">
+
+                <div>
+
+                    <i class="bi bi-thermometer-half"></i>
+
+                    <span>
+                        Temperature
+                    </span>
+
+                    <strong>
+                        10–60 °C
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <i class="bi bi-speedometer2"></i>
+
+                    <span>
+                        Discharge rate
+                    </span>
+
+                    <strong>
+                        0.5–8 C
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+<!-- =================================
+     LCO
+================================== -->
+
+<div
+    id="lcoCorrelation"
+    class="correlation-panel">
+
+    <div class="correlation-header">
+
+        <div>
+
+            <span class="chemistry-label lco-label">
+                LCO
+            </span>
+
+            <h3>
+                18650 LCO Heat Generation Correlation
+            </h3>
+
+            <p>
+                PySR-derived analytical correlation
+                for direct HGR estimation.
+            </p>
+
+        </div>
+
+
+        <div class="equation-number">
+            Eq. (1)
+        </div>
+
+    </div>
+
+
+    <!-- Equation -->
+
+    <div class="equation-box">
+
+        $$
+        HGR =
+        \frac{
+        \left[
+        (a_0 I D)+a_1
+        \right]C
+        }{
+        \sqrt{
+        T
+        \sqrt{
+        e^{(I-D)}+a_2D
+        }
+        +
+        \left[
+        I-\ln(I-a_3)
+        \right]
+        }
+        }
+        $$
+
+    </div>
+
+
+    <!-- Variables -->
+
+    <div class="variables-grid">
+
+        <div class="variable-item">
+
+            <strong>
+                $I$
+            </strong>
+
+            <span>
+                Current (A)
+            </span>
+
+        </div>
+
+
+        <div class="variable-item">
+
+            <strong>
+                $C$
+            </strong>
+
+            <span>
+                Discharge rate (C)
+            </span>
+
+        </div>
+
+
+        <div class="variable-item">
+
+            <strong>
+                $D$
+            </strong>
+
+            <span>
+                DOD (%)
+            </span>
+
+        </div>
+
+
+        <div class="variable-item">
+
+            <strong>
+                $T$
+            </strong>
+
+            <span>
+                Temperature (°C)
+            </span>
+
+        </div>
+
+
+        <div class="variable-item">
+
+            <strong>
+                $HGR$
+            </strong>
+
+            <span>
+                Heat generation rate (W)
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- Coefficients -->
+
+    <div class="coefficient-section">
+
+        <h4>
+            Correlation Coefficients
+        </h4>
+
+
+        <div class="coefficient-grid">
+
+            <div>
+                <span>$a_0$</span>
+                <strong>0.09882616</strong>
+            </div>
+
+            <div>
+                <span>$a_1$</span>
+                <strong>1.8190366</strong>
+            </div>
+
+            <div>
+                <span>$a_2$</span>
+                <strong>0.45524344</strong>
+            </div>
+
+            <div>
+                <span>$a_3$</span>
+                <strong>1.2983198</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Range -->
+
+    <div class="correlation-range">
+
+        <div>
+
+            <i class="bi bi-thermometer-half"></i>
+
+            <span>
+                Temperature
+            </span>
+
+            <strong>
+                10–60 °C
+            </strong>
+
+        </div>
+
+
+        <div>
+
+            <i class="bi bi-speedometer2"></i>
+
+            <span>
+                Discharge rate
+            </span>
+
+            <strong>
+                0.5–5 C
+            </strong>
+
+        </div>
+
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     MODEL DEVELOPMENT
+====================================== -->
+
+<section class="hgr-development-section">
+
+    <div class="section-heading">
+
+        <div class="section-kicker">
+            MODEL DEVELOPMENT
+        </div>
+
+        <h2>
+            From Experimental Data to Compact Correlation
+        </h2>
+
+        <p>
+            The analytical correlations were obtained through
+            a multi-stage modelling framework.
+        </p>
+
+    </div>
+
+
+    <div class="development-flow">
+
+
+        <div class="development-step">
+
+            <div class="development-number">
+                01
+            </div>
+
+            <div class="development-icon">
+                <i class="bi bi-thermometer-half"></i>
+            </div>
+
+            <h3>
+                Experimental HGR
+            </h3>
+
+            <p>
+                Heat generation data were experimentally
+                obtained using isothermal battery calorimetry
+                under controlled operating conditions.
+            </p>
+
+        </div>
+
+
+
+        <div class="flow-arrow">
+            <i class="bi bi-arrow-right"></i>
+        </div>
+
+
+
+        <div class="development-step">
+
+            <div class="development-number">
+                02
+            </div>
+
+            <div class="development-icon">
+                <i class="bi bi-cpu"></i>
+            </div>
+
+            <h3>
+                Machine Learning
+            </h3>
+
+            <p>
+                Machine-learning models were trained using
+                current, C-rate, DOD and temperature as
+                input variables.
+            </p>
+
+        </div>
+
+
+
+        <div class="flow-arrow">
+            <i class="bi bi-arrow-right"></i>
+        </div>
+
+
+
+        <div class="development-step">
+
+            <div class="development-number">
+                03
+            </div>
+
+            <div class="development-icon">
+                <i class="bi bi-graph-up-arrow"></i>
+            </div>
+
+            <h3>
+                Polynomial Regression
+            </h3>
+
+            <p>
+                The selected ML model was approximated using
+                a high-order polynomial representation.
+            </p>
+
+        </div>
+
+
+
+        <div class="flow-arrow">
+            <i class="bi bi-arrow-right"></i>
+        </div>
+
+
+
+        <div class="development-step">
+
+            <div class="development-number">
+                04
+            </div>
+
+            <div class="development-icon">
+                <i class="bi bi-diagram-3"></i>
+            </div>
+
+            <h3>
+                Symbolic Regression
+            </h3>
+
+            <p>
+                PySR was used to obtain a compact analytical
+                expression with substantially fewer terms.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================
+     MODEL PERFORMANCE
+====================================== -->
+
+<section class="hgr-performance-section">
+
+    <div class="section-heading">
+
+        <div class="section-kicker">
+            MODEL PERFORMANCE
+        </div>
+
+        <h2>
+            Published Correlation Performance
+        </h2>
+
+        <p>
+            Reported performance of the final symbolic-regression
+            correlations.
+        </p>
+
+    </div>
+
+
+    <div class="performance-table-wrapper">
+
+        <table class="performance-table">
+
+            <thead>
+
+                <tr>
+
+                    <th>
+                        Chemistry
+                    </th>
+
+                    <th>
+                        Model
+                    </th>
+
+                    <th>
+                        MAE
+                    </th>
+
+                    <th>
+                        MSE
+                    </th>
+
+                    <th>
+                        RMSE
+                    </th>
+
+                    <th>
+                        R²
+                    </th>
+
+                    <th>
+                        Terms
+                    </th>
+
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        <span class="table-chemistry lfp">
+                            LFP
+                        </span>
+                    </td>
+
+                    <td>
+                        PySR
+                    </td>
+
+                    <td>
+                        0.0345
+                    </td>
+
+                    <td>
+                        0.0031
+                    </td>
+
+                    <td>
+                        0.0564
+                    </td>
+
+                    <td>
+                        0.9866
+                    </td>
+
+                    <td>
+                        6
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <span class="table-chemistry nmc">
+                            NMC
+                        </span>
+                    </td>
+
+                    <td>
+                        PySR
+                    </td>
+
+                    <td>
+                        0.0812
+                    </td>
+
+                    <td>
+                        0.0192
+                    </td>
+
+                    <td>
+                        0.1389
+                    </td>
+
+                    <td>
+                        0.9867
+                    </td>
+
+                    <td>
+                        6
+                    </td>
+
+                </tr>
+
+<tr>
+
+    <td>
+        <span class="table-chemistry lco">
+            LCO
+        </span>
+    </td>
+
+    <td>
+        PySR
+    </td>
+
+    <td>
+        0.0812
+    </td>
+
+    <td>
+        0.0192
+    </td>
+
+    <td>
+        0.1389
+    </td>
+
+    <td>
+        0.9867
+    </td>
+
+    <td>
+        4
+    </td>
+
+</tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+
+    <div class="performance-note">
+
+        <i class="bi bi-info-circle-fill"></i>
+
+        <p>
+            The reported metrics correspond to the final
+            symbolic-regression correlations. The LFP correlation
+            was developed from the SVM model and reduced to six
+            terms, while the NMC correlation was similarly obtained
+            through a multi-stage ML and symbolic-regression
+            framework.
+        </p>
+
+    </div>
+
+</section>
+
+    <!-- =====================================
+         MODEL INFORMATION
+    ====================================== -->
+
+    <section class="hgr-model-section">
+
+        <div class="section-heading">
+
+            <div class="section-kicker">
+                MODEL INFORMATION
+            </div>
+
+            <h2>
+                Analytical HGR Correlation
+            </h2>
+
+            <p>
+                The predictor uses the compact symbolic
+                correlations developed from experimentally
+                measured HGR data.
+            </p>
+
+        </div>
+
+
+        <div class="model-cards">
+
+
+            <!-- LFP -->
+
+            <div class="model-card">
+
+                <div class="model-card-top">
+
+                    <span class="model-badge">
+                        LFP
+                    </span>
+
+                    <span>
+                        18650
+                    </span>
+
+                </div>
+
+                <h3>
+                    LFP HGR Correlation
+                </h3>
+
+                <p>
+                    PySR-derived analytical correlation based
+                    on experimentally measured HGR data.
+                </p>
+
+                <div class="model-range">
+
+                    <span>
+                        <i class="bi bi-thermometer"></i>
+                        10–60 °C
+                    </span>
+
+                    <span>
+                        <i class="bi bi-speedometer2"></i>
+                        0.5–6 C
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- NMC -->
+
+            <div class="model-card">
+
+                <div class="model-card-top">
+
+                    <span class="model-badge nmc">
+                        NMC
+                    </span>
+
+                    <span>
+                        18650
+                    </span>
+
+                </div>
+
+                <h3>
+                    NMC HGR Correlation
+                </h3>
+
+                <p>
+                    PySR-derived compact analytical correlation
+                    for direct HGR estimation.
+                </p>
+
+                <div class="model-range">
+
+                    <span>
+                        <i class="bi bi-thermometer"></i>
+                        10–60 °C
+                    </span>
+
+                    <span>
+                        <i class="bi bi-speedometer2"></i>
+                        0.5–8 C
+                    </span>
+
+                </div>
+
+            </div>
+
+<!-- LCO -->
+
+<div class="model-card">
+
+    <div class="model-card-top">
+
+        <span class="model-badge lco">
+            LCO
+        </span>
+
+        <span>
+            18650
+        </span>
+
+    </div>
+
+
+    <h3>
+        LCO HGR Correlation
+    </h3>
+
+
+    <p>
+        PySR-derived analytical correlation
+        for direct HGR estimation.
+    </p>
+
+
+    <div class="model-range">
+
+        <span>
+            <i class="bi bi-thermometer"></i>
+            10–60 °C
+        </span>
+
+        <span>
+            <i class="bi bi-speedometer2"></i>
+            0.5–5 C
+        </span>
+
+    </div>
+
+</div>
+
+        </div>
+
+    </section>
+
+
+        
+<!-- =========================================
+     HGR EXPLORER
+========================================== -->
+
+<section class="hgr-explorer-section">
+
+
+    <!-- Section heading -->
+
+    <div class="section-heading">
+
+        <div class="section-kicker">
+            INTERACTIVE HGR EXPLORER
+        </div>
+
+        <h2>
+            Explore Heat Generation Across
+            Operating Conditions
+        </h2>
+
+        <p>
+            Visualize the predicted heat generation rate
+            as a function of C-rate and temperature for
+            a selected depth of discharge.
+        </p>
+
+    </div>
+
+
+
+    <!-- =====================================
+         EXPLORER CARD
+    ====================================== -->
+
+    <div class="hgr-explorer-card">
+
+
+        <!-- =================================
+             CONTROL PANEL
+        ================================== -->
+
+        <div class="explorer-controls">
+
+
+            <div class="explorer-control">
+
+                <label for="explorerChemistry">
+                    Battery Chemistry
+                </label>
+
+                <select
+                    id="explorerChemistry"
+                    class="form-select">
+
+                    <option value="LFP">
+                        LFP — 18650
+                    </option>
+
+                    <option value="NMC">
+                        NMC — 18650
+                    </option>
+
+                    <option value="LCO">
+                        LCO — 18650
+                    </option>
+                </select>
+
+            </div>
+
+
+
+            <div class="explorer-control">
+
+                <label for="explorerDOD">
+                    Depth of Discharge
+                </label>
+
+                <div class="explorer-input-unit">
+
+                    <input
+                        type="number"
+                        id="explorerDOD"
+                        class="form-control"
+                        value="50"
+                        min="0"
+                        max="100"
+                        step="1">
+
+                    <span>
+                        %
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="explorer-control">
+
+                <label for="explorerCMin">
+                    Minimum C-rate
+                </label>
+
+                <div class="explorer-input-unit">
+
+                    <input
+                        type="number"
+                        id="explorerCMin"
+                        class="form-control"
+                        value="0.5"
+                        min="0.5"
+                        step="0.1">
+
+                    <span>
+                        C
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="explorer-control">
+
+                <label for="explorerCMax">
+                    Maximum C-rate
+                </label>
+
+                <div class="explorer-input-unit">
+
+                    <input
+                        type="number"
+                        id="explorerCMax"
+                        class="form-control"
+                        value="6"
+                        min="0.5"
+                        step="0.1">
+
+                    <span>
+                        C
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="explorer-control">
+
+                <label for="explorerTMin">
+                    Minimum Temperature
+                </label>
+
+                <div class="explorer-input-unit">
+
+                    <input
+                        type="number"
+                        id="explorerTMin"
+                        class="form-control"
+                        value="10"
+                        min="10"
+                        max="60"
+                        step="1">
+
+                    <span>
+                        °C
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="explorer-control">
+
+                <label for="explorerTMax">
+                    Maximum Temperature
+                </label>
+
+                <div class="explorer-input-unit">
+
+                    <input
+                        type="number"
+                        id="explorerTMax"
+                        class="form-control"
+                        value="60"
+                        min="10"
+                        max="60"
+                        step="1">
+
+                    <span>
+                        °C
+                    </span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- =================================
+             GENERATE BUTTON
+        ================================== -->
+
+        <div class="explorer-action">
+
+            <button
+                type="button"
+                id="generateHeatmap"
+                class="btn-generate-heatmap">
+
+                <i class="bi bi-grid-3x3-gap"></i>
+
+                Generate HGR Heatmap
+
+            </button>
+
+        </div>
+
+
+
+        <!-- =================================
+             HEATMAP
+        ================================== -->
+
+        <div class="heatmap-container">
+
+            <div
+                id="hgrHeatmap">
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             HEATMAP INFORMATION
+        ================================== -->
+
+        <div class="heatmap-information">
+
+
+            <div class="heatmap-info-item">
+
+                <i class="bi bi-palette"></i>
+
+                <div>
+
+                    <strong>
+                        Color Intensity
+                    </strong>
+
+                    <span>
+                        Darker regions indicate higher
+                        predicted HGR.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="heatmap-info-item">
+
+                <i class="bi bi-arrows"></i>
+
+                <div>
+
+                    <strong>
+                        X-axis
+                    </strong>
+
+                    <span>
+                        C-rate
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="heatmap-info-item">
+
+                <i class="bi bi-thermometer-half"></i>
+
+                <div>
+
+                    <strong>
+                        Y-axis
+                    </strong>
+
+                    <span>
+                        Temperature (°C)
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="heatmap-info-item">
+
+                <i class="bi bi-bullseye"></i>
+
+                <div>
+
+                    <strong>
+                        Fixed Parameter
+                    </strong>
+
+                    <span id="heatmapFixedDOD">
+                        DOD = 80 %
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             SELECTED CONDITION
+        ================================== -->
+
+        <div
+            id="heatmapStatus"
+            class="heatmap-status">
+
+            <i class="bi bi-info-circle"></i>
+
+            <span>
+                Select the operating conditions and
+                generate the heatmap.
+            </span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+Research Reference
+======================================================= -->
+
+<section class="research-reference-section py-5">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+        <div class="section-heading text-center mb-5">
+
+            <span class="section-kicker">
+                RESEARCH REFERENCE
+            </span>
+
+            <h2>
+                Research Behind the HGR Predictor
+            </h2>
+
+            <p class="section-description">
+                The analytical heat-generation correlations implemented
+                in this predictor are based on machine-learning-assisted
+                methodologies developed from experimentally measured
+                battery calorimetry data.
+            </p>
+
+        </div>
+
+
+        <!-- Research Reference Note -->
+        <div class="research-reference-note mb-4">
+
+            <i class="bi bi-info-circle-fill"></i>
+
+            <span>
+                The HGR prediction framework presented here builds upon
+                machine-learning-assisted correlation-development
+                approaches reported in the following research articles.
+            </span>
+
+        </div>
+
+
+        <!-- ===================================================
+        Reference 1 — LFP
+        =================================================== -->
+
+        <div class="publication-card mb-4">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-10">
+
+                    <div class="journal-badges">
+
+                        <span class="badge bg-success">
+                            Q1 Journal
+                        </span>
+
+                        <span class="badge bg-primary">
+                            Elsevier
+                        </span>
+
+                        <span class="badge bg-dark">
+                            First Author
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        Developing an accurate correlation for estimating
+                        heat generation rate by an 18650 lithium iron
+                        phosphate cell through a machine learning model
+                        trained on experimental measurements
+                    </h3>
+
+
+                    <p class="authors">
+
+                        <strong>
+                            Vijay Kumar Chauhan
+                        </strong>,
+                        Jishnu Bhattacharya
+
+                    </p>
+
+
+                    <p class="journal">
+
+                        <i class="bi bi-book-half"></i>
+
+                        Energy,
+                        Vol. 334 (2025),
+                        137835
+
+                    </p>
+
+
+                    <p>
+                        Developed a machine-learning framework for
+                        estimating the heat generation rate of an
+                        18650 lithium iron phosphate cell using
+                        experimentally measured heat-generation data.
+                    </p>
+
+
+                    <div class="keywords">
+
+                        <span>Machine Learning</span>
+
+                        <span>HGR Prediction</span>
+
+                        <span>LFP</span>
+
+                        <span>Heat Generation</span>
+
+                        <span>Experimental Data</span>
+
+                        <span>BMS</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-2 text-lg-end mt-4 mt-lg-0">
+
+                    <a
+                        href="https://doi.org/10.1016/j.energy.2025.137835"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary mb-2 w-100">
+
+                        DOI
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ===================================================
+        Reference 2 — NMC
+        =================================================== -->
+
+        <div class="publication-card">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-10">
+
+                    <div class="journal-badges">
+
+                        <span class="badge bg-success">
+                            Q1 Journal
+                        </span>
+
+                        <span class="badge bg-primary">
+                            Elsevier
+                        </span>
+
+                        <span class="badge bg-dark">
+                            First Author
+                        </span>
+
+                    </div>
+
+
+                    <h3>
+                        A multistage data-driven method for deriving a
+                        compact heat-generation correlation from
+                        high-precision calorimetry data of lithium-ion
+                        batteries: A case study for an 18650 NMC cell
+                    </h3>
+
+
+                    <p class="authors">
+
+                        <strong>
+                            Vijay Kumar Chauhan
+                        </strong>,
+                        Jishnu Bhattacharya
+
+                    </p>
+
+
+                    <p class="journal">
+
+                        <i class="bi bi-book-half"></i>
+
+                        International Journal of Thermal Sciences,
+                        Vol. 229 (2026),
+                        111055
+
+                    </p>
+
+
+                    <p>
+                        Developed a multistage machine-learning-assisted
+                        methodology for deriving a compact heat-generation
+                        correlation from experimentally measured
+                        calorimetry data for an 18650 NMC cell.
+                    </p>
+
+
+                    <div class="keywords">
+
+                        <span>Machine Learning</span>
+
+                        <span>HGR Prediction</span>
+
+                        <span>NMC</span>
+
+                        <span>Calorimetry</span>
+
+                        <span>Symbolic Regression</span>
+
+                        <span>BMS</span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-2 text-lg-end mt-4 mt-lg-0">
+
+                    <a
+                        href="https://doi.org/10.1016/j.ijthermalsci.2026.111055"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-primary mb-2 w-100">
+
+                        DOI
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <div id="footer"></div>
+
+
+
+    <!-- =========================================
+         BOOTSTRAP JS
+    ========================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+
+    <!-- =========================================
+         COMPONENT LOADER
+    ========================================== -->
+
+    <script
+        src="../../assets/js/include.js">
+    </script>
+
+
+
+    <!-- =========================================
+         HGR PREDICTOR JS
+    ========================================== -->
+
+    <script
+        src="../../assets/js/hgr-predictor.js">
+    </script>
+
+
+</body>
+
+</html>

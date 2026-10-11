@@ -1,0 +1,819 @@
+/* ==========================================================
+   PUBLICATION HERO
+========================================================== */
+
+.publication-hero{
+    background:linear-gradient(135deg,#0B3D91,#1e5ec8);
+    color:#fff;
+    padding:130px 0 90px;
+    text-align:center;
+}
+
+.hero-tag{
+    display:inline-block;
+    background:rgba(255,255,255,.18);
+    padding:8px 18px;
+    border-radius:40px;
+    font-size:.9rem;
+    letter-spacing:.5px;
+    margin-bottom:25px;
+    backdrop-filter:blur(8px);
+}
+
+.hero-tag i{
+    margin-right:8px;
+}
+
+.publication-hero h1{
+    font-size:3rem;
+    font-weight:700;
+    margin-bottom:20px;
+}
+
+.publication-hero p{
+    font-size:1.15rem;
+    max-width:850px;
+    margin:auto;
+    opacity:.95;
+    line-height:1.8;
+}
+
+
+
+/* ==========================================================
+   STATISTICS
+========================================================== */
+
+.publication-stats{
+    padding:80px 0 50px;
+    background:#f7f9fc;
+}
+
+.stat-card{
+
+    background:#fff;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    padding:35px 20px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.stat-card i{
+
+    font-size:42px;
+
+    color:#0B3D91;
+
+}
+
+.stat-card h2{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    margin:18px 0 10px;
+
+}
+
+.stat-card p{
+
+    margin:0;
+
+    color:#666;
+
+}
+
+
+
+/* ==========================================================
+   RESEARCH TAGS
+========================================================== */
+
+.research-area-section{
+
+    padding:70px 0;
+
+}
+
+.research-tags{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+.research-tag{
+
+    background:#fff;
+
+    border:2px solid #0B3D91;
+
+    color:#0B3D91;
+
+    padding:12px 22px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.research-tag:hover{
+
+    background:#0B3D91;
+
+    color:#fff;
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/* ==========================================================
+   PUBLICATION SECTION
+========================================================== */
+
+.publication-section{
+
+    background:#f8f9fc;
+
+    padding:80px 0;
+
+}
+
+.year-heading{
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#0B3D91;
+
+    margin:60px 0 35px;
+
+    border-left:6px solid #0B3D91;
+
+    padding-left:18px;
+
+}
+
+/* ==========================================================
+   PUBLICATION CARD
+========================================================== */
+
+.publication-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    margin-bottom:35px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    transition:all .35s ease;
+
+    border-left:6px solid #0B3D91;
+
+}
+
+.publication-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.publication-card h3{
+
+    font-size:1.55rem;
+
+    font-weight:700;
+
+    color:#0B3D91;
+
+    line-height:1.5;
+
+    margin:20px 0;
+
+}
+
+.publication-card p{
+
+    color:#555;
+
+    line-height:1.8;
+
+}
+
+.authors{
+
+    font-size:1rem;
+
+    margin-bottom:12px;
+
+}
+
+.authors strong{
+
+    color:#0B3D91;
+
+    font-weight:700;
+
+}
+
+.journal{
+
+    color:#666;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.journal i{
+
+    color:#0B3D91;
+
+    margin-right:8px;
+
+}
+
+
+
+/* ==========================================================
+   JOURNAL BADGES
+========================================================== */
+
+.journal-badges{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-bottom:15px;
+
+}
+
+.journal-badges .badge{
+
+    font-size:.85rem;
+
+    padding:8px 14px;
+
+    border-radius:30px;
+
+    letter-spacing:.3px;
+
+}
+
+
+
+/* ==========================================================
+   DOI BUTTONS
+========================================================== */
+
+.publication-card .btn{
+
+    border-radius:12px;
+
+    font-weight:600;
+
+    padding:10px 18px;
+
+    transition:.3s;
+
+}
+
+.publication-card .btn-primary{
+
+    background:#0B3D91;
+
+    border:none;
+
+}
+
+.publication-card .btn-primary:hover{
+
+    background:#072c68;
+
+}
+
+.publication-card .btn-outline-primary{
+
+    border:2px solid #0B3D91;
+
+    color:#0B3D91;
+
+}
+
+.publication-card .btn-outline-primary:hover{
+
+    background:#0B3D91;
+
+    color:#fff;
+
+}
+
+
+
+/* ==========================================================
+   KEYWORDS
+========================================================== */
+
+.keywords{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:20px;
+
+}
+
+.keywords span{
+
+    background:#eef4ff;
+
+    color:#0B3D91;
+
+    border-radius:30px;
+
+    padding:8px 16px;
+
+    font-size:.85rem;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.keywords span:hover{
+
+    background:#0B3D91;
+
+    color:#fff;
+
+}
+
+
+
+/* ==========================================================
+   YEAR SEPARATOR
+========================================================== */
+
+.year-heading{
+
+    position:relative;
+
+}
+
+.year-heading::after{
+
+    content:"";
+
+    display:block;
+
+    width:100px;
+
+    height:4px;
+
+    background:#0B3D91;
+
+    margin-top:10px;
+
+    border-radius:5px;
+
+}
+
+
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:992px){
+
+.publication-card{
+
+padding:28px;
+
+}
+
+.publication-card h3{
+
+font-size:1.3rem;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.publication-card{
+
+padding:24px;
+
+}
+
+.publication-card .btn{
+
+width:100%;
+
+margin-top:10px;
+
+}
+
+.journal-badges{
+
+justify-content:center;
+
+}
+
+.keywords{
+
+justify-content:center;
+
+}
+
+}
+
+/* ==========================================================
+   RESEARCH IMPACT SECTION
+========================================================== */
+
+.citation-section{
+
+    padding:90px 0;
+
+    background:#ffffff;
+
+}
+
+.impact-card{
+
+    background:#ffffff;
+
+    border-radius:20px;
+
+    padding:35px 25px;
+
+    text-align:center;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+
+    transition:.35s;
+
+    height:100%;
+
+}
+
+.impact-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(0,0,0,.12);
+
+}
+
+.impact-card i{
+
+    font-size:42px;
+
+    color:#0B3D91;
+
+    margin-bottom:15px;
+
+}
+
+.impact-card h2{
+
+    font-size:2.2rem;
+
+    font-weight:700;
+
+    color:#0B3D91;
+
+    margin-bottom:10px;
+
+}
+
+.impact-card p{
+
+    margin:0;
+
+    color:#666;
+
+}
+
+
+
+/* ==========================================================
+   RESEARCH PROFILE SECTION
+========================================================== */
+
+.profile-section{
+
+    padding:90px 0;
+
+    background:#f7f9fc;
+
+}
+
+.profile-card{
+
+    background:linear-gradient(135deg,#94e898,#94e898);
+
+    color:#040202df;
+
+    text-align:center;
+
+    padding:70px 50px;
+
+    border-radius:24px;
+
+    box-shadow:0 20px 50px rgba(11,61,145,.30);
+
+}
+
+.profile-card h2{
+
+    font-size:2.4rem;
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.profile-card p{
+
+    max-width:800px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    font-size:1.1rem;
+
+}
+
+.profile-buttons{
+
+    margin-top:40px;
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:20px;
+
+}
+
+.profile-buttons .btn{
+
+    border-radius:40px;
+
+    padding:14px 28px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.profile-buttons .btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+
+/* ==========================================================
+   RESEARCH AREA FOOTER
+========================================================== */
+
+.publication-footer-section{
+
+    padding:90px 0;
+
+    background:#ffffff;
+
+}
+
+.footer-highlight{
+
+    text-align:center;
+
+}
+
+.footer-highlight h2{
+
+    color:#0B3D91;
+
+    font-size:2.2rem;
+
+    font-weight:700;
+
+    margin-bottom:35px;
+
+}
+
+.footer-tags{
+
+    display:flex;
+
+    justify-content:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
+}
+
+.footer-tags span{
+
+    background:#eef4ff;
+
+    color:#0B3D91;
+
+    padding:12px 22px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.footer-tags span:hover{
+
+    background:#0B3D91;
+
+    color:#ffffff;
+
+    transform:translateY(-4px);
+
+}
+
+
+
+/* ==========================================================
+   SECTION TITLE
+========================================================== */
+
+.section-title{
+
+    font-size:2.4rem;
+
+    font-weight:700;
+
+    color:#0B3D91;
+
+    margin-bottom:15px;
+
+}
+
+.section-subtitle{
+
+    color:#666;
+
+    font-size:1.05rem;
+
+    max-width:750px;
+
+    margin:auto;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ==========================================================
+   SMOOTH ANIMATION
+========================================================== */
+
+.publication-card,
+.stat-card,
+.impact-card,
+.profile-card{
+
+    animation:fadeUp .7s ease both;
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(25px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+/* ==========================================================
+   MOBILE RESPONSIVE
+========================================================== */
+
+@media(max-width:768px){
+
+.publication-hero{
+
+padding:110px 0 70px;
+
+}
+
+.publication-hero h1{
+
+font-size:2.2rem;
+
+}
+
+.profile-card{
+
+padding:40px 25px;
+
+}
+
+.profile-card h2{
+
+font-size:1.9rem;
+
+}
+
+.profile-buttons{
+
+flex-direction:column;
+
+}
+
+.profile-buttons .btn{
+
+width:100%;
+
+}
+
+.footer-highlight h2{
+
+font-size:1.8rem;
+
+}
+
+.section-title{
+
+font-size:2rem;
+
+}
+
+}

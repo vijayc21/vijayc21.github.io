@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Curriculum Vitae | Vijay Kumar Chauhan
+    </title>
+
+
+    <!-- =====================================================
+         BOOTSTRAP
+    ====================================================== -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         BOOTSTRAP ICONS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =====================================================
+         MAIN WEBSITE CSS
+    ====================================================== -->
+
+    <link rel="stylesheet"
+          href="../../assets/css/style.css">
+
+
+    <!-- =====================================================
+         PAGE CSS
+    ====================================================== -->
+
+    <style>
+
+        /* =====================================================
+           GENERAL
+        ====================================================== */
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background: #f7f9fc;
+        }
+
+
+        /* =====================================================
+           CV HERO
+        ====================================================== */
+
+        .cv-hero {
+            background: linear-gradient(
+                135deg,
+                #0d47a1 0%,
+                #1565c0 55%,
+                #2874d8 100%
+            );
+
+            color: white;
+
+            padding: 85px 0 75px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+
+        .cv-hero::before {
+
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.06);
+
+            right: -100px;
+            top: -150px;
+        }
+
+
+        .cv-hero::after {
+
+            content: "";
+
+            position: absolute;
+
+            width: 230px;
+            height: 230px;
+
+            border-radius: 50%;
+
+            background: rgba(255, 255, 255, 0.05);
+
+            left: -90px;
+            bottom: -120px;
+        }
+
+
+        .cv-hero .container {
+
+            position: relative;
+
+            z-index: 2;
+        }
+
+
+        .cv-badge {
+
+            display: inline-block;
+
+            background: rgba(255, 255, 255, 0.15);
+
+            border: 1px solid rgba(255, 255, 255, 0.18);
+
+            padding: 8px 18px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            margin-bottom: 20px;
+        }
+
+
+        .cv-hero h1 {
+
+            font-size: 48px;
+
+            font-weight: 700;
+
+            margin-bottom: 15px;
+        }
+
+
+        .cv-hero .designation {
+
+            font-size: 21px;
+
+            font-weight: 500;
+
+            margin-bottom: 8px;
+        }
+
+
+        .cv-hero .department {
+
+            font-size: 16px;
+
+            color: rgba(255, 255, 255, 0.88);
+
+            margin-bottom: 5px;
+        }
+
+
+        .cv-hero .institute {
+
+            font-size: 16px;
+
+            color: rgba(255, 255, 255, 0.88);
+
+            margin-bottom: 28px;
+        }
+
+
+        /* =====================================================
+           HERO BUTTONS
+        ====================================================== */
+
+        .cv-buttons {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 14px;
+        }
+
+
+        .cv-buttons .btn {
+
+            padding: 12px 24px;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            font-size: 15px;
+        }
+
+
+        .btn-cv-light {
+
+            background: white;
+
+            color: #0d47a1;
+
+            border: 2px solid white;
+        }
+
+
+        .btn-cv-light:hover {
+
+            background: #f1f5ff;
+
+            color: #0d47a1;
+        }
+
+
+        .btn-cv-outline {
+
+            background: transparent;
+
+            color: white;
+
+            border: 2px solid rgba(255, 255, 255, 0.8);
+        }
+
+
+        .btn-cv-outline:hover {
+
+            background: white;
+
+            color: #0d47a1;
+        }
+
+
+        /* =====================================================
+           HERO ICON
+        ====================================================== */
+
+        .cv-hero-icon {
+
+            width: 210px;
+            height: 210px;
+
+            margin: auto;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255, 255, 255, 0.10);
+
+            border: 2px solid rgba(255, 255, 255, 0.18);
+
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+
+
+        .cv-hero-icon i {
+
+            font-size: 95px;
+
+            color: white;
+        }
+
+
+        /* =====================================================
+           CV INFORMATION BAR
+        ====================================================== */
+
+        .cv-info-section {
+
+            margin-top: -30px;
+
+            position: relative;
+
+            z-index: 5;
+        }
+
+
+        .cv-info-box {
+
+            background: white;
+
+            border-radius: 16px;
+
+            padding: 25px 30px;
+
+            box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+        }
+
+
+        .cv-info-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 13px;
+        }
+
+
+        .cv-info-icon {
+
+            width: 45px;
+            height: 45px;
+
+            border-radius: 50%;
+
+            background: #edf4ff;
+
+            color: #0d47a1;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-shrink: 0;
+
+            font-size: 19px;
+        }
+
+
+        .cv-info-item small {
+
+            display: block;
+
+            color: #7b8493;
+
+            font-size: 12px;
+
+            margin-bottom: 2px;
+        }
+
+
+        .cv-info-item strong {
+
+            font-size: 14px;
+
+            color: #202938;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           CV VIEWER SECTION
+        ====================================================== */
+
+        .cv-viewer-section {
+
+            padding: 80px 0 90px;
+        }
+
+
+        .section-heading {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+
+        .section-badge {
+
+            display: inline-block;
+
+            background: #eaf2ff;
+
+            color: #0d47a1;
+
+            padding: 7px 17px;
+
+            border-radius: 25px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            margin-bottom: 12px;
+        }
+
+
+        .section-heading h2 {
+
+            color: #10479b;
+
+            font-size: 38px;
+
+            font-weight: 700;
+
+            margin-bottom: 12px;
+        }
+
+
+        .section-heading p {
+
+            max-width: 750px;
+
+            margin: auto;
+
+            color: #6b7280;
+
+            line-height: 1.8;
+        }
+
+
+        /* =====================================================
+           PDF CONTAINER
+        ====================================================== */
+
+        .pdf-wrapper {
+
+            background: white;
+
+            border-radius: 18px;
+
+            padding: 14px;
+
+            box-shadow: 0 10px 40px rgba(18, 53, 91, 0.10);
+
+            border: 1px solid #e8edf5;
+        }
+
+
+        .pdf-toolbar {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            padding: 10px 10px 18px;
+
+            gap: 15px;
+        }
+
+
+        .pdf-title {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            font-weight: 600;
+
+            color: #25344d;
+        }
+
+
+        .pdf-title i {
+
+            color: #dc3545;
+
+            font-size: 23px;
+        }
+
+
+        .pdf-toolbar-buttons {
+
+            display: flex;
+
+            gap: 8px;
+        }
+
+
+        .pdf-toolbar-buttons .btn {
+
+            border-radius: 25px;
+
+            font-size: 13px;
+
+            font-weight: 500;
+
+            padding: 8px 16px;
+        }
+
+
+        .pdf-frame {
+
+            width: 100%;
+
+            height: 1000px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #eeeeee;
+        }
+
+
+        /* =====================================================
+           BOTTOM DOWNLOAD AREA
+        ====================================================== */
+
+        .cv-download-area {
+
+            background: #eef4ff;
+
+            border-radius: 18px;
+
+            padding: 35px;
+
+            margin-top: 40px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+
+        .cv-download-area h4 {
+
+            color: #10479b;
+
+            font-weight: 700;
+
+            margin-bottom: 7px;
+        }
+
+
+        .cv-download-area p {
+
+            color: #687386;
+
+            margin: 0;
+        }
+
+
+        .cv-download-area .btn {
+
+            white-space: nowrap;
+
+            border-radius: 30px;
+
+            padding: 12px 24px;
+
+            font-weight: 600;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ====================================================== */
+
+        @media (max-width: 991px) {
+
+            .cv-hero {
+
+                text-align: center;
+
+                padding: 65px 0;
+            }
+
+
+            .cv-hero h1 {
+
+                font-size: 40px;
+            }
+
+
+            .cv-buttons {
+
+                justify-content: center;
+            }
+
+
+            .cv-hero-icon {
+
+                margin-top: 45px;
+
+                width: 170px;
+                height: 170px;
+            }
+
+
+            .cv-hero-icon i {
+
+                font-size: 75px;
+            }
+
+
+            .cv-info-item {
+
+                margin-bottom: 18px;
+            }
+
+
+            .pdf-frame {
+
+                height: 800px;
+            }
+
+        }
+
+
+        @media (max-width: 767px) {
+
+            .cv-hero h1 {
+
+                font-size: 34px;
+            }
+
+
+            .section-heading h2 {
+
+                font-size: 30px;
+            }
+
+
+            .pdf-frame {
+
+                height: 650px;
+            }
+
+
+            .pdf-toolbar {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+
+            .cv-download-area {
+
+                flex-direction: column;
+
+                text-align: center;
+            }
+
+        }
+
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+====================================================== -->
+
+<div id="navbar-pages"></div>
+
+
+
+<!-- =====================================================
+     HERO SECTION
+====================================================== -->
+
+<section class="cv-hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="col-lg-8">
+
+                <span class="cv-badge">
+
+                    <i class="bi bi-person-vcard me-2"></i>
+
+                    Academic Profile
+
+                </span>
+
+
+                <h1>
+                    Curriculum Vitae
+                </h1>
+
+
+                <div class="designation">
+
+                    Vijay Kumar Chauhan
+
+                </div>
+
+
+                <div class="department">
+
+                    Ph.D. Research Scholar
+
+                </div>
+
+
+                <div class="institute">
+
+                    Department of Sustainable Energy Engineering<br>
+
+                    Indian Institute of Technology Kanpur
+
+                </div>
+
+
+                <div class="cv-buttons">
+
+
+                    <!-- VIEW CV -->
+
+                    <a href="../../documents/CV.pdf"
+                       target="_blank"
+                       rel="noopener"
+                       class="btn btn-cv-light">
+
+                        <i class="bi bi-file-earmark-pdf me-2"></i>
+
+                        Open CV
+
+                    </a>
+
+
+                    <!-- DOWNLOAD CV -->
+
+                    <a href="../../documents/CV.pdf"
+                       download="Vijay_Kumar_Chauhan_CV.pdf"
+                       class="btn btn-cv-outline">
+
+                        <i class="bi bi-download me-2"></i>
+
+                        Download CV
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT ICON -->
+
+            <div class="col-lg-4 text-center">
+
+                <div class="cv-hero-icon">
+
+                    <i class="bi bi-file-earmark-person"></i>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     QUICK INFORMATION
+====================================================== -->
+
+<section class="cv-info-section">
+
+    <div class="container">
+
+        <div class="cv-info-box">
+
+            <div class="row g-4">
+
+
+                <!-- ITEM 1 -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="cv-info-item">
+
+                        <div class="cv-info-icon">
+
+                            <i class="bi bi-mortarboard-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Position
+                            </small>
+
+                            <strong>
+                                Ph.D. Research Scholar
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 2 -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="cv-info-item">
+
+                        <div class="cv-info-icon">
+
+                            <i class="bi bi-building"></i>
+
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Institution
+                            </small>
+
+                            <strong>
+                                IIT Kanpur
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ITEM 3 -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="cv-info-item">
+
+                        <div class="cv-info-icon">
+
+                            <i class="bi bi-lightning-charge-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <small>
+                                Research Area
+                            </small>
+
+                            <strong>
+                                Lithium-Ion Battery Research
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CV VIEWER
+====================================================== -->
+
+<section class="cv-viewer-section">
+
+    <div class="container">
+
+
+        <!-- SECTION HEADING -->
+
+        <div class="section-heading">
+
+            <span class="section-badge">
+
+                Curriculum Vitae
+
+            </span>
+
+
+            <h2>
+
+                Academic & Research Profile
+
+            </h2>
+
+
+            <p>
+
+                A detailed overview of my academic background,
+                research experience, publications, technical skills,
+                professional activities and achievements.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             PDF VIEWER
+        ================================================== -->
+
+        <div class="pdf-wrapper">
+
+
+            <!-- PDF TOOLBAR -->
+
+            <div class="pdf-toolbar">
+
+
+                <div class="pdf-title">
+
+                    <i class="bi bi-file-earmark-pdf-fill"></i>
+
+                    Vijay Kumar Chauhan — Curriculum Vitae
+
+                </div>
+
+
+                <div class="pdf-toolbar-buttons">
+
+
+                    <!-- OPEN PDF -->
+
+                    <a href="../../documents/CV.pdf"
+                       target="_blank"
+                       rel="noopener"
+                       class="btn btn-outline-primary">
+
+                        <i class="bi bi-box-arrow-up-right me-1"></i>
+
+                        Open
+
+                    </a>
+
+
+                    <!-- DOWNLOAD -->
+
+                    <a href="../../documents/CV.pdf"
+                       download="Vijay_Kumar_Chauhan_CV.pdf"
+                       class="btn btn-primary">
+
+                        <i class="bi bi-download me-1"></i>
+
+                        Download
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PDF -->
+
+            <iframe
+
+                src="../../documents/CV.pdf#view=FitH"
+
+                class="pdf-frame"
+
+                title="Curriculum Vitae of Vijay Kumar Chauhan">
+
+            </iframe>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             BOTTOM DOWNLOAD
+        ================================================== -->
+
+        <div class="cv-download-area">
+
+
+            <div>
+
+                <h4>
+
+                    Download My Curriculum Vitae
+
+                </h4>
+
+                <p>
+
+                    Download the complete PDF version of my
+                    academic and research curriculum vitae.
+
+                </p>
+
+            </div>
+
+
+            <a href="../../documents/CV.pdf"
+               download="Vijay_Kumar_Chauhan_CV.pdf"
+               class="btn btn-primary">
+
+                <i class="bi bi-file-earmark-arrow-down me-2"></i>
+
+                Download CV
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+====================================================== -->
+
+<div id="footer"></div>
+
+
+
+<!-- =====================================================
+     BOOTSTRAP JS
+====================================================== -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+<!-- =====================================================
+     LOAD NAVBAR
+====================================================== -->
+
+<script>
+
+fetch("../../components/navbar-pages.html")
+
+.then(response => response.text())
+
+.then(data => {
+
+    document.getElementById("navbar-pages").innerHTML = data;
+
+});
+
+</script>
+
+
+
+<!-- =====================================================
+     LOAD FOOTER
+====================================================== -->
+
+<script>
+
+fetch("../../components/footer.html")
+
+.then(response => response.text())
+
+.then(data => {
+
+    document.getElementById("footer").innerHTML = data;
+
+});
+
+</script>
+
+
+</body>
+
+</html>

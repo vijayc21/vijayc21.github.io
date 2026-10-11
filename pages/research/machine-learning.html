@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Machine Learning | Vijay Kumar Chauhan
+</title>
+
+<!-- Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Main CSS -->
+
+<link rel="stylesheet"
+href="../../assets/css/style.css">
+
+<!-- Page CSS -->
+
+<link rel="stylesheet"
+href="../../assets/css/machine-learning.css">
+
+</head>
+
+<body>
+
+<!-- =======================================================
+Navbar
+======================================================= -->
+
+<div id="navbar-pages"></div>
+
+
+
+<!-- =======================================================
+Hero Section
+======================================================= -->
+
+<section class="ml-hero">
+
+    <div class="container">
+
+        <!-- Hero Text -->
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-10 col-lg-11">
+
+                <span class="hero-badge">
+
+                    <i class="bi bi-cpu-fill"></i>
+                    Artificial Intelligence for Battery Research
+
+                </span>
+
+                <h1>
+
+                    Machine Learning for<br>
+                    Battery Thermal Management
+
+                </h1>
+
+                <p class="hero-description">
+
+                    Machine learning has emerged as a powerful tool for intelligent Battery
+                    Management Systems (BMS), enabling accurate prediction of Heat Generation
+                    Rate (HGR), battery temperature, State of Charge (SOC), degradation behaviour,
+                    Remaining Useful Life (RUL) and Digital Twin applications. This research
+                    combines high-precision experimental calorimetric measurements with advanced
+                    machine learning and deep learning algorithms to develop computationally
+                    efficient, interpretable and real-time predictive models for next-generation
+                    lithium-ion battery systems.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Hero Image -->
+
+        <div class="row mt-5">
+
+            <div class="col-12 text-center">
+
+                <img src="../../assets/images/machine-learning/hero-ai_1.png"
+                     class="hero-image img-fluid"
+                     alt="Machine Learning for Battery Thermal Management">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+Introduction
+======================================================= -->
+
+<section
+id="introduction"
+class="section-space">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Introduction
+
+</h2>
+
+<p class="section-subtitle">
+
+Artificial Intelligence (AI) has revolutionized
+engineering research by enabling intelligent data-driven
+prediction, optimization and decision-making. Machine
+Learning (ML), a subset of AI, provides computational
+models capable of learning complex nonlinear
+relationships directly from experimental data. Recent
+advances in Deep Learning and Symbolic Regression have
+opened new opportunities for battery diagnostics,
+thermal management and Battery Management Systems.
+
+</p>
+
+</div>
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+
+<img src="../../assets/images/machine-learning/ai-overview.png"
+class="img-fluid rounded shadow-lg section-image"
+alt="Artificial Intelligence Overview">
+
+<p class="figure-caption">
+
+Figure 1.
+Relationship between Artificial Intelligence,
+Machine Learning, Deep Learning and Generative AI.
+
+</p>
+
+</div>
+
+<div class="col-lg-6">
+
+<h3>
+
+Artificial Intelligence in Battery Research
+
+</h3>
+
+<p>
+
+Artificial Intelligence provides a broad framework for
+developing intelligent systems capable of learning,
+reasoning and prediction. Within AI, Machine Learning
+algorithms automatically learn relationships from
+experimental datasets without requiring explicit
+mathematical programming.
+
+</p>
+
+<p>
+
+Deep Learning extends Machine Learning through
+multi-layer neural networks that efficiently capture
+complex nonlinear battery behaviour, while Generative AI
+introduces powerful capabilities for knowledge
+generation, scientific writing and intelligent research
+assistance.
+
+</p>
+
+<div class="topic-tags">
+
+<span>Artificial Intelligence</span>
+
+<span>Machine Learning</span>
+
+<span>Deep Learning</span>
+
+<span>Generative AI</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =======================================================
+Machine Learning Classification
+======================================================= -->
+
+<section class="classification-section">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Classification of Machine Learning Algorithms
+
+</h2>
+
+<p class="section-subtitle">
+
+Machine Learning algorithms can be broadly categorized
+into supervised learning, unsupervised learning and
+reinforcement learning. This research primarily employs
+supervised learning techniques for regression-based heat
+generation prediction.
+
+</p>
+
+</div>
+
+<div class="row align-items-center">
+
+<div class="col-lg-7">
+
+<img src="../../assets/images/machine-learning/ml-classification.png"
+class="img-fluid rounded shadow-lg section-image"
+alt="Classification of Machine Learning">
+
+<p class="figure-caption">
+
+Figure 2.
+Classification of Machine Learning algorithms used in
+battery thermal management research.
+
+</p>
+
+</div>
+
+<div class="col-lg-5">
+
+<div class="info-card">
+
+<h3>
+
+Algorithms Used in This Research
+
+</h3>
+
+<ul class="algorithm-list">
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Feed Forward Neural Network (FNN)
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Long Short-Term Memory (LSTM)
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Support Vector Machine (SVM)
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+K-Nearest Neighbors (KNN)
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Decision Tree
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Random Forest Regression
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Symbolic Regression (PySR)
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =======================================================
+Why Machine Learning?
+======================================================= -->
+
+<section class="section-space bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Why Machine Learning for Battery Research?
+
+</h2>
+
+<p class="section-subtitle">
+
+Machine Learning provides efficient data-driven models
+for predicting battery performance under complex operating
+conditions. Compared with conventional electrochemical
+models, ML algorithms offer rapid prediction while
+maintaining excellent accuracy.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+
+<div class="feature-card">
+
+<i class="bi bi-speedometer2 feature-icon"></i>
+
+<h4>
+
+Fast Prediction
+
+</h4>
+
+<p>
+
+Provides real-time prediction of battery Heat
+Generation Rate (HGR), voltage and temperature,
+making ML suitable for online Battery Management
+Systems.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="feature-card">
+
+<i class="bi bi-cpu-fill feature-icon"></i>
+
+<h4>
+
+Handles Nonlinear Behaviour
+
+</h4>
+
+<p>
+
+Captures highly nonlinear relationships among
+Current, C-rate, DOD and Temperature without
+explicit mathematical equations.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-lg-4">
+
+<div class="feature-card">
+
+<i class="bi bi-graph-up-arrow feature-icon"></i>
+
+<h4>
+
+High Prediction Accuracy
+
+</h4>
+
+<p>
+
+Advanced ML algorithms significantly improve
+prediction accuracy while reducing computational
+cost compared with detailed electrochemical models.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+AI Workflow
+======================================================= -->
+
+<section class="section-space">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Artificial Intelligence Workflow
+
+</h2>
+
+<p class="section-subtitle">
+
+The proposed AI framework integrates experimental
+battery measurements with modern machine learning
+techniques to develop accurate predictive models
+for battery Heat Generation Rate.
+
+</p>
+
+</div>
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-7">
+
+<img src="../../assets/images/machine-learning/ai-workflow.png"
+class="img-fluid rounded shadow-lg section-image"
+alt="AI Workflow">
+
+<p class="figure-caption">
+
+Figure 3.
+Machine Learning workflow for battery Heat
+Generation Rate prediction.
+
+</p>
+
+</div>
+
+<div class="col-lg-5">
+
+<div class="info-card">
+
+<h3>
+
+Workflow Steps
+
+</h3>
+
+<ul class="algorithm-list">
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Experimental Battery Testing
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Data Cleaning & Preprocessing
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Feature Engineering
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Model Training
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Hyperparameter Optimization
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Model Validation
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+SHAP Analysis
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Symbolic Regression (PySR)
+
+</li>
+
+<li>
+
+<i class="bi bi-check-circle-fill"></i>
+
+Real-time Battery Management System
+
+</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+Machine Learning Algorithms
+======================================================= -->
+
+<section class="section-space bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Machine Learning Algorithms
+
+</h2>
+
+<p class="section-subtitle">
+
+Several machine learning algorithms were investigated
+for predicting battery Heat Generation Rate (HGR)
+using experimentally measured calorimetric datasets.
+
+</p>
+
+</div>
+
+
+<!-- =======================================================
+FNN
+======================================================= -->
+
+<div class="row align-items-center g-5 mb-5">
+
+<div class="col-lg-5">
+
+<img src="../../assets/images/machine-learning/fnn.png"
+class="img-fluid rounded shadow-lg section-image"
+alt="Feed Forward Neural Network">
+
+</div>
+
+<div class="col-lg-7">
+
+<span class="algorithm-badge">
+
+Deep Learning
+
+</span>
+
+<h3>
+
+Feed Forward Neural Network (FNN)
+
+</h3>
+
+<p>
+
+Feed Forward Neural Networks learn complex nonlinear
+relationships between battery operating parameters
+and Heat Generation Rate through multiple hidden
+layers. FNN models provide accurate prediction for
+steady-state battery operating conditions and are
+widely applied in engineering regression problems.
+
+</p>
+
+<div class="topic-tags">
+
+<span>Regression</span>
+
+<span>Neural Network</span>
+
+<span>Nonlinear Prediction</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =======================================================
+LSTM
+======================================================= -->
+
+<div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+
+<div class="col-lg-5">
+
+<img src="../../assets/images/machine-learning/lstm.png"
+class="img-fluid rounded shadow-lg section-image"
+alt="Long Short-Term Memory">
+
+</div>
+
+<div class="col-lg-7">
+
+<span class="algorithm-badge">
+
+Deep Learning
+
+</span>
+
+<h3>
+
+Long Short-Term Memory (LSTM)
+
+</h3>
+
+<p>
+
+LSTM networks are specifically designed for sequential
+battery datasets and capture long-term temporal
+dependencies through memory cells. They are highly
+effective for predicting battery voltage, temperature,
+State of Charge (SOC) and Heat Generation Rate during
+dynamic driving conditions.
+
+</p>
+
+<div class="topic-tags">
+
+<span>Time Series</span>
+
+<span>Battery Dynamics</span>
+
+<span>High Accuracy</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =======================================================
+Support Vector Machine
+======================================================= -->
+
+<!-- =======================================================
+More Machine Learning Algorithms
+======================================================= -->
+
+<section class="section-space">
+<div class="container">
+
+    <!-- SVM -->
+
+    <div class="row align-items-center g-5 mb-5">
+
+        <div class="col-lg-5">
+
+            <img src="../../assets/images/machine-learning/svm.jpg"
+                 class="img-fluid rounded shadow-lg section-image"
+                 alt="Support Vector Machine">
+
+        </div>
+
+        <div class="col-lg-7">
+
+            <span class="algorithm-badge">
+                Machine Learning
+            </span>
+
+            <h3>
+                Support Vector Machine (SVM)
+            </h3>
+
+            <p>
+                Support Vector Machine (SVM) is a supervised learning algorithm that
+                constructs an optimal hyperplane to model nonlinear relationships
+                between battery operating variables and Heat Generation Rate (HGR).
+                Kernel functions enable SVM to capture complex patterns while
+                maintaining excellent generalization capability.
+            </p>
+
+            <div class="topic-tags">
+                <span>Regression</span>
+                <span>Kernel Methods</span>
+                <span>High Generalization</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- KNN -->
+
+    <div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+
+        <div class="col-lg-5">
+
+            <img src="../../assets/images/machine-learning/knn.jpg"
+                 class="img-fluid rounded shadow-lg section-image"
+                 alt="KNN">
+
+        </div>
+
+        <div class="col-lg-7">
+
+            <span class="algorithm-badge">
+                Machine Learning
+            </span>
+
+            <h3>
+                K-Nearest Neighbors (KNN)
+            </h3>
+
+            <p>
+                K-Nearest Neighbors predicts battery Heat Generation Rate by
+                identifying neighbouring experimental samples with similar
+                operating conditions. The prediction is obtained using a weighted
+                average of neighbouring samples, making KNN an intuitive and
+                effective algorithm for nonlinear regression.
+            </p>
+
+            <div class="topic-tags">
+                <span>Distance Based</span>
+                <span>Regression</span>
+                <span>Simple Model</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Random Forest -->
+
+    <div class="row align-items-center g-5">
+
+        <div class="col-lg-5">
+
+            <img src="../../assets/images/machine-learning/rfr.png"
+                 class="img-fluid rounded shadow-lg section-image"
+                 alt="Random Forest">
+
+        </div>
+
+        <div class="col-lg-7">
+
+            <span class="algorithm-badge">
+                Ensemble Learning
+            </span>
+
+            <h3>
+                Random Forest Regression
+            </h3>
+
+            <p>
+                Random Forest Regression combines predictions from multiple
+                decision trees to improve prediction accuracy while reducing
+                variance and overfitting. The ensemble learning approach enables
+                robust prediction of battery Heat Generation Rate across a wide
+                range of operating conditions.
+            </p>
+
+            <div class="topic-tags">
+                <span>Ensemble</span>
+                <span>High Accuracy</span>
+                <span>Robust</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+</section>
+
+
+<!-- =======================================================
+Feature Engineering
+======================================================= -->
+
+<section class="section-space bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Feature Engineering & Data Preparation
+
+</h2>
+
+<p class="section-subtitle">
+
+Feature engineering is a crucial step in developing robust
+machine learning models. Experimentally measured battery
+parameters were processed, normalized and transformed to
+improve prediction accuracy while reducing computational
+complexity.
+
+</p>
+
+</div>
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+
+<img src="../../assets/images/machine-learning/feature-engineering.png"
+class="img-fluid rounded shadow-lg section-image"
+alt="Feature Engineering">
+
+<p class="figure-caption">
+
+Figure 4.
+Data preprocessing and feature engineering pipeline.
+
+</p>
+
+</div>
+
+<div class="col-lg-6">
+
+<div class="info-card">
+
+<h3>
+
+Input Features
+
+</h3>
+
+<ul class="algorithm-list">
+
+<li><i class="bi bi-check-circle-fill"></i> Current (A)</li>
+
+<li><i class="bi bi-check-circle-fill"></i> C-rate</li>
+
+<li><i class="bi bi-check-circle-fill"></i> Temperature (°C)</li>
+
+<li><i class="bi bi-check-circle-fill"></i> Depth of Discharge (DOD)</li>
+
+<li><i class="bi bi-check-circle-fill"></i> State of Charge (SOC)</li>
+
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+Model Performance
+======================================================= -->
+
+<section class="section-space">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Model Performance Comparison
+
+</h2>
+
+<p class="section-subtitle">
+
+The prediction capability of different Machine Learning
+algorithms was evaluated using standard statistical
+performance indicators.
+
+</p>
+
+</div>
+
+<div class="table-responsive">
+
+<table class="table table-bordered table-hover align-middle">
+
+<thead class="table-primary">
+
+<tr>
+
+<th>Model</th>
+
+<th>Application</th>
+
+<th>Strength</th>
+
+<th>Limitation</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr>
+
+<td>FNN</td>
+
+<td>Regression</td>
+
+<td>Excellent nonlinear fitting</td>
+
+<td>Large training data required</td>
+
+</tr>
+
+<tr>
+
+<td>LSTM</td>
+
+<td>Time Series</td>
+
+<td>Captures temporal behaviour</td>
+
+<td>Long training time</td>
+
+</tr>
+
+<tr>
+
+<td>SVM</td>
+
+<td>Regression</td>
+
+<td>High generalization</td>
+
+<td>Kernel selection required</td>
+
+</tr>
+
+<tr>
+
+<td>KNN</td>
+
+<td>Regression</td>
+
+<td>Simple implementation</td>
+
+<td>Slow for large datasets</td>
+
+</tr>
+
+<tr>
+
+<td>Decision Tree</td>
+
+<td>Regression</td>
+
+<td>Highly interpretable</td>
+
+<td>Overfitting tendency</td>
+
+</tr>
+
+<tr>
+
+<td>Random Forest</td>
+
+<td>Regression</td>
+
+<td>High prediction accuracy</td>
+
+<td>Large model size</td>
+
+</tr>
+
+<tr>
+
+<td>Symbolic Regression</td>
+
+<td>Equation Discovery</td>
+
+<td>Explainable AI</td>
+
+<td>High computational cost</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+SHAP Analysis
+======================================================= -->
+
+<section class="section-space bg-light">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-6">
+
+<img src="../../assets/images/machine-learning/shap-analysis.jpg"
+class="img-fluid rounded shadow-lg section-image"
+alt="SHAP Analysis">
+
+<p class="figure-caption">
+
+Figure 5.
+SHAP analysis showing feature importance.
+
+</p>
+
+</div>
+
+<div class="col-lg-6">
+
+<h2>
+
+SHAP Feature Importance Analysis
+
+</h2>
+
+<p>
+
+SHAP (SHapley Additive exPlanations) provides an
+interpretable framework for understanding the influence
+of each battery operating parameter on Heat Generation
+Rate prediction.
+
+</p>
+
+<div class="topic-tags">
+
+<span>Explainable AI</span>
+
+<span>Feature Importance</span>
+
+<span>Model Interpretation</span>
+
+</div>
+
+<p>
+
+The analysis quantifies the contribution of Current,
+Temperature, C-rate and Depth of Discharge toward
+battery heat generation prediction, enabling improved
+understanding of model behaviour.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+Prediction Results
+======================================================= -->
+
+<section class="section-space">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Prediction Results
+
+</h2>
+
+<p class="section-subtitle">
+
+Machine Learning models were trained using experimentally
+measured calorimetric datasets and validated over a wide
+range of temperatures and discharge rates.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-6">
+
+<img src="../../assets/images/machine-learning/result1.png"
+class="img-fluid rounded shadow-lg">
+
+<p class="figure-caption">
+
+Actual vs Predicted Heat Generation Rate for SVM Modelresul
+
+</p>
+
+</div>
+
+<div class="col-lg-6">
+
+<img src="../../assets/images/machine-learning/result2.png"
+class="img-fluid rounded shadow-lg">
+
+<p class="figure-caption">
+
+Actual vs Predicted Heat Generation Rate for RFR Modelresul
+
+</p>
+
+</div>
+
+<div class="col-lg-6">
+
+<img src="../../assets/images/machine-learning/result3.png"
+class="img-fluid rounded shadow-lg">
+
+<p class="figure-caption">
+
+Training Loss
+
+</p>
+
+</div>
+
+<div class="col-lg-6">
+
+<img src="../../assets/images/machine-learning/result4.png"
+class="img-fluid rounded shadow-lg">
+
+<p class="figure-caption">
+
+Validation Performance
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =======================================================
+Applications
+======================================================= -->
+
+<section class="section-space bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Applications in Battery Thermal Management
+
+</h2>
+
+<p class="section-subtitle">
+
+Machine Learning enables intelligent prediction,
+optimization and control of lithium-ion batteries for
+Electric Vehicle applications.
+
+</p>
+
+</div>
+
+<div class="row g-4">
+
+<!-- Card 1 -->
+
+<div class="col-lg-4">
+
+<div class="application-card">
+
+<div class="application-icon">
+
+<i class="bi bi-thermometer-half"></i>
+
+</div>
+
+<h4>
+
+Heat Generation Prediction
+
+</h4>
+
+<p>
+
+Accurate prediction of battery Heat Generation Rate
+(HGR) under varying operating conditions using
+experimentally trained Machine Learning models.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Card 2 -->
+
+<div class="col-lg-4">
+
+<div class="application-card">
+
+<div class="application-icon">
+
+<i class="bi bi-cpu-fill"></i>
+
+</div>
+
+<h4>
+
+Battery Management System
+
+</h4>
+
+<p>
+
+Computationally efficient models suitable for
+real-time implementation in Battery Management
+Systems (BMS).
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Card 3 -->
+
+<div class="col-lg-4">
+
+<div class="application-card">
+
+<div class="application-icon">
+
+<i class="bi bi-ev-front-fill"></i>
+
+</div>
+
+<h4>
+
+Electric Vehicles
+
+</h4>
+
+<p>
+
+Prediction of battery thermal behaviour during
+dynamic EV drive cycles for improved safety and
+performance.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Card 4 -->
+
+<div class="col-lg-4">
+
+<div class="application-card">
+
+<div class="application-icon">
+
+<i class="bi bi-lightning-charge-fill"></i>
+
+</div>
+
+<h4>
+
+Fast Charging
+
+</h4>
+
+<p>
+
+Intelligent prediction of heat generation during
+high-rate charging for optimized charging
+strategies.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Card 5 -->
+
+<div class="col-lg-4">
+
+<div class="application-card">
+
+<div class="application-icon">
+
+<i class="bi bi-graph-up-arrow"></i>
+
+</div>
+
+<h4>
+
+Battery Health
+
+</h4>
+
+<p>
+
+Machine learning assists in monitoring battery
+health and degradation using experimental data.
+
+</p>
+
+</div>
+
+</div>
+
+<!-- Card 6 -->
+
+<div class="col-lg-4">
+
+<div class="application-card">
+
+<div class="application-icon">
+
+<i class="bi bi-shield-check"></i>
+
+</div>
+
+<h4>
+
+Safety Analysis
+
+</h4>
+
+<p>
+
+Prediction of abnormal thermal behaviour and
+support for thermal runaway prevention.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+Advantages
+======================================================= -->
+
+<section class="section-space">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Advantages of Machine Learning
+
+</h2>
+
+</div>
+
+<div class="row">
+
+<div class="col-lg-6">
+
+<ul class="advantage-list">
+
+<li>Fast computational prediction</li>
+
+<li>Excellent nonlinear approximation capability</li>
+
+<li>Reduced computational cost</li>
+
+<li>Suitable for real-time implementation</li>
+
+<li>Improved prediction accuracy</li>
+
+<li>Capability to learn directly from experiments</li>
+
+</ul>
+
+</div>
+
+<div class="col-lg-6">
+
+<ul class="advantage-list">
+
+<li>Supports Battery Management Systems</li>
+
+<li>Handles large experimental datasets</li>
+
+<li>Explainable AI using SHAP analysis</li>
+
+<li>Automatic equation discovery using PySR</li>
+
+<li>Supports battery digital twin development</li>
+
+<li>Scalable for future battery technologies</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+Research Publications
+======================================================= -->
+
+<!-- =======================================================
+Related Publications
+======================================================= -->
+
+<section class="publication-section bg-light py-5">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+                Related Publications
+            </h2>
+
+            <p class="section-subtitle">
+                Research articles associated with Machine Learning,
+                Heat Generation Prediction and Battery Thermal
+                Management.
+            </p>
+
+        </div>
+
+        <!-- Publications -->
+
+        <div class="row justify-content-center g-4">
+
+            <!-- Publication 1 -->
+
+            <div class="col-md-6 col-lg-5">
+
+                <div class="publication-card h-100">
+
+                    <img src="../../assets/images/publications/paper3.png"
+                         class="img-fluid rounded publication-image"
+                         alt="Energy Journal">
+
+                    <div class="publication-content">
+
+                        <span class="journal-badge">
+
+                            <i class="bi bi-journal-text"></i>
+                            Energy • 2025
+
+                        </span>
+
+                        <h4>
+
+                            Machine Learning-Based Heat Generation Prediction
+
+                        </h4>
+
+                        <p>
+
+                            Developed an accurate machine learning correlation for
+                            estimating Heat Generation Rate (HGR) using
+                            experimentally measured calorimetric datasets for
+                            lithium-ion batteries.
+
+                        </p>
+
+                        <div class="topic-tags">
+
+                            <span>Machine Learning</span>
+                            <span>Heat Generation</span>
+                            <span>FNN, LSTM, SVM</span>
+                            <span>PySR genetic algorithm</span>
+                            <span>Battery Thermal Management</span>
+
+                        </div>
+
+                        <a href="../publications/publications.html"
+                           class="btn btn-primary mt-3">
+
+                            <i class="bi bi-arrow-right-circle"></i>
+                            View Publication
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Publication 2 -->
+
+            <div class="col-md-6 col-lg-5">
+
+                <div class="publication-card h-100">
+
+                    <img src="../../assets/images/publications/paper5.png"
+                         class="img-fluid rounded publication-image"
+                         alt="IJTS">
+
+                    <div class="publication-content">
+
+                        <span class="journal-badge">
+
+                            <i class="bi bi-journal-text"></i>
+                            IJTS • 2026
+
+                        </span>
+
+                        <h4>
+
+                            Symbolic Regression for Battery Heat Prediction
+
+                        </h4>
+
+                        <p>
+
+                            Proposed a multistage symbolic regression framework to
+                            derive compact and interpretable equations for
+                            estimating battery Heat Generation Rate under
+                            varying operating conditions.
+
+                        </p>
+
+                        <div class="topic-tags">
+
+                            <span>Symbolic Regression</span>
+                            <span>Explainable AI</span>
+                            <span>Battery Modelling</span>
+
+                        </div>
+
+                        <a href="../publications/publications.html"
+                           class="btn btn-primary mt-3">
+
+                            <i class="bi bi-arrow-right-circle"></i>
+                            View Publication
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+Future Scope
+======================================================= -->
+
+<section class="section-space">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Future Research Directions
+
+</h2>
+
+</div>
+
+<div class="future-box">
+
+<ul>
+
+<li>Physics-informed Machine Learning models.</li>
+
+<li>Hybrid Electrochemical–Machine Learning models.</li>
+
+<li>Battery Digital Twin development.</li>
+
+<li>Real-time onboard Battery Management Systems.</li>
+
+<li>AI-assisted fast charging optimization.</li>
+
+<li>Battery ageing prediction.</li>
+
+<li>Large Language Models for battery diagnostics.</li>
+
+<li>Next-generation explainable Artificial Intelligence.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- =======================================================
+Footer
+======================================================= -->
+
+<div id="footer"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<script src="../../assets/js/include.js"></script>
+
+</body>
+
+</html>
+

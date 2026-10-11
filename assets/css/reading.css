@@ -1,0 +1,831 @@
+/* =========================================================
+   READING PAGE
+   Vijay Kumar Personal Website
+========================================================= */
+
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
+.reading-hero,
+.books-section,
+.reading-lessons,
+.reading-quote,
+.reading-footer {
+
+    font-family: "Poppins", sans-serif;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.reading-hero {
+
+    padding-top: 155px;
+    padding-bottom: 100px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5f8fc 0%,
+            #ffffff 55%,
+            #eef4ff 100%
+        );
+
+    position: relative;
+
+}
+
+
+.reading-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+
+    background: rgba(20, 73, 151, 0.06);
+
+    right: 8%;
+    top: 100px;
+
+    z-index: 0;
+
+}
+
+
+.reading-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+}
+
+
+.reading-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #164997;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+
+}
+
+
+.reading-hero h1 {
+
+    font-size: clamp(42px, 6vw, 72px);
+
+    line-height: 1.08;
+
+    font-weight: 700;
+
+    color: #164997;
+
+    margin-bottom: 25px;
+
+}
+
+
+.reading-hero p {
+
+    max-width: 700px;
+
+    font-size: 20px;
+
+    line-height: 1.8;
+
+    color: #626a75;
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.books-section {
+
+    padding: 100px 0;
+
+    background: #ffffff;
+
+}
+
+
+.section-heading {
+
+    max-width: 760px;
+
+    margin: 0 auto 55px;
+
+}
+
+
+.section-label {
+
+    display: block;
+
+    color: #164997;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.section-heading h2 {
+
+    color: #164997;
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+
+.section-heading p {
+
+    color: #6b7078;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    margin-bottom: 0;
+
+}
+
+
+/* =========================================================
+   BOOK CARD
+========================================================= */
+
+.book-card {
+
+    height: 100%;
+
+    background: #ffffff;
+
+    border: 1px solid #e8ebef;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+
+}
+
+
+.book-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 50px rgba(20, 73, 151, 0.14);
+
+}
+
+
+/* =========================================================
+   BOOK IMAGE
+========================================================= */
+
+.book-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 520px;
+    background: #ffffff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.book-card:hover .book-image {
+    transform: scale(1.02);
+}
+
+@media (max-width: 991px) {
+
+    .book-image-wrapper {
+        height: 400px;
+    }
+
+}
+
+@media (max-width: 767px) {
+
+    .book-image-wrapper {
+        height: 380px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .book-image-wrapper {
+        height: 340px;
+    }
+
+}
+
+
+.book-number {
+
+    position: absolute;
+
+    top: 18px;
+
+    right: 18px;
+
+    width: 44px;
+
+    height: 44px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    color: #164997;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* =========================================================
+   BOOK CONTENT
+========================================================= */
+
+.book-content {
+
+    padding: 30px;
+
+}
+
+
+.book-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-bottom: 14px;
+
+}
+
+
+.book-tags span {
+
+    padding: 5px 10px;
+
+    border-radius: 30px;
+
+    background: #eef4ff;
+
+    color: #164997;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.8px;
+
+}
+
+
+.book-content h3 {
+
+    color: #20242a;
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    margin-bottom: 8px;
+
+}
+
+
+.book-author {
+
+    color: #7a7f87;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* =========================================================
+   BOOK SUMMARY
+========================================================= */
+
+.book-summary {
+
+    padding-bottom: 22px;
+
+    border-bottom: 1px solid #e9edf2;
+
+}
+
+
+.book-summary strong {
+
+    display: block;
+
+    color: #164997;
+
+    font-size: 12px;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.book-summary p {
+
+    color: #626871;
+
+    font-size: 14px;
+
+    line-height: 1.75;
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   TAKEAWAY
+========================================================= */
+
+.book-takeaway {
+
+    padding-top: 22px;
+
+}
+
+
+.book-takeaway span {
+
+    display: block;
+
+    color: #c58b00;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.3px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.book-takeaway p {
+
+    color: #30353b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    font-weight: 500;
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   SECOND ROW
+========================================================= */
+
+.books-section .col-lg-5 {
+
+    max-width: 480px;
+
+}
+
+
+/* =========================================================
+   READING LESSONS
+========================================================= */
+
+.reading-lessons {
+
+    padding: 100px 0;
+
+    background: #f6f8fb;
+
+}
+
+
+.lesson-card {
+
+    height: 100%;
+
+    position: relative;
+
+    padding: 38px 32px;
+
+    background: #ffffff;
+
+    border-radius: 20px;
+
+    border: 1px solid #e9edf2;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.lesson-card:hover {
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(20, 73, 151, 0.10);
+
+}
+
+
+.lesson-icon {
+
+    width: 58px;
+
+    height: 58px;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eef4ff;
+
+    color: #164997;
+
+    font-size: 25px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.lesson-number {
+
+    position: absolute;
+
+    right: 28px;
+
+    top: 28px;
+
+    color: #d9dfe8;
+
+    font-size: 34px;
+
+    font-weight: 700;
+
+}
+
+
+.lesson-card h3 {
+
+    color: #20242a;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+
+}
+
+
+.lesson-card p {
+
+    color: #6b7078;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    margin: 0;
+
+}
+
+
+/* =========================================================
+   QUOTE SECTION
+========================================================= */
+
+.reading-quote {
+
+    padding: 100px 0;
+
+    background: #ffffff;
+
+}
+
+
+.quote-box {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    text-align: center;
+
+    padding: 65px 40px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123f87,
+            #164997
+        );
+
+    color: #ffffff;
+
+    box-shadow: 0 20px 50px rgba(20, 73, 151, 0.18);
+
+}
+
+
+.quote-icon {
+
+    display: block;
+
+    font-size: 45px;
+
+    opacity: 0.45;
+
+    margin-bottom: 15px;
+
+}
+
+
+.quote-box h2 {
+
+    max-width: 700px;
+
+    margin: 0 auto 20px;
+
+    font-size: 32px;
+
+    line-height: 1.4;
+
+    font-weight: 600;
+
+}
+
+
+.quote-box p {
+
+    max-width: 650px;
+
+    margin: 0 auto 25px;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    opacity: 0.85;
+
+}
+
+
+.quote-box span {
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    opacity: 0.9;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.reading-footer {
+
+    padding: 25px 0;
+
+    background: #0f3d82;
+
+    color: rgba(255, 255, 255, 0.75);
+
+}
+
+
+.reading-footer p {
+
+    margin: 0;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .reading-hero {
+
+        padding-top: 130px;
+
+        padding-bottom: 75px;
+
+    }
+
+
+    .reading-hero h1 {
+
+        font-size: 50px;
+
+    }
+
+
+    .book-image-wrapper {
+
+        height: 300px;
+
+    }
+
+}
+
+
+@media (max-width: 767px) {
+
+    .reading-hero {
+
+        padding-top: 120px;
+
+        padding-bottom: 65px;
+
+    }
+
+
+    .reading-hero h1 {
+
+        font-size: 40px;
+
+    }
+
+
+    .reading-hero p {
+
+        font-size: 16px;
+
+    }
+
+
+    .books-section,
+    .reading-lessons,
+    .reading-quote {
+
+        padding: 70px 0;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size: 32px;
+
+    }
+
+
+    .book-image-wrapper {
+
+        height: 360px;
+
+    }
+
+
+    .book-content {
+
+        padding: 25px;
+
+    }
+
+
+    .quote-box {
+
+        padding: 45px 25px;
+
+    }
+
+
+    .quote-box h2 {
+
+        font-size: 25px;
+
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .reading-hero h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .book-image-wrapper {
+
+        height: 320px;
+
+    }
+
+
+    .book-content h3 {
+
+        font-size: 21px;
+
+    }
+
+}

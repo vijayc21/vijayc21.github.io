@@ -1,0 +1,1860 @@
+/* =========================================================
+   TRAVEL MEMORIES
+   Vijay Kumar Chauhan
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --travel-blue: #1554a5;
+    --travel-blue-dark: #103f82;
+    --travel-blue-light: #eaf2ff;
+
+    --travel-text: #1f2b3d;
+    --travel-muted: #66758c;
+
+    --travel-bg: #f5f8fc;
+    --travel-white: #ffffff;
+
+    --travel-border: #dbe5f1;
+
+    --travel-shadow:
+        0 12px 35px rgba(24, 62, 105, 0.08);
+
+    --travel-radius: 22px;
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    margin: 0;
+
+    font-family: "Poppins", sans-serif;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f7faff 0%,
+            #f4f7fb 100%
+        );
+
+    color: var(--travel-text);
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.travel-hero {
+
+    position: relative;
+
+    min-height: 390px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        100px 20px
+        80px;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #0d438e,
+            #236bc2
+        );
+
+}
+
+
+/* Decorative background circles */
+
+.travel-hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 420px;
+
+    height: 420px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.07);
+
+    top: -220px;
+
+    left: -100px;
+
+}
+
+
+.travel-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.06);
+
+    right: -160px;
+
+    bottom: -300px;
+
+}
+
+
+/* Hero overlay */
+
+.travel-hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(10,55,120,0.35),
+            rgba(24,96,180,0.10)
+        );
+
+}
+
+
+/* Hero content */
+
+.travel-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 850px;
+
+}
+
+
+.travel-tag {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        7px 16px;
+
+    margin-bottom: 18px;
+
+    border:
+        1px solid rgba(255,255,255,0.35);
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.10);
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.8px;
+
+    text-transform: uppercase;
+
+}
+
+
+.travel-hero h1 {
+
+    margin: 0;
+
+    color: #ffffff;
+
+    font-size:
+        clamp(38px, 5vw, 64px);
+
+    font-weight: 800;
+
+    line-height: 1.12;
+
+    letter-spacing: -1.5px;
+
+}
+
+
+.travel-hero p {
+
+    max-width: 720px;
+
+    margin:
+        20px auto 0;
+
+    color:
+        rgba(255,255,255,0.88);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.travel-main {
+
+    padding:
+        60px 20px 90px;
+
+    background:
+        #f5f8fc;
+
+}
+
+
+.travel-container {
+
+    width:
+        min(1180px, 100%);
+
+    margin:
+        0 auto;
+
+}
+
+
+/* =========================================================
+   CATEGORY SWITCH
+========================================================= */
+
+.travel-category-switch {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-bottom: 42px;
+
+}
+
+
+.travel-category-btn {
+
+    min-width: 170px;
+
+    padding:
+        13px 22px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    border:
+        1px solid var(--travel-border);
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color:
+        var(--travel-text);
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.travel-category-btn i {
+
+    font-size: 16px;
+
+}
+
+
+.travel-category-btn:hover {
+
+    border-color:
+        var(--travel-blue);
+
+    color:
+        var(--travel-blue);
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.travel-category-btn.active {
+
+    background:
+        var(--travel-blue);
+
+    border-color:
+        var(--travel-blue);
+
+    color:
+        #ffffff;
+
+    box-shadow:
+        0 8px 20px
+        rgba(21,84,165,0.20);
+
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.travel-category {
+
+    display: none;
+
+}
+
+
+.travel-category.active-category {
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   TRIP CARD
+========================================================= */
+
+.trip-card {
+
+    margin-bottom: 32px;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.35fr)
+        minmax(300px, 0.65fr);
+
+    gap: 0;
+
+    background:
+        var(--travel-white);
+
+    border:
+        1px solid var(--travel-border);
+
+    border-radius:
+        var(--travel-radius);
+
+    overflow: hidden;
+
+    box-shadow:
+        var(--travel-shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.trip-card:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 18px 45px
+        rgba(24,62,105,0.12);
+
+}
+
+
+/* =========================================================
+   TRIP GALLERY
+   Show only 5 preview photos
+========================================================= */
+
+.trip-gallery {
+
+    height: 500px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.35fr
+        0.675fr
+        0.675fr;
+
+    grid-template-rows:
+        repeat(2, 1fr);
+
+    gap: 4px;
+
+    background: #edf2f7;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   ONLY FIRST 5 PHOTOS VISIBLE
+========================================================= */
+
+.trip-gallery .trip-image:nth-child(n + 6) {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   NORMAL IMAGE
+========================================================= */
+
+.trip-image {
+
+    position: relative;
+
+    min-width: 0;
+
+    min-height: 0;
+
+    overflow: hidden;
+
+    background: #e5ebf3;
+
+}
+
+
+.trip-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.4s ease;
+
+}
+
+
+.trip-image:hover img {
+
+    transform:
+        scale(1.05);
+
+    filter:
+        brightness(0.93);
+
+}
+
+
+/* =========================================================
+   LARGE FEATURE IMAGE
+
+   FIX: this rule was previously declared TWICE with
+   conflicting values (grid-row: 1 / 3 and 1 / 4).
+   .trip-gallery only has 2 rows defined
+   (grid-template-rows: repeat(2, 1fr)), so the large
+   image must span exactly those 2 rows: 1 / 3.
+   The duplicate "1 / 4" declaration has been removed.
+========================================================= */
+
+.trip-image-large {
+
+    grid-row:
+        1 / 3;
+
+}
+
+
+/* =========================================================
+   IMAGE LABEL
+========================================================= */
+
+.image-label {
+
+    position: absolute;
+
+    left: 14px;
+
+    bottom: 14px;
+
+    z-index: 3;
+
+    padding:
+        7px 13px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(21,44,73,0.82);
+
+    color:
+        #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    backdrop-filter:
+        blur(6px);
+
+}
+
+
+/* =========================================================
+   PHOTO COUNT
+========================================================= */
+
+.photo-count {
+
+    position: absolute;
+
+    right: 12px;
+
+    bottom: 12px;
+
+    z-index: 3;
+
+    padding:
+        6px 11px;
+
+    border-radius:
+        999px;
+
+    background:
+        rgba(25,43,68,0.82);
+
+    color:
+        #ffffff;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    backdrop-filter:
+        blur(6px);
+
+}
+
+
+/* =========================================================
+   TRIP CONTENT
+========================================================= */
+
+.trip-content {
+
+    padding:
+        38px 34px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+}
+
+
+.trip-topline {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 12px;
+
+    margin-bottom: 14px;
+
+}
+
+
+.trip-location {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    color:
+        var(--travel-blue);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+}
+
+
+.trip-location i {
+
+    font-size: 13px;
+
+}
+
+
+.trip-year {
+
+    padding:
+        5px 10px;
+
+    border-radius:
+        999px;
+
+    background:
+        var(--travel-blue-light);
+
+    color:
+        var(--travel-blue);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+}
+
+
+.trip-content h2 {
+
+    margin:
+        0 0 13px;
+
+    color:
+        #1c2940;
+
+    font-size: 28px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        -0.5px;
+
+}
+
+
+.trip-content p {
+
+    margin:
+        0 0 20px;
+
+    color:
+        var(--travel-muted);
+
+    font-size: 13px;
+
+    line-height: 1.8;
+
+}
+
+
+/* =========================================================
+   PLACES LIST
+========================================================= */
+
+.places-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+}
+
+
+.places-list span {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    padding:
+        6px 10px;
+
+    border:
+        1px solid #dce7f4;
+
+    border-radius:
+        999px;
+
+    background:
+        #f7faff;
+
+    color:
+        #52637c;
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    transition:
+        all 0.2s ease;
+
+}
+
+
+.places-list span:hover {
+
+    background:
+        var(--travel-blue-light);
+
+    border-color:
+        #bfd4f1;
+
+    color:
+        var(--travel-blue);
+
+}
+
+
+/* =========================================================
+   INTERNATIONAL EMPTY
+========================================================= */
+
+.international-empty {
+
+    min-height: 430px;
+
+    padding:
+        70px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid var(--travel-border);
+
+    border-radius:
+        var(--travel-radius);
+
+    box-shadow:
+        var(--travel-shadow);
+
+}
+
+
+.international-icon {
+
+    width: 72px;
+
+    height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    border-radius: 20px;
+
+    background:
+        var(--travel-blue-light);
+
+    color:
+        var(--travel-blue);
+
+    font-size: 30px;
+
+}
+
+
+.international-empty .travel-tag {
+
+    margin-bottom: 15px;
+
+    background:
+        var(--travel-blue-light);
+
+    border-color:
+        #cbdcf3;
+
+    color:
+        var(--travel-blue);
+
+}
+
+
+.international-empty h2 {
+
+    margin:
+        0 0 12px;
+
+    color:
+        #1d2b42;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+}
+
+
+.international-empty p {
+
+    max-width: 550px;
+
+    margin:
+        0;
+
+    color:
+        var(--travel-muted);
+
+    font-size: 14px;
+
+    line-height: 1.8;
+
+}
+
+
+.international-line {
+
+    width: 70px;
+
+    height: 3px;
+
+    margin:
+        25px 0 15px;
+
+    border-radius: 999px;
+
+    background:
+        var(--travel-blue);
+
+}
+
+
+.international-empty > span:last-child {
+
+    color:
+        var(--travel-blue);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing:
+        1px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   IMAGE LOADING / BROKEN IMAGE PROTECTION
+========================================================= */
+
+.trip-image img {
+
+    background:
+        linear-gradient(
+            135deg,
+            #e9eff6,
+            #dfe7f1
+        );
+
+}
+
+
+/*
+   If an image cannot be loaded, keep the
+   gallery cell visually consistent.
+*/
+
+.trip-image img[src=""] {
+
+    display: none;
+
+}
+
+
+/* =========================================================
+   VIEW MEMORIES BUTTON
+========================================================= */
+
+.trip-action {
+
+    margin-top: 26px;
+
+}
+
+
+.view-memory-btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    padding:
+        11px 18px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1554a5,
+            #276dcc
+        );
+
+    color: #ffffff;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 18px
+        rgba(21,84,165,0.18);
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.view-memory-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 24px
+        rgba(21,84,165,0.25);
+
+}
+
+
+.view-memory-btn i {
+
+    font-size: 14px;
+
+}
+
+
+.view-memory-btn i:last-child {
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .trip-card {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .trip-gallery {
+
+        min-height: 500px;
+
+    }
+
+
+    .trip-content {
+
+        padding:
+            30px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .travel-hero {
+
+        min-height: 330px;
+
+        padding:
+            100px 20px 65px;
+
+    }
+
+
+    .travel-main {
+
+        padding:
+            45px 16px 70px;
+
+    }
+
+
+    .travel-category-switch {
+
+        margin-bottom: 30px;
+
+    }
+
+
+    .trip-gallery {
+
+        min-height: 430px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+
+   FIX: this block previously contained a nested
+   @media (max-width: 420px) { ... } rule, which is
+   invalid outside browsers with native CSS nesting
+   support and conflicted with a second, separate
+   420px block later in the file. That nested block
+   has been removed from here and merged into the
+   single "VERY SMALL MOBILE" block below instead.
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .travel-hero {
+
+        min-height: 300px;
+
+        padding:
+            90px 18px 55px;
+
+    }
+
+
+    .travel-hero h1 {
+
+        font-size: 36px;
+
+        letter-spacing:
+            -0.8px;
+
+    }
+
+
+    .travel-hero p {
+
+        font-size: 13px;
+
+        line-height:
+            1.7;
+
+    }
+
+
+    .travel-category-switch {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 1fr;
+
+        gap: 8px;
+
+    }
+
+
+    .travel-category-btn {
+
+        min-width: 0;
+
+        width: 100%;
+
+        padding:
+            11px 12px;
+
+        font-size: 12px;
+
+    }
+
+
+    .trip-card {
+
+        border-radius:
+            17px;
+
+        margin-bottom:
+            24px;
+
+    }
+
+
+    .trip-content {
+
+        padding:
+            24px 20px 26px;
+
+    }
+
+
+    .trip-content h2 {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .trip-content p {
+
+        font-size:
+            12px;
+
+    }
+
+
+    .places-list span {
+
+        font-size:
+            9px;
+
+        padding:
+            5px 8px;
+
+    }
+
+
+    .international-empty {
+
+        min-height:
+            350px;
+
+        padding:
+            50px 20px;
+
+    }
+
+
+    .international-empty h2 {
+
+        font-size:
+            25px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   (single, merged 420px breakpoint — see note above)
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .travel-category-switch {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .trip-gallery {
+
+        height: 320px;
+
+        grid-template-columns:
+            1.3fr 0.7fr;
+
+        grid-template-rows:
+            repeat(3, 105px);
+
+    }
+
+
+    .trip-image-large {
+
+        grid-row:
+            1 / 3;
+
+    }
+
+
+    .trip-content {
+
+        padding:
+            21px 17px;
+
+    }
+
+
+    .trip-topline {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .trip-content h2 {
+
+        font-size:
+            22px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .trip-card,
+    .trip-image img,
+    .travel-category-btn,
+    .places-list span {
+
+        transition: none;
+
+    }
+
+}
+
+/* =========================================================
+   TRAVEL LIGHTBOX
+========================================================= */
+
+.travel-lightbox {
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 30px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease;
+
+}
+
+
+/* =========================================================
+   ACTIVE LIGHTBOX
+========================================================= */
+
+.travel-lightbox.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+
+}
+
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.travel-lightbox-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        rgba(7, 18, 35, 0.88);
+
+    backdrop-filter:
+        blur(7px);
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.travel-lightbox-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1100px, 94vw);
+
+    height:
+        min(760px, 90vh);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.lightbox-image-wrapper {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        35px 70px 85px;
+
+}
+
+
+.lightbox-image-wrapper img {
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+    width: auto;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 20px 60px
+        rgba(0,0,0,0.35);
+
+}
+
+
+/* =========================================================
+   CLOSE BUTTON
+========================================================= */
+
+.lightbox-close {
+
+    position: absolute;
+
+    top: 5px;
+
+    right: 5px;
+
+    z-index: 5;
+
+    width: 44px;
+
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid
+        rgba(255,255,255,0.20);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    color: #ffffff;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.lightbox-close:hover {
+
+    background:
+        rgba(255,255,255,0.22);
+
+    transform:
+        rotate(90deg);
+
+}
+
+
+/* =========================================================
+   PREVIOUS / NEXT
+========================================================= */
+
+.lightbox-prev,
+.lightbox-next {
+
+    position: absolute;
+
+    top: 50%;
+
+    z-index: 5;
+
+    width: 50px;
+
+    height: 50px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border: 1px solid
+        rgba(255,255,255,0.20);
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,255,255,0.12);
+
+    color: #ffffff;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transform:
+        translateY(-50%);
+
+    transition:
+        all 0.25s ease;
+
+}
+
+
+.lightbox-prev {
+
+    left: 5px;
+
+}
+
+
+.lightbox-next {
+
+    right: 5px;
+
+}
+
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+
+    background:
+        rgba(255,255,255,0.24);
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+
+}
+
+
+/* =========================================================
+   INFORMATION
+========================================================= */
+
+.lightbox-info {
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: 15px;
+
+    z-index: 5;
+
+    transform:
+        translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    white-space: nowrap;
+
+}
+
+
+.lightbox-counter {
+
+    padding:
+        6px 11px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255,255,255,0.14);
+
+    color: #ffffff;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+}
+
+
+.lightbox-caption {
+
+    color:
+        rgba(255,255,255,0.88);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+}
+
+
+/* =========================================================
+   BODY WHEN LIGHTBOX IS OPEN
+========================================================= */
+
+body.travel-lightbox-open {
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   VIEW MEMORY BUTTON
+========================================================= */
+
+.trip-action {
+
+    position: relative;
+
+    z-index: 10;
+
+    margin-top: 26px;
+
+}
+
+
+.view-memory-btn {
+
+    position: relative;
+
+    z-index: 11;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    min-height: 42px;
+
+    padding:
+        11px 18px;
+
+    border:
+        1px solid transparent;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1554a5,
+            #276dcc
+        );
+
+    color: #ffffff;
+
+    font-family:
+        "Poppins",
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    user-select: none;
+
+    box-shadow:
+        0 7px 18px
+        rgba(21,84,165,0.18);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+
+}
+
+
+.view-memory-btn:hover {
+
+    transform:
+        translateY(-2px);
+
+    background:
+        linear-gradient(
+            135deg,
+            #103f82,
+            #2163bd
+        );
+
+    box-shadow:
+        0 10px 24px
+        rgba(21,84,165,0.25);
+
+}
+
+
+.view-memory-btn:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+.view-memory-btn i {
+
+    font-size: 14px;
+
+}
+
+
+.view-memory-btn i:last-child {
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================================
+   MOBILE LIGHTBOX
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .travel-lightbox {
+
+        padding: 15px;
+
+    }
+
+
+    .travel-lightbox-content {
+
+        width: 100%;
+
+        height: 90vh;
+
+    }
+
+
+    .lightbox-image-wrapper {
+
+        padding:
+            45px 48px 80px;
+
+    }
+
+
+    .lightbox-prev,
+    .lightbox-next {
+
+        width: 42px;
+
+        height: 42px;
+
+        font-size: 16px;
+
+    }
+
+
+    .lightbox-prev {
+
+        left: 2px;
+
+    }
+
+
+    .lightbox-next {
+
+        right: 2px;
+
+    }
+
+
+    .lightbox-close {
+
+        top: 0;
+
+        right: 0;
+
+        width: 40px;
+
+        height: 40px;
+
+    }
+
+
+    .lightbox-info {
+
+        bottom: 10px;
+
+        gap: 8px;
+
+        max-width: 90%;
+
+    }
+
+
+    .lightbox-caption {
+
+        max-width: 190px;
+
+        overflow: hidden;
+
+        text-overflow: ellipsis;
+
+    }
+
+}

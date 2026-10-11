@@ -1,0 +1,943 @@
+/* =========================================================
+   EXPERIMENTAL FACILITIES
+========================================================= */
+
+.experimental-facilities {
+    padding: 90px 0;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.experimental-facilities .section-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 9px 20px;
+    margin-bottom: 14px;
+
+    background: #eaf2ff;
+    color: #0d47a1;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 50px;
+}
+
+
+.experimental-facilities .section-title {
+    color: #0d47a1;
+
+    font-size: 42px;
+    font-weight: 700;
+
+    margin-bottom: 16px;
+}
+
+
+.experimental-facilities .section-subtitle {
+    max-width: 900px;
+    margin: 0 auto;
+
+    color: #657080;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+
+/* =========================================================
+   INDIVIDUAL FACILITY ROW
+========================================================= */
+
+.facility-row {
+    position: relative;
+
+    padding: 55px 0;
+    margin-bottom: 25px !important;
+}
+
+
+/* subtle separator */
+
+.facility-row:not(:last-of-type)::after {
+    content: "";
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+
+    width: 90%;
+    height: 1px;
+
+    transform: translateX(-50%);
+
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #dce5f2,
+        transparent
+    );
+}
+
+
+
+/* =========================================================
+   FACILITY IMAGE
+========================================================= */
+
+.facility-image-wrapper {
+    position: relative;
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: #ffffff;
+
+    border: 1px solid #e3eaf4;
+    border-radius: 22px;
+
+    box-shadow:
+        0 18px 45px rgba(15, 52, 96, 0.12);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.facility-image-wrapper:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 25px 55px rgba(15, 52, 96, 0.18);
+}
+
+
+.experimental-image {
+    width: 100%;
+    height: 440px;
+
+    object-fit: contain;
+
+    background: #f8fafc;
+
+    border-radius: 14px;
+}
+
+
+/* image category label */
+
+.image-label {
+    position: absolute;
+
+    left: 28px;
+    bottom: 28px;
+
+    padding: 9px 17px;
+
+    background: rgba(13, 71, 161, 0.94);
+    color: #ffffff;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+
+
+/* =========================================================
+   FACILITY CATEGORY
+========================================================= */
+
+.facility-category {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 14px;
+
+    padding: 8px 16px;
+
+    background: #edf4ff;
+
+    color: #0d47a1;
+
+    border-radius: 30px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.facility-category i {
+    font-size: 15px;
+}
+
+
+
+/* =========================================================
+   FACILITY TITLE
+========================================================= */
+
+.facility-title {
+    color: #0d47a1;
+
+    font-size: 32px;
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    margin-bottom: 6px;
+}
+
+
+.facility-model {
+    color: #4772b8;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    margin-bottom: 20px;
+}
+
+
+.facility-text {
+    color: #555f6f;
+
+    font-size: 15.5px;
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+}
+
+
+
+/* =========================================================
+   FACILITY FEATURE GRID
+========================================================= */
+
+.facility-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+
+
+/* =========================================================
+   FACILITY FEATURE CARD
+========================================================= */
+
+.facility-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    min-height: 120px;
+
+    padding: 18px;
+
+    background: #f8fbff;
+
+    border: 1px solid #e1eaf6;
+
+    border-radius: 14px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.facility-item:hover {
+    transform: translateY(-4px);
+
+    border-color: #b9d1f5;
+
+    box-shadow:
+        0 12px 25px rgba(13, 71, 161, 0.08);
+}
+
+
+
+/* =========================================================
+   FACILITY ICON
+========================================================= */
+
+.facility-icon {
+    flex: 0 0 44px;
+
+    width: 44px;
+    height: 44px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #e5efff;
+
+    color: #0d47a1;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+}
+
+
+.facility-item h5 {
+    margin: 1px 0 6px;
+
+    color: #163c75;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.facility-item p {
+    margin: 0;
+
+    color: #6b7482;
+
+    font-size: 12.5px;
+    line-height: 1.55;
+}
+
+
+
+/* =========================================================
+   RESEARCH HIGHLIGHT BOX
+========================================================= */
+
+.highlight-box {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding: 20px 22px;
+
+    background: linear-gradient(
+        135deg,
+        #eef5ff,
+        #f8fbff
+    );
+
+    border-left: 4px solid #0d47a1;
+
+    border-radius: 0 14px 14px 0;
+}
+
+
+.highlight-icon {
+    flex: 0 0 42px;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #0d47a1;
+
+    color: #ffffff;
+
+    border-radius: 50%;
+
+    font-size: 18px;
+}
+
+
+.highlight-box h5 {
+    margin: 0 0 6px;
+
+    color: #0d47a1;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+.highlight-box p {
+    margin: 0;
+
+    color: #5d6878;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+
+/* =========================================================
+   TEMPERATURE RANGE
+========================================================= */
+
+.temperature-range-box {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 17px 20px;
+
+    background: #f5f9ff;
+
+    border: 1px solid #dce8f8;
+
+    border-radius: 14px;
+}
+
+
+.temperature-value {
+    min-width: 62px;
+
+    color: #0d47a1;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+.temperature-value:last-child {
+    text-align: right;
+}
+
+
+.temperature-line {
+    position: relative;
+
+    flex: 1;
+
+    height: 7px;
+
+    border-radius: 20px;
+
+    background: linear-gradient(
+        90deg,
+        #4ea1ff 0%,
+        #d8ecff 35%,
+        #ffd27a 70%,
+        #ff765f 100%
+    );
+}
+
+
+.temperature-line::before,
+.temperature-line::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 13px;
+    height: 13px;
+
+    transform: translateY(-50%);
+
+    background: #ffffff;
+
+    border: 3px solid #0d47a1;
+
+    border-radius: 50%;
+}
+
+
+.temperature-line::before {
+    left: -2px;
+}
+
+
+.temperature-line::after {
+    right: -2px;
+}
+
+
+.temperature-dot {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    width: 10px;
+    height: 10px;
+
+    transform: translate(-50%, -50%);
+
+    background: #0d47a1;
+
+    border-radius: 50%;
+}
+
+
+.temperature-caption {
+    margin-top: 8px;
+
+    text-align: center;
+
+    color: #788394;
+
+    font-size: 12px;
+}
+
+
+
+/* =========================================================
+   LABORATORY AFFILIATION BOX
+========================================================= */
+
+.laboratory-info-box {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 25px;
+
+    max-width: 1050px;
+
+    margin: 60px auto 0;
+
+    padding: 32px 38px;
+
+    background: linear-gradient(
+        135deg,
+        #0d47a1,
+        #2368c7
+    );
+
+    color: #ffffff;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 18px 45px rgba(13, 71, 161, 0.20);
+
+    overflow: hidden;
+}
+
+
+/* decorative circle */
+
+.laboratory-info-box::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: -55px;
+    top: -75px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.07);
+}
+
+
+
+/* =========================================================
+   LAB ICON
+========================================================= */
+
+.lab-info-icon {
+    flex: 0 0 75px;
+
+    width: 75px;
+    height: 75px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(255, 255, 255, 0.14);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    border-radius: 18px;
+
+    font-size: 31px;
+}
+
+
+.lab-label {
+    display: inline-block;
+
+    margin-bottom: 5px;
+
+    color: #d9e8ff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+}
+
+
+.laboratory-info-box h3 {
+    margin: 0 0 5px;
+
+    color: #ffffff;
+
+    font-size: 23px;
+    font-weight: 700;
+}
+
+
+.laboratory-info-box > div > p {
+    margin: 0;
+
+    color: #e4edfb;
+
+    font-size: 14px;
+}
+
+
+.laboratory-info-box .lab-description {
+    max-width: 780px;
+
+    margin-top: 10px;
+
+    color: rgba(255, 255, 255, 0.82);
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+
+/* =========================================================
+   RESPONSIVE - TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .experimental-facilities {
+        padding: 70px 0;
+    }
+
+
+    .experimental-facilities .section-title {
+        font-size: 36px;
+    }
+
+
+    .facility-row {
+        padding: 40px 0;
+    }
+
+
+    .facility-title {
+        font-size: 28px;
+    }
+
+
+    .experimental-image {
+        height: 380px;
+    }
+
+
+    .facility-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .laboratory-info-box {
+        margin-top: 45px;
+    }
+
+}
+
+
+
+/* =========================================================
+   RESPONSIVE - MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .experimental-facilities {
+        padding: 55px 0;
+    }
+
+
+    .experimental-facilities .section-title {
+        font-size: 30px;
+    }
+
+
+    .experimental-facilities .section-subtitle {
+        font-size: 15px;
+    }
+
+
+    .facility-row {
+        padding: 30px 0;
+    }
+
+
+    .facility-title {
+        font-size: 25px;
+    }
+
+
+    .experimental-image {
+        height: auto;
+        max-height: 400px;
+    }
+
+
+    .facility-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .facility-item {
+        min-height: auto;
+    }
+
+
+    .highlight-box {
+        padding: 18px;
+    }
+
+
+    .temperature-range-box {
+        padding: 15px;
+    }
+
+
+    .laboratory-info-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 28px 25px;
+    }
+
+
+    .laboratory-info-box h3 {
+        font-size: 20px;
+    }
+
+}
+
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .experimental-facilities .section-title {
+        font-size: 27px;
+    }
+
+
+    .facility-title {
+        font-size: 23px;
+    }
+
+
+    .facility-image-wrapper {
+        padding: 8px;
+
+        border-radius: 16px;
+    }
+
+
+    .experimental-image {
+        border-radius: 11px;
+    }
+
+
+    .image-label {
+        left: 20px;
+        bottom: 20px;
+
+        padding: 7px 13px;
+
+        font-size: 11px;
+    }
+
+
+    .temperature-value {
+        min-width: 50px;
+
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================================
+   TEMPERATURE & HUMIDITY CHAMBER
+   Larger Equipment Image
+========================================================= */
+
+.thermal-chamber-image-wrapper {
+    width: 100%;
+
+    padding: 10px;
+
+    background: #ffffff;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+}
+
+
+/* Make chamber image considerably larger */
+
+.thermal-chamber-image {
+    display: block;
+
+    width: 100%;
+
+    height: 600px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    background: #f8fafc;
+
+    border-radius: 15px;
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+========================================================= */
+
+@media (min-width: 1400px) {
+
+    .thermal-chamber-image {
+        height: 640px;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 991px) {
+
+    .thermal-chamber-image {
+        height: 550px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .thermal-chamber-image {
+        width: 100%;
+        height: auto;
+
+        max-height: none;
+
+        object-fit: contain;
+    }
+
+}
+
+/* =========================================================
+   ISOTHERMAL BATTERY CALORIMETER IMAGE
+========================================================= */
+
+.calorimeter-image-wrapper {
+    width: 100%;
+    height: 520px;
+
+    padding: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8fafc;
+
+    border: 1px solid #dce5f2;
+    border-radius: 22px;
+
+    overflow: hidden;
+}
+
+
+/* Actual calorimeter image */
+
+.calorimeter-image {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+
+    border-radius: 14px;
+}
+
+.calorimeter-image-wrapper {
+    height: 600px;
+    padding: 8px;
+}
+
+.calorimeter-image {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+    object-position: center;
+}
+

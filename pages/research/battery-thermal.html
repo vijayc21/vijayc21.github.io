@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Battery Thermal Management | Vijay Kumar Chauhan</title>
+
+<!-- Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Website CSS -->
+
+<link rel="stylesheet"
+      href="../../assets/css/style.css">
+
+<link rel="stylesheet"
+      href="../../assets/css/battery-thermal.css">
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div id="navbar-pages"></div>
+
+
+
+<!-- =========================================================
+     BATTERY THERMAL MANAGEMENT
+========================================================= -->
+
+<section class="btms-page">
+
+    <div class="container">
+
+
+        <!-- =====================================================
+             1. INTRODUCTION
+        ====================================================== -->
+
+        <section class="btms-intro">
+
+            <div class="section-heading text-center">
+
+                <span class="section-badge">
+                    Battery Thermal Management
+                </span>
+
+                <h2>
+                    Why Battery Thermal Management is Important
+                </h2>
+
+                <p class="section-subtitle">
+                    Understanding, measuring and controlling heat generation
+                    in lithium-ion batteries for safe and reliable operation.
+                </p>
+
+            </div>
+
+
+            <div class="row justify-content-center">
+
+                <div class="col-lg-10">
+
+                    <div class="btms-text-card">
+
+                        <p>
+                            Lithium-ion batteries generate heat during charging
+                            and discharging due to electrochemical and internal
+                            resistive processes. The thermal behaviour of a
+                            battery strongly influences its safety, performance,
+                            efficiency and operational life.
+                        </p>
+
+                        <p>
+                            Maintaining the battery within an appropriate
+                            temperature range is therefore an important
+                            requirement for reliable battery operation.
+                            Excessively low temperatures can increase internal
+                            resistance and adversely affect battery performance,
+                            while elevated temperatures can accelerate
+                            degradation and undesirable side reactions.
+                        </p>
+
+                        <p>
+                            Battery Thermal Management Systems (BTMS) are
+                            developed to control the thermal environment of
+                            battery cells and modules and to maintain suitable
+                            operating temperatures during different operating
+                            conditions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             2. OPERATING TEMPERATURE RANGE
+        ====================================================== -->
+
+        <section class="btms-figure-section">
+
+            <div class="section-heading">
+
+                <span class="section-badge">
+                    Thermal Behaviour
+                </span>
+
+                <h2>
+                    Battery Operating Temperature and Performance
+                </h2>
+
+            </div>
+
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-7">
+
+                    <div class="btms-image-card">
+
+                        <img src="../../assets/images/battery-thermal/safe-temperature.jpg"
+                             class="btms-main-image"
+                             alt="Battery temperature range and performance">
+
+                        <div class="image-caption">
+                            Operating temperature range and its influence on
+                            lithium-ion battery performance and safety.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-5">
+
+                    <div class="btms-content">
+
+                        <h3>
+                            Temperature strongly influences battery behaviour
+                        </h3>
+
+                        <p>
+                            Battery performance is strongly dependent on
+                            operating temperature. At low temperatures,
+                            electrochemical reactions become slower and
+                            internal resistance increases, which can reduce
+                            battery performance and charging capability.
+                        </p>
+
+                        <p>
+                            At elevated temperatures, unwanted side reactions
+                            and degradation mechanisms can become more
+                            significant. Excessive heating can further increase
+                            the risk of thermal instability and, under severe
+                            conditions, thermal runaway.
+                        </p>
+
+                        <div class="thermal-points">
+
+                            <div class="thermal-point">
+
+                                <div class="point-icon">
+                                    <i class="bi bi-snow"></i>
+                                </div>
+
+                                <div>
+                                    <h5>Low Temperature</h5>
+
+                                    <p>
+                                        Increased resistance and slower
+                                        electrochemical reactions.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="thermal-point">
+
+                                <div class="point-icon">
+                                    <i class="bi bi-thermometer-half"></i>
+                                </div>
+
+                                <div>
+                                    <h5>Optimal Region</h5>
+
+                                    <p>
+                                        Favourable operating conditions for
+                                        battery performance.
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <div class="thermal-point">
+
+                                <div class="point-icon">
+                                    <i class="bi bi-fire"></i>
+                                </div>
+
+                                <div>
+                                    <h5>High Temperature</h5>
+
+                                    <p>
+                                        Accelerated degradation and increased
+                                        thermal safety concerns.
+                                    </p>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             3. CLASSIFICATION OF BTMS
+        ====================================================== -->
+
+        <section class="btms-classification">
+
+            <div class="section-heading text-center">
+
+                <span class="section-badge">
+                    BTMS Technologies
+                </span>
+
+                <h2>
+                    Classification of Battery Thermal Management Systems
+                </h2>
+
+                <p class="section-subtitle">
+                    Thermal management approaches can broadly be classified
+                    into passive, active and hybrid techniques.
+                </p>
+
+            </div>
+
+
+            <div class="classification-image-card">
+
+                <img src="../../assets/images/battery-thermal/btms-classification.png"
+                     class="classification-image"
+                     alt="Classification of Battery Thermal Management Systems">
+
+                <p class="image-caption">
+                    Classification of battery thermal management techniques.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+                <!-- Passive -->
+
+                <div class="col-lg-4">
+
+                    <div class="btms-method-card">
+
+                        <div class="method-icon">
+                            <i class="bi bi-wind"></i>
+                        </div>
+
+                        <h3>
+                            Passive Methods
+                        </h3>
+
+                        <p>
+                            Passive thermal management approaches regulate
+                            battery temperature without requiring continuous
+                            external energy input for active cooling.
+                        </p>
+
+                        <ul>
+                            <li>Natural convection</li>
+                            <li>Heat-pipe-based systems</li>
+                            <li>Phase Change Material (PCM)</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Active -->
+
+                <div class="col-lg-4">
+
+                    <div class="btms-method-card">
+
+                        <div class="method-icon">
+                            <i class="bi bi-fan"></i>
+                        </div>
+
+                        <h3>
+                            Active Methods
+                        </h3>
+
+                        <p>
+                            Active systems employ an external mechanism to
+                            enhance heat transfer from the battery.
+                        </p>
+
+                        <ul>
+                            <li>Air-based cooling</li>
+                            <li>Liquid-based cooling</li>
+                            <li>Thermoelectric cooling</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Hybrid -->
+
+                <div class="col-lg-4">
+
+                    <div class="btms-method-card">
+
+                        <div class="method-icon">
+                            <i class="bi bi-diagram-3-fill"></i>
+                        </div>
+
+                        <h3>
+                            Hybrid Methods
+                        </h3>
+
+                        <p>
+                            Hybrid systems combine two or more thermal
+                            management mechanisms to improve heat transfer
+                            and temperature control.
+                        </p>
+
+                        <ul>
+                            <li>PCM + Air</li>
+                            <li>PCM + Liquid</li>
+                            <li>PCM + Heat Pipes</li>
+                        </ul>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             4. MY BTMS RESEARCH
+        ====================================================== -->
+
+        <section class="btms-project">
+
+            <div class="section-heading text-center">
+
+                <span class="section-badge">
+                    Current Research
+                </span>
+
+                <h2>
+                    Development of a Passive BTMS for an NMC Battery Module
+                </h2>
+
+                <p class="section-subtitle">
+                    Experimental characterization followed by passive thermal
+                    management design using a natural circulation loop.
+                </p>
+
+            </div>
+
+
+            <div class="project-overview-card">
+
+                <div class="row align-items-center g-5">
+
+                    <div class="col-lg-5">
+
+                        <!-- Replace with your battery module image -->
+
+                        <img src="../../assets/images/battery-thermal/battery-pack_1.jpg"
+                             class="project-image"
+                             alt="3S10P NMC battery module">
+
+                    </div>
+
+
+                    <div class="col-lg-7">
+
+                        <div class="project-content">
+
+                            <h3>
+                                3S10P NMC Battery Module
+                            </h3>
+
+                            <p>
+                                The thermal management system is being
+                                developed for a
+                                <strong>3S10P NMC lithium-ion battery module</strong>
+                                with a specified voltage of
+                                <strong>12.6 V</strong> and capacity of
+                                <strong>25 Ah</strong>.
+                            </p>
+
+                            <p>
+                                The research follows an experimental-to-design
+                                approach in which the heat generation
+                                characteristics of the battery module are first
+                                experimentally characterized. The measured
+                                thermal behaviour is then used as a basis for
+                                developing an appropriate passive thermal
+                                management strategy.
+                            </p>
+
+
+                            <div class="module-specifications">
+
+                                <div class="spec-item">
+
+                                    <span>
+                                        Configuration
+                                    </span>
+
+                                    <strong>
+                                        3S10P
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="spec-item">
+
+                                    <span>
+                                        Battery Chemistry
+                                    </span>
+
+                                    <strong>
+                                        NMC
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="spec-item">
+
+                                    <span>
+                                        Voltage
+                                    </span>
+
+                                    <strong>
+                                        12.6 V
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="spec-item">
+
+                                    <span>
+                                        Capacity
+                                    </span>
+
+                                    <strong>
+                                        25 Ah
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             5. HEAT GENERATION MEASUREMENT
+        ====================================================== -->
+
+        <section class="heat-generation">
+
+            <div class="section-heading">
+
+                <span class="section-badge">
+                    Experimental Characterization
+                </span>
+
+                <h2>
+                    Experimental Measurement of Battery Heat Generation
+                </h2>
+
+            </div>
+
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <div class="process-card">
+
+                        <div class="process-number">
+                            01
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Heat Generation Characterization
+                            </h3>
+
+                            <p>
+                                Before designing the thermal management
+                                system, the heat generation characteristics
+                                of the battery are experimentally measured.
+                            </p>
+
+                            <p>
+                                An
+                                <strong>isothermal battery calorimeter</strong>
+                                is used to directly characterize the heat
+                                released or absorbed by the battery under
+                                controlled operating conditions.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="research-highlight">
+
+                        <div class="highlight-icon">
+
+                            <i class="bi bi-thermometer-half"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Why measure heat generation first?
+                            </h4>
+
+                            <p>
+                                The experimentally measured thermal behaviour
+                                provides an important basis for understanding
+                                the thermal load that the BTMS needs to
+                                accommodate during battery operation.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="workflow-line">
+
+                <div class="workflow-step">
+
+                    <span>01</span>
+
+                    <strong>
+                        Battery Testing
+                    </strong>
+
+                </div>
+
+                <i class="bi bi-arrow-right"></i>
+
+                <div class="workflow-step">
+
+                    <span>02</span>
+
+                    <strong>
+                        Calorimetric Measurement
+                    </strong>
+
+                </div>
+
+                <i class="bi bi-arrow-right"></i>
+
+                <div class="workflow-step">
+
+                    <span>03</span>
+
+                    <strong>
+                        Heat Generation Characterization
+                    </strong>
+
+                </div>
+
+                <i class="bi bi-arrow-right"></i>
+
+                <div class="workflow-step">
+
+                    <span>04</span>
+
+                    <strong>
+                        BTMS Design
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+<!-- =====================================================
+     6. INFRARED THERMOGRAPHY
+====================================================== -->
+
+<section class="ir-thermography-section">
+
+    <div class="container">
+
+        <!-- SECTION HEADING -->
+
+        <div class="ir-heading text-center">
+
+            <span class="section-badge">
+                EXPERIMENTAL CHARACTERIZATION
+            </span>
+
+            <h2>
+                Infrared Thermography
+            </h2>
+
+            <p>
+                Thermal imaging during 1C discharge of the 3S10P
+                NMC battery module to visualize surface temperature
+                distribution and localized thermal variations.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             EXPERIMENTAL CONDITIONS
+        ================================================== -->
+
+        <div class="ir-info-bar">
+
+            <div class="ir-info-item">
+
+                <i class="bi bi-battery-half"></i>
+
+                <div>
+                    <small>Battery Module</small>
+                    <strong>3S10P NMC</strong>
+                </div>
+
+            </div>
+
+
+            <div class="ir-info-item">
+
+                <i class="bi bi-lightning-charge"></i>
+
+                <div>
+                    <small>Discharge Rate</small>
+                    <strong>1C</strong>
+                </div>
+
+            </div>
+
+
+            <div class="ir-info-item">
+
+                <i class="bi bi-camera"></i>
+
+                <div>
+                    <small>Measurement</small>
+                    <strong>Infrared Thermography</strong>
+                </div>
+
+            </div>
+
+
+            <div class="ir-info-item">
+
+                <i class="bi bi-thermometer-half"></i>
+
+                <div>
+                    <small>Parameter</small>
+                    <strong>Surface Temperature</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             FEATURED THERMAL IMAGE
+        ================================================== -->
+
+        <div class="ir-featured">
+
+            <div class="ir-featured-image">
+
+                <img
+                    src="../../assets/images/battery-thermal/ir-1c-discharge-01.png"
+                    alt="Infrared thermal image of 3S10P NMC battery module during 1C discharge">
+
+            </div>
+
+
+            <div class="ir-featured-caption">
+
+                <div>
+
+                    <span class="ir-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Thermal Distribution During Discharge
+                    </h3>
+
+                    <p>
+                        Infrared thermography reveals the surface
+                        temperature distribution of the battery module
+                        during controlled 1C discharge.
+                    </p>
+
+                </div>
+
+
+                <div class="ir-temperature">
+
+                    <i class="bi bi-thermometer-high"></i>
+
+                    <div>
+
+                        <small>
+                            Maximum Temperature
+                        </small>
+
+                        <strong>
+                            80.7°C
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             SUPPORTING THERMAL IMAGES
+        ================================================== -->
+
+        <div class="row g-4 mt-4">
+
+
+            <!-- IMAGE 02 -->
+
+            <div class="col-lg-6">
+
+                <div class="ir-small-card">
+
+                    <div class="ir-small-image">
+
+                        <img
+                            src="../../assets/images/battery-thermal/ir-1c-discharge-02.png"
+                            alt="Infrared thermal image of 3S10P NMC battery module">
+
+                        <span>
+                            02
+                        </span>
+
+                    </div>
+
+
+                    <div class="ir-small-content">
+
+                        <div>
+
+                            <h4>
+                                Module Temperature Distribution
+                            </h4>
+
+                            <p>
+                                Infrared view of the battery module
+                                showing spatial temperature variation.
+                            </p>
+
+                        </div>
+
+
+                        <strong class="small-temperature">
+                            61.0°C
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- IMAGE 03 -->
+
+            <div class="col-lg-6">
+
+                <div class="ir-small-card">
+
+                    <div class="ir-small-image">
+
+                        <img
+                            src="../../assets/images/battery-thermal/ir-1c-discharge-03.png"
+                            alt="Top-view infrared thermal image of 3S10P NMC battery module">
+
+                        <span>
+                            03
+                        </span>
+
+                    </div>
+
+
+                    <div class="ir-small-content">
+
+                        <div>
+
+                            <h4>
+                                Top-View Thermal Distribution
+                            </h4>
+
+                            <p>
+                                Top-view infrared image highlighting
+                                localized thermal regions within the module.
+                            </p>
+
+                        </div>
+
+
+                        <strong class="small-temperature">
+                            85.0°C
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             OBSERVATION
+        ================================================== -->
+
+        <div class="ir-observation">
+
+            <div class="ir-observation-icon">
+
+                <i class="bi bi-thermometer-half"></i>
+
+            </div>
+
+
+            <div>
+
+                <span>
+                    EXPERIMENTAL OBSERVATION
+                </span>
+
+                <p>
+                    The thermal images provide a visual representation
+                    of the surface temperature distribution and help
+                    identify localized thermal variations within the
+                    battery module. Such measurements are useful for
+                    understanding thermal behaviour and guiding the
+                    development of effective battery thermal management
+                    strategies.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- =====================================================
+             7. PASSIVE PCM-NCL BTMS
+        ====================================================== -->
+
+        <section class="pcm-ncl-section">
+
+            <div class="section-heading text-center">
+
+                <span class="section-badge">
+                    BTMS Development
+                </span>
+
+                <h2>
+                    PCM–NCL Passive Battery Thermal Management System
+                </h2>
+
+                <p class="section-subtitle">
+                    A passive thermal management approach based on phase
+                    change material and natural circulation.
+                </p>
+
+            </div>
+
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <!-- Replace with your PCM-NCL / BTMS figure -->
+
+                    <img src="../../assets/images/battery-thermal/pcm-ncl-btms.jpg"
+                         class="project-image"
+                         alt="PCM-NCL passive battery thermal management system">
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="pcm-content">
+
+                        <h3>
+                            Passive Cooling Without Additional Power
+                        </h3>
+
+                        <p>
+                            Based on the experimentally characterized heat
+                            generation of the battery module, a passive
+                            Battery Thermal Management System is being
+                            developed using a
+                            <strong>Phase Change Material (PCM)</strong>
+                            combined with a
+                            <strong>Natural Circulation Loop (NCL)</strong>.
+                        </p>
+
+                        <p>
+                            The objective is to manage the battery thermal load
+                            through passive heat-transfer mechanisms while
+                            avoiding the additional energy requirement
+                            associated with continuously operated active
+                            cooling components.
+                        </p>
+
+                        <div class="pcm-features">
+
+                            <div class="pcm-feature">
+
+                                <i class="bi bi-droplet-half"></i>
+
+                                <div>
+
+                                    <h5>
+                                        Phase Change Material
+                                    </h5>
+
+                                    <p>
+                                        Provides thermal energy storage through
+                                        phase change.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="pcm-feature">
+
+                                <i class="bi bi-arrow-repeat"></i>
+
+                                <div>
+
+                                    <h5>
+                                        Natural Circulation Loop
+                                    </h5>
+
+                                    <p>
+                                        Enables passive circulation for heat
+                                        transport without a dedicated pump.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="pcm-feature">
+
+                                <i class="bi bi-lightning-charge"></i>
+
+                                <div>
+
+                                    <h5>
+                                        Reduced Auxiliary Energy
+                                    </h5>
+
+                                    <p>
+                                        Designed to reduce the additional
+                                        energy burden associated with active
+                                        cooling.
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-status">
+
+                <i class="bi bi-hourglass-split"></i>
+
+                <div>
+
+                    <h4>
+                        Ongoing Research
+                    </h4>
+
+                    <p>
+                        The PCM–NCL thermal management system is currently
+                        under development. Detailed experimental results,
+                        thermal performance evaluation and comparative
+                        analysis will be added as the project progresses.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             8. BATTERY SAFETY / CATASTROPHIC CONDITIONS
+        ====================================================== -->
+
+        <section class="battery-safety">
+
+            <div class="section-heading text-center">
+
+                <span class="section-badge">
+                    Battery Safety
+                </span>
+
+                <h2>
+                    Thermal Safety and Abuse Conditions
+                </h2>
+
+                <p class="section-subtitle">
+                    Battery safety can be influenced by thermal, electrical
+                    and mechanical abuse conditions.
+                </p>
+
+            </div>
+
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-lg-6">
+
+                    <!-- Replace with your catastrophic abuse figure -->
+
+                    <img src="../../assets/images/battery-thermal/battery-abuse.jpg"
+                         class="safety-image"
+                         alt="Battery thermal electrical and mechanical abuse">
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="abuse-card">
+
+                        <div class="abuse-item">
+
+                            <div class="abuse-icon thermal">
+                                <i class="bi bi-fire"></i>
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Thermal Abuse
+                                </h4>
+
+                                <p>
+                                    Exposure to excessive temperature or
+                                    uncontrolled heating can lead to severe
+                                    thermal degradation and potentially
+                                    thermal runaway.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="abuse-item">
+
+                            <div class="abuse-icon electrical">
+                                <i class="bi bi-lightning-charge-fill"></i>
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Electrical Abuse
+                                </h4>
+
+                                <p>
+                                    Abnormal electrical operating conditions
+                                    can increase heat generation and create
+                                    battery safety concerns.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="abuse-item">
+
+                            <div class="abuse-icon mechanical">
+                                <i class="bi bi-tools"></i>
+                            </div>
+
+                            <div>
+
+                                <h4>
+                                    Mechanical Abuse
+                                </h4>
+
+                                <p>
+                                    Mechanical damage or deformation can
+                                    compromise cell integrity and contribute
+                                    to hazardous battery behaviour.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =====================================================
+             9. CURRENT RESEARCH STATUS
+        ====================================================== -->
+
+        <section class="research-status">
+
+            <div class="status-card">
+
+                <div class="status-icon">
+
+                    <i class="bi bi-graph-up-arrow"></i>
+
+                </div>
+
+                <div>
+
+                    <span class="status-label">
+                        Current Research Status
+                    </span>
+
+                    <h3>
+                        Experimental Characterization → BTMS Design
+                    </h3>
+
+                    <p>
+                        The current work focuses on experimentally
+                        characterizing battery heat generation and using the
+                        resulting thermal information to guide the development
+                        of a passive PCM–NCL Battery Thermal Management System
+                        for the 3S10P NMC battery module.
+                    </p>
+
+                    <p class="mb-0">
+                        Additional design details, experimental results and
+                        performance analysis will be added as the ongoing
+                        research progresses.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+Footer (Loaded Automatically)
+======================================================= -->
+
+<div id="footer"></div>
+
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Shared Components -->
+<script src="../../assets/js/include.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>IMESD-2023 Gallery | Vijay Kumar Chauhan</title>
+
+<!-- Bootstrap -->
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<!-- Main CSS -->
+
+<link rel="stylesheet" href="../../assets/css/style.css">
+
+<!-- Gallery CSS -->
+
+<link rel="stylesheet" href="../../assets/css/conference-gallery.css">
+
+</head>
+
+<body>
+
+<!-- =======================================================
+Navbar
+======================================================= -->
+
+<div id="navbar-pages"></div>
+
+
+<!-- =======================================================
+PAGE HEADER
+======================================================= -->
+
+<section class="page-header">
+
+<div class="container">
+
+<h1>
+IMESD-2023 Gallery
+</h1>
+
+<p>
+
+A collection of photographs captured during the
+2nd International Meeting on Energy Storage Devices
+(IMESD-2023) held at the Indian Institute of Technology
+Roorkee, India.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+Conference Information
+======================================================= -->
+
+<section class="conference-info-section">
+
+<div class="container">
+
+<div class="conference-info-card">
+
+<div class="row align-items-center">
+
+<div class="col-lg-8">
+
+<span class="conference-badge">
+
+International Conference
+
+</span>
+
+<h2>
+
+2nd International Meeting on Energy Storage Devices
+(IMESD-2023)
+
+</h2>
+
+<div class="conference-meta">
+
+<span>
+
+<i class="bi bi-geo-alt-fill"></i>
+
+IIT Roorkee, Uttarakhand, India
+
+</span>
+
+<span>
+
+<i class="bi bi-calendar-event-fill"></i>
+
+7–10 December 2023
+
+</span>
+
+
+
+<div class="col-lg-4 text-center">
+
+<div class="photo-count">
+
+
+
+<p>
+
+Conference Photos
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+PHOTO GALLERY
+======================================================= -->
+
+<section class="gallery-section">
+
+<div class="container">
+
+<div class="row g-4">
+
+<!-- ================= Photo 1 ================= -->
+
+<div class="col-xl-3 col-lg-4 col-md-6">
+
+<div class="gallery-card">
+
+<img src="../../assets/images/conferences/imesd2023/photo1.jpg"
+class="gallery-img"
+alt="IMESD Photo 1"
+onclick="openGallery(0)">
+
+</div>
+
+</div>
+
+
+
+<!-- ================= Photo 2 ================= -->
+
+<div class="col-xl-3 col-lg-4 col-md-6">
+
+<div class="gallery-card">
+
+<img src="../../assets/images/conferences/imesd2023/photo2.jpg"
+class="gallery-img"
+alt="IMESD Photo 2"
+onclick="openGallery(1)">
+
+</div>
+
+</div>
+
+
+
+<!-- ================= Photo 3 ================= -->
+
+<div class="col-xl-3 col-lg-4 col-md-6">
+
+<div class="gallery-card">
+
+<img src="../../assets/images/conferences/imesd2023/photo3.jpg"
+class="gallery-img"
+alt="IMESD Photo 3"
+onclick="openGallery(2)">
+
+</div>
+
+</div>
+
+
+
+<!-- ================= Photo 4 ================= -->
+
+<div class="col-xl-3 col-lg-4 col-md-6">
+
+<div class="gallery-card">
+
+<img src="../../assets/images/conferences/imesd2023/photo4.jpg"
+class="gallery-img"
+alt="IMESD Photo 4"
+onclick="openGallery(3)">
+
+</div>
+
+</div>
+
+
+
+<!-- ================= Photo 5 ================= -->
+
+<div class="col-xl-3 col-lg-4 col-md-6">
+
+<div class="gallery-card">
+
+<img src="../../assets/images/conferences/imesd2023/photo5.jpg"
+class="gallery-img"
+alt="IMESD Photo 5"
+onclick="openGallery(4)">
+
+</div>
+
+</div>
+
+
+
+<!-- ================= Photo 6 ================= -->
+
+<div class="col-xl-3 col-lg-4 col-md-6">
+
+<div class="gallery-card">
+
+<img src="../../assets/images/conferences/imesd2023/photo6.jpg"
+class="gallery-img"
+alt="IMESD Photo 6"
+onclick="openGallery(5)">
+
+</div>
+
+</div>
+
+
+
+<!-- ================= Photo 7 ================= -->
+
+<div class="col-xl-3 col-lg-4 col-md-6">
+
+<div class="gallery-card">
+
+<img src="../../assets/images/conferences/imesd2023/photo7.jpg"
+class="gallery-img"
+alt="IMESD Photo 7"
+onclick="openGallery(6)">
+
+</div>
+
+</div>
+
+
+
+<!-- ================= Photo 8 ================= -->
+
+<div class="col-xl-3 col-lg-4 col-md-6">
+
+<div class="gallery-card">
+
+<img src="../../assets/images/conferences/imesd2023/photo8.jpg"
+class="gallery-img"
+alt="IMESD Photo 8"
+onclick="openGallery(7)">
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =======================================================
+IMAGE VIEWER MODAL
+======================================================= -->
+
+<div class="modal fade"
+     id="galleryModal"
+     tabindex="-1"
+     aria-hidden="true">
+
+    <div class="modal-dialog modal-fullscreen">
+
+        <div class="modal-content gallery-modal">
+
+            <!-- Close Button -->
+
+            <button type="button"
+                    class="btn-close btn-close-white gallery-close"
+                    data-bs-dismiss="modal">
+            </button>
+
+
+            <!-- Previous Button -->
+
+            <button class="gallery-nav prev-btn"
+                    onclick="previousImage()">
+
+                <i class="bi bi-chevron-left"></i>
+
+            </button>
+
+
+            <!-- Next Button -->
+
+            <button class="gallery-nav next-btn"
+                    onclick="nextImage()">
+
+                <i class="bi bi-chevron-right"></i>
+
+            </button>
+
+
+            <!-- Image Counter -->
+
+            <div class="gallery-counter">
+
+                <span id="imageCounter">
+
+                    1 / 8
+
+                </span>
+
+            </div>
+
+
+            <!-- Image -->
+
+            <div class="modal-body d-flex justify-content-center align-items-center">
+
+                <img id="galleryImage"
+                     class="gallery-modal-image"
+                     alt="Conference Photo">
+
+            </div>
+
+
+            <!-- Caption -->
+
+            <div class="gallery-caption">
+
+                <h5 id="imageTitle">
+
+                    IMESD-2023
+
+                </h5>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- =======================================================
+Footer
+======================================================= -->
+
+<div id="footer"></div>
+
+
+
+
+<!-- Bootstrap -->
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Shared Components -->
+
+<script src="../../assets/js/include.js"></script>
+
+<!-- Conference Gallery -->
+
+<script src="../../assets/js/conference-gallery.js"></script>
+
+</body>
+</html>

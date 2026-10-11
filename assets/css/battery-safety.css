@@ -1,0 +1,917 @@
+/* =========================================================
+   BATTERY SAFETY & ABUSE TESTING
+   Page-specific stylesheet
+   ========================================================= */
+
+
+/* =========================================================
+   GENERAL PAGE
+   ========================================================= */
+
+.safety-page {
+    background: #ffffff;
+    color: #2d3748;
+    font-family: inherit;
+}
+
+.safety-page .container {
+    max-width: 1200px;
+}
+
+
+/* =========================================================
+   PAGE HERO / INTRODUCTION
+   ========================================================= */
+
+.safety-hero {
+    padding: 80px 0 70px;
+    background: #ffffff;
+}
+
+.safety-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.safety-label {
+    display: inline-block;
+    padding: 8px 18px;
+    margin-bottom: 18px;
+
+    background: #edf4ff;
+    color: #124494;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.safety-hero h1 {
+    margin-bottom: 20px;
+
+    color: #124494;
+
+    font-size: 46px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.safety-hero p {
+    max-width: 850px;
+    margin: 0 auto;
+
+    color: #606872;
+
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   SECTION COMMON STYLING
+   ========================================================= */
+
+.safety-section {
+    padding: 70px 0;
+}
+
+.safety-section:nth-child(even) {
+    background: #f8fafc;
+}
+
+.safety-section-title {
+    margin-bottom: 18px;
+
+    color: #124494;
+
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.safety-section-subtitle {
+    max-width: 850px;
+    margin-bottom: 35px;
+
+    color: #606872;
+
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   TEXT CONTENT
+   ========================================================= */
+
+.safety-text {
+    color: #4b5563;
+
+    font-size: 16px;
+    line-height: 1.85;
+}
+
+.safety-text strong {
+    color: #1f2937;
+}
+
+.safety-text + .safety-text {
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   IMAGE CONTAINER
+   ========================================================= */
+
+.safety-figure {
+    margin: 35px auto;
+    text-align: center;
+}
+
+.safety-figure img {
+    display: block;
+
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+
+    margin: 0 auto;
+
+    border-radius: 14px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
+}
+
+.safety-figure figcaption {
+    margin-top: 12px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   SAFETY ABUSE INTRODUCTION
+   ========================================================= */
+
+.abuse-intro {
+    padding: 70px 0;
+}
+
+.abuse-intro-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.abuse-intro h2 {
+    margin-bottom: 20px;
+
+    color: #124494;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.abuse-intro p {
+    color: #4b5563;
+
+    font-size: 17px;
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   ABUSE CATEGORY CARDS
+   ========================================================= */
+
+.abuse-categories {
+    padding: 70px 0;
+    background: #f8fafc;
+}
+
+.abuse-card {
+    height: 100%;
+
+    padding: 35px 28px;
+
+    background: #ffffff;
+
+    border-radius: 16px;
+
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.abuse-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.11);
+}
+
+.abuse-icon {
+    width: 65px;
+    height: 65px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 22px;
+
+    background: #edf4ff;
+    color: #124494;
+
+    border-radius: 50%;
+
+    font-size: 28px;
+}
+
+.abuse-card h3 {
+    margin-bottom: 15px;
+
+    color: #1f2937;
+
+    font-size: 23px;
+    font-weight: 700;
+}
+
+.abuse-card p {
+    margin-bottom: 20px;
+
+    color: #606872;
+
+    font-size: 15.5px;
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   ABUSE TEST LIST
+   ========================================================= */
+
+.abuse-test-list {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+}
+
+.abuse-test-list li {
+    position: relative;
+
+    margin-bottom: 12px;
+    padding-left: 28px;
+
+    color: #4b5563;
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.abuse-test-list li::before {
+    content: "\f26a";
+
+    position: absolute;
+    left: 0;
+    top: 1px;
+
+    font-family: "bootstrap-icons";
+
+    color: #124494;
+
+    font-size: 16px;
+}
+
+
+/* =========================================================
+   ELECTRICAL ABUSE
+   ========================================================= */
+
+.electrical-section {
+    padding: 75px 0;
+    background: #ffffff;
+}
+
+.electrical-title {
+    color: #124494;
+}
+
+.electrical-tests {
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   MECHANICAL ABUSE
+   ========================================================= */
+
+.mechanical-section {
+    padding: 75px 0;
+    background: #f8fafc;
+}
+
+.mechanical-title {
+    color: #124494;
+}
+
+.mechanical-tests {
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   ENVIRONMENTAL ABUSE
+   ========================================================= */
+
+.environmental-section {
+    padding: 75px 0;
+    background: #ffffff;
+}
+
+.environmental-title {
+    color: #124494;
+}
+
+.environmental-tests {
+    margin-top: 30px;
+}
+
+
+/* =========================================================
+   TEST ITEM BOXES
+   ========================================================= */
+
+.test-item {
+    height: 100%;
+
+    padding: 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e7ebf0;
+    border-radius: 12px;
+
+    transition:
+        border-color 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.test-item:hover {
+    transform: translateY(-4px);
+
+    border-color: #b9d0f5;
+
+    box-shadow: 0 8px 25px rgba(18, 68, 148, 0.09);
+}
+
+.test-item h4 {
+    margin-bottom: 10px;
+
+    color: #1f2937;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.test-item p {
+    margin: 0;
+
+    color: #68707b;
+
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   CURRENT RESEARCH / ARC SETUP
+   ========================================================= */
+
+.current-research {
+    padding: 80px 0;
+
+    background: #f8fafc;
+}
+
+.current-research-box {
+    padding: 40px;
+
+    background: #ffffff;
+
+    border-left: 5px solid #124494;
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.current-research-box h2 {
+    margin-bottom: 18px;
+
+    color: #124494;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.current-research-box p {
+    color: #4b5563;
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   ARC SETUP HIGHLIGHT
+   ========================================================= */
+
+.arc-highlight {
+    margin-top: 35px;
+    padding: 28px;
+
+    background: #f1f6ff;
+
+    border-radius: 12px;
+}
+
+.arc-highlight h3 {
+    margin-bottom: 12px;
+
+    color: #124494;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.arc-highlight p {
+    margin: 0;
+
+    color: #4b5563;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   RESEARCH TOPICS / TAGS
+   ========================================================= */
+
+.research-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.research-tag {
+    display: inline-block;
+
+    padding: 8px 16px;
+
+    background: #edf4ff;
+    color: #124494;
+
+    border-radius: 25px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   FIGURE GRID
+   ========================================================= */
+
+.safety-figure-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+    margin-top: 35px;
+}
+
+.safety-figure-grid .safety-figure {
+    margin: 0;
+}
+
+
+/* =========================================================
+   RESEARCH STATUS
+   ========================================================= */
+
+.research-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 7px 15px;
+
+    margin-bottom: 18px;
+
+    background: #edf4ff;
+    color: #124494;
+
+    border-radius: 25px;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.research-status::before {
+    content: "";
+
+    width: 8px;
+    height: 8px;
+
+    background: #2e9d55;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================================
+   CTA / MORE RESEARCH
+   ========================================================= */
+
+.safety-cta {
+    padding: 75px 0;
+
+    background: #124494;
+
+    text-align: center;
+}
+
+.safety-cta h2 {
+    margin-bottom: 15px;
+
+    color: #ffffff;
+
+    font-size: 34px;
+    font-weight: 700;
+}
+
+.safety-cta p {
+    max-width: 750px;
+
+    margin: 0 auto 28px;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.safety-cta .btn {
+    padding: 12px 28px;
+
+    border-radius: 30px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   RESPONSIVE — TABLETS
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    .safety-hero {
+        padding: 60px 0;
+    }
+
+    .safety-hero h1 {
+        font-size: 40px;
+    }
+
+    .safety-section {
+        padding: 60px 0;
+    }
+
+    .safety-section-title {
+        font-size: 30px;
+    }
+
+    .safety-figure-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE — MOBILE
+   ========================================================= */
+
+@media (max-width: 767px) {
+
+    .safety-hero {
+        padding: 50px 0;
+    }
+
+    .safety-hero h1 {
+        font-size: 32px;
+    }
+
+    .safety-hero p {
+        font-size: 16px;
+    }
+
+    .safety-section {
+        padding: 50px 0;
+    }
+
+    .safety-section-title {
+        font-size: 27px;
+    }
+
+    .safety-section-subtitle {
+        font-size: 15px;
+    }
+
+    .abuse-card {
+        padding: 28px 22px;
+    }
+
+    .current-research-box {
+        padding: 28px 22px;
+    }
+
+    .current-research-box h2 {
+        font-size: 27px;
+    }
+
+    .safety-cta {
+        padding: 55px 20px;
+    }
+
+    .safety-cta h2 {
+        font-size: 28px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .safety-hero h1 {
+        font-size: 28px;
+    }
+
+    .safety-label {
+        font-size: 12px;
+    }
+
+    .safety-card {
+        padding: 22px 18px;
+    }
+
+    .research-tags {
+        gap: 7px;
+    }
+
+    .research-tag {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   BATTERY SAFETY CLASSIFICATION FIGURE
+   ========================================= */
+
+.safety-figure-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.safety-figure {
+    width: 70%;
+    max-width: 900px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 992px) {
+
+    .safety-figure {
+        width: 85%;
+        max-width: 850px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    .safety-figure-wrapper {
+        margin: 35px auto;
+        padding: 0 15px;
+    }
+
+    .safety-figure {
+        width: 100%;
+        max-width: 100%;
+    }
+
+}
+
+/* =========================================================
+   BATTERY SAFETY HERO
+========================================================= */
+
+.safety-hero {
+
+    padding: 90px 0 70px;
+
+    background: #ffffff;
+
+}
+
+
+/* =========================================================
+   HERO CONTENT
+========================================================= */
+
+.safety-hero-content {
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+}
+
+
+.safety-hero-content .section-tag {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    color: #222;
+
+    letter-spacing: 0.3px;
+
+}
+
+
+.safety-hero-content h1 {
+
+    margin: 0 auto 20px;
+
+    font-size: clamp(42px, 5vw, 68px);
+
+    line-height: 1.1;
+
+    font-weight: 700;
+
+    color: #15489b;
+
+}
+
+
+.safety-hero-content p {
+
+    max-width: 850px;
+
+    margin: 0 auto 28px;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #5f6368;
+
+}
+
+
+/* =========================================================
+   HERO BUTTON
+========================================================= */
+
+.safety-hero-btn {
+
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    border: none;
+
+}
+
+
+/* =========================================================
+   ARC FIGURE
+========================================================= */
+
+.safety-hero-figure {
+
+    max-width: 1200px;
+
+    margin: 55px auto 0;
+
+}
+
+
+.safety-hero-image {
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 560px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .safety-hero {
+
+        padding: 60px 0 45px;
+
+    }
+
+    .safety-hero-content h1 {
+
+        font-size: 40px;
+
+    }
+
+    .safety-hero-content p {
+
+        font-size: 16px;
+
+        line-height: 1.7;
+
+    }
+
+    .safety-hero-figure {
+
+        margin-top: 40px;
+
+    }
+
+    .safety-hero-image {
+
+        border-radius: 14px;
+
+    }
+
+}

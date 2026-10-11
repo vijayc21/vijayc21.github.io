@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Battery Current Profile Generator | Vijay</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Plotly -->
+    <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+
+    <!-- SheetJS -->
+    <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+
+    <!-- Existing Website CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Current Profile Generator CSS -->
+    <link rel="stylesheet" href="../../assets/css/current-profile.css">
+
+    <link rel="icon" href="../../assets/images/logo/iitk.png">
+</head>
+
+
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar-pages"></div>
+
+
+    <main class="profile-page">
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="profile-hero">
+
+            <div class="profile-tag">
+                <i class="bi bi-lightning-charge-fill"></i>
+                RESEARCH TOOL
+            </div>
+
+            <h1>Battery Current Profile Generator</h1>
+
+            <p>
+                Generate customizable current profiles for battery testing,
+                experimental characterization, simulation and research applications.
+            </p>
+
+        </section>
+
+
+
+        <!-- =========================================
+             GENERATOR
+        ========================================== -->
+
+        <section class="profile-generator-section">
+
+            <div class="generator-grid">
+
+
+                <!-- =================================
+                     CARD 1
+                ================================== -->
+
+                <div class="generator-card">
+
+                    <div class="generator-card-header">
+                        <i class="bi bi-sliders2"></i>
+                        <span>1. Profile Parameters</span>
+                    </div>
+
+
+                    <div class="generator-card-body">
+
+                        <!-- Profile Type -->
+
+                        <div class="form-group">
+
+                            <label for="profileType">
+                                Profile Type
+                            </label>
+
+                            <select id="profileType" class="form-control">
+
+                                <option value="constant">
+                                    Constant (DC)
+                                </option>
+
+                                <option value="square">
+                                    Square (Pulse)
+                                </option>
+
+                                <option value="sine">
+                                    Sine (Sinusoidal)
+                                </option>
+
+                                <option value="triangular">
+                                    Triangular
+                                </option>
+
+                                <option value="trapezoidal">
+                                    Trapezoidal
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <!-- Cell Capacity -->
+
+                        <div class="form-group">
+
+                            <label for="cellCapacity">
+                                Cell Capacity (Ah)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="cellCapacity"
+                                class="form-control"
+                                value="2.5"
+                                min="0.001"
+                                step="0.01">
+
+                        </div>
+
+
+
+                        <!-- Peak Current -->
+
+                        <div class="form-group">
+
+                            <label for="peakCurrent">
+                                Peak Current (A)
+                            </label>
+
+                            <input
+                                type="number"
+                                id="peakCurrent"
+                                class="form-control"
+                                value="5"
+                                step="0.01">
+
+                        </div>
+
+
+
+                        <!-- Time Step -->
+
+                        <div class="two-column-form">
+
+                            <div class="form-group">
+
+                                <label for="timeStep">
+                                    Time Step, Δt (s)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="timeStep"
+                                    class="form-control"
+                                    value="1"
+                                    min="0.001"
+                                    step="0.001">
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="totalTime">
+                                    Total Time (s)
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="totalTime"
+                                    class="form-control"
+                                    value="800"
+                                    min="0.001"
+                                    step="0.1">
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             DYNAMIC PROFILE PARAMETERS
+                        ================================== -->
+
+                        <div
+                            id="profileSpecificParameters"
+                            class="profile-specific-box">
+
+                        </div>
+
+
+
+                        <!-- =================================
+                             GENERATION MODE
+                        ================================== -->
+
+                        <div class="generation-mode-box">
+
+                            <div class="generation-mode-title">
+                                <i class="bi bi-repeat"></i>
+                                Generation Mode
+                            </div>
+
+
+                            <div class="generation-mode-options">
+
+                                <label class="mode-option">
+
+                                    <input
+                                        type="radio"
+                                        name="generationMode"
+                                        id="cyclesMode"
+                                        value="cycles"
+                                        checked>
+
+                                    <span>
+                                        Number of Cycles
+                                    </span>
+
+                                </label>
+
+
+                                <label class="mode-option">
+
+                                    <input
+                                        type="radio"
+                                        name="generationMode"
+                                        id="durationMode"
+                                        value="duration">
+
+                                    <span>
+                                        Total Duration
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+
+                            <div id="generationModeInputs"></div>
+
+                        </div>
+
+
+
+                        <!-- C-rate information -->
+
+                        <div
+                            id="crateInfo"
+                            class="crate-info">
+
+                            <i class="bi bi-info-circle-fill"></i>
+
+                            <span>
+                                Peak current of 5 A for a 2.5 Ah cell
+                                corresponds to 2.00C rate.
+                            </span>
+
+                        </div>
+
+
+
+                        <!-- Buttons -->
+
+                        <div class="generator-buttons">
+
+                            <button
+                                id="generateBtn"
+                                class="btn-generate">
+
+                                <i class="bi bi-play-fill"></i>
+
+                                Generate Profile
+
+                            </button>
+
+
+                            <button
+                                id="resetBtn"
+                                class="btn-reset">
+
+                                <i class="bi bi-arrow-counterclockwise"></i>
+
+                                Reset
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     CARD 2 - GRAPH
+                ================================== -->
+
+                <div class="generator-card">
+
+                    <div class="generator-card-header">
+
+                        <i class="bi bi-graph-up"></i>
+
+                        <span>
+                            2. Current Profile
+                        </span>
+
+                    </div>
+
+
+                    <div class="generator-card-body profile-display">
+
+                        <div
+                            id="currentPlot"
+                            class="current-plot">
+                        </div>
+
+
+                        <div class="data-preview">
+
+                            <div class="data-preview-header">
+
+                                <strong>
+                                    Generated Data
+                                </strong>
+
+                                <span>
+                                    First 10 Rows
+                                </span>
+
+                            </div>
+
+
+                            <div class="table-responsive">
+
+                                <table
+                                    id="dataTable"
+                                    class="table table-sm">
+
+                                    <thead>
+
+                                        <tr>
+
+                                            <th>
+                                                Time (s)
+                                            </th>
+
+                                            <th>
+                                                Current (A)
+                                            </th>
+
+                                        </tr>
+
+                                    </thead>
+
+                                    <tbody></tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     CARD 3 - EXPORT
+                ================================== -->
+
+                <div class="generator-card">
+
+                    <div class="generator-card-header">
+
+                        <i class="bi bi-download"></i>
+
+                        <span>
+                            3. Export Data
+                        </span>
+
+                    </div>
+
+
+                    <div class="generator-card-body">
+
+                        <button
+                            id="downloadCsv"
+                            class="btn-export btn-csv">
+
+                            <i class="bi bi-filetype-csv"></i>
+
+                            Download CSV
+
+                        </button>
+
+
+                        <button
+                            id="downloadExcel"
+                            class="btn-export btn-excel">
+
+                            <i class="bi bi-file-earmark-excel"></i>
+
+                            Download Excel
+
+                        </button>
+
+
+                        <label class="excel-option">
+
+                            <input
+                                type="checkbox"
+                                id="includePlot"
+                                checked>
+
+                            Include plot in Excel file
+
+                        </label>
+
+
+
+                        <!-- Profile information -->
+
+                        <div class="profile-information">
+
+                            <div class="profile-info-title">
+
+                                <i class="bi bi-info-circle-fill"></i>
+
+                                Profile Information
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <span>Profile Type</span>
+
+                                <strong id="infoProfileType">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <span>Cell Capacity</span>
+
+                                <strong id="infoCapacity">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <span>Peak Current</span>
+
+                                <strong id="infoPeakCurrent">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <span>C-rate</span>
+
+                                <strong id="infoCrate">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <span>Generation Mode</span>
+
+                                <strong id="infoGenerationMode">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <span>Time Step</span>
+
+                                <strong id="infoTimeStep">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <span>Total Time</span>
+
+                                <strong id="infoTotalTime">
+                                    -
+                                </strong>
+
+                            </div>
+
+
+                            <div class="info-row">
+
+                                <span>Data Points</span>
+
+                                <strong id="infoDataPoints">
+                                    -
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div
+                            id="successMessage"
+                            class="success-message">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <div>
+
+                                <strong>
+                                    Profile ready
+                                </strong>
+
+                                <span>
+                                    Profile generated successfully.
+                                    You can now download the data.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             EXAMPLE PROFILES
+        ========================================== -->
+
+        <section class="example-section">
+
+            <div class="section-heading">
+
+                <i class="bi bi-bar-chart-line-fill"></i>
+
+                <span>
+                    Example Profiles
+                </span>
+
+            </div>
+
+
+            <div class="example-grid">
+
+
+                <!-- Constant -->
+
+                <div
+                    class="example-profile"
+                    data-profile="constant">
+
+                    <span class="example-number">
+                        01
+                    </span>
+
+                    <h3>
+                        Constant
+                    </h3>
+
+                    <div
+                        id="miniConstant"
+                        class="mini-plot">
+                    </div>
+
+                    <p>
+                        Constant DC current
+                    </p>
+
+                </div>
+
+
+
+                <!-- Square -->
+
+                <div
+                    class="example-profile"
+                    data-profile="square">
+
+                    <span class="example-number">
+                        02
+                    </span>
+
+                    <h3>
+                        Square
+                    </h3>
+
+                    <div
+                        id="miniSquare"
+                        class="mini-plot">
+                    </div>
+
+                    <p>
+                        Pulsed current profile
+                    </p>
+
+                </div>
+
+
+
+                <!-- Sine -->
+
+                <div
+                    class="example-profile"
+                    data-profile="sine">
+
+                    <span class="example-number">
+                        03
+                    </span>
+
+                    <h3>
+                        Sine
+                    </h3>
+
+                    <div
+                        id="miniSine"
+                        class="mini-plot">
+                    </div>
+
+                    <p>
+                        Sinusoidal current
+                    </p>
+
+                </div>
+
+
+
+                <!-- Triangular -->
+
+                <div
+                    class="example-profile"
+                    data-profile="triangular">
+
+                    <span class="example-number">
+                        04
+                    </span>
+
+                    <h3>
+                        Triangular
+                    </h3>
+
+                    <div
+                        id="miniTriangular"
+                        class="mini-plot">
+                    </div>
+
+                    <p>
+                        Linear ramp up and down
+                    </p>
+
+                </div>
+
+
+
+                <!-- Trapezoidal -->
+
+                <div
+                    class="example-profile"
+                    data-profile="trapezoidal">
+
+                    <span class="example-number">
+                        05
+                    </span>
+
+                    <h3>
+                        Trapezoidal
+                    </h3>
+
+                    <div
+                        id="miniTrapezoidal"
+                        class="mini-plot">
+                    </div>
+
+                    <p>
+                        Ramp and constant-current regions
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             RESEARCH NOTE
+        ========================================== -->
+
+        <section class="profile-note-section">
+
+            <div class="profile-note">
+
+                <div class="note-icon">
+
+                    <i class="bi bi-lightbulb"></i>
+
+                </div>
+
+
+                <div>
+
+                    <div class="profile-note-label">
+                        RESEARCH NOTE
+                    </div>
+
+                    <h3>
+                        Designed for Battery Research
+                    </h3>
+
+                    <p>
+                        This tool provides a flexible way to generate
+                        user-defined current profiles for battery testing,
+                        experimental characterization, simulation and
+                        battery research applications.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+
+
+    <!-- Bootstrap JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+
+    <!-- Existing Components -->
+    <script src="../../assets/js/include.js"></script>
+
+    <!-- Generator JS -->
+    <script src="../../assets/js/current-profile.js"></script>
+
+</body>
+
+</html>

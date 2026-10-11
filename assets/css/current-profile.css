@@ -1,0 +1,910 @@
+/* =========================================================
+   BATTERY CURRENT PROFILE GENERATOR
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.profile-page {
+    padding-top: 90px;
+    padding-bottom: 60px;
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.profile-hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 45px 20px 35px;
+    text-align: center;
+}
+
+.profile-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 12px;
+
+    color: #164997;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.profile-hero h1 {
+    margin: 0 0 12px;
+
+    color: #20252b;
+
+    font-size: 38px;
+    font-weight: 700;
+}
+
+.profile-hero p {
+    max-width: 750px;
+    margin: auto;
+
+    color: #697586;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   GENERATOR SECTION
+========================================================= */
+
+.profile-generator-section {
+    width: min(1400px, 94%);
+    margin: 0 auto 45px;
+}
+
+.generator-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(300px, 1fr)
+        minmax(430px, 1.55fr)
+        minmax(280px, 0.95fr);
+
+    gap: 20px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.generator-card {
+    background: #ffffff;
+
+    border: 1px solid #dce6f2;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(22, 73, 151, 0.07);
+}
+
+.generator-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 16px 20px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #1765c0,
+            #164997
+        );
+
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.generator-card-header i {
+    font-size: 19px;
+}
+
+.generator-card-body {
+    padding: 22px;
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #303944;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.form-control {
+    width: 100%;
+
+    min-height: 43px;
+
+    border: 1px solid #d3deeb;
+    border-radius: 8px;
+
+    padding: 9px 12px;
+
+    color: #26313d;
+
+    background: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+    font-size: 13px;
+
+    outline: none;
+}
+
+.form-control:focus {
+    border-color: #1b6dcc;
+
+    box-shadow:
+        0 0 0 3px rgba(27, 109, 204, 0.10);
+}
+
+.two-column-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+
+/* =========================================================
+   PROFILE SPECIFIC PARAMETERS
+========================================================= */
+
+.profile-specific-box {
+    margin-top: 5px;
+    margin-bottom: 17px;
+
+    padding: 14px;
+
+    background: #f5f8fc;
+
+    border: 1px solid #dce6f2;
+
+    border-radius: 12px;
+}
+
+.profile-specific-title {
+    margin-bottom: 14px;
+
+    color: #164997;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.dynamic-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 13px;
+}
+
+.dynamic-grid.single {
+    grid-template-columns: 1fr;
+}
+
+
+/* =========================================================
+   GENERATION MODE
+========================================================= */
+
+.generation-mode-box {
+    margin-bottom: 17px;
+
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border: 1px solid #dce6f2;
+
+    border-radius: 12px;
+}
+
+.generation-mode-title {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin-bottom: 12px;
+
+    color: #164997;
+
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.generation-mode-options {
+    display: flex;
+    gap: 20px;
+
+    margin-bottom: 14px;
+}
+
+.mode-option {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    color: #394555;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.mode-option input {
+    accent-color: #1765c0;
+}
+
+
+/* =========================================================
+   C-RATE
+========================================================= */
+
+.crate-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+
+    margin-bottom: 18px;
+
+    padding: 11px 13px;
+
+    color: #164997;
+
+    background: #eef6ff;
+
+    border: 1px solid #bddbfa;
+
+    border-radius: 9px;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.crate-info i {
+    margin-top: 2px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.generator-buttons {
+    display: grid;
+
+    grid-template-columns: 1.5fr 0.8fr;
+
+    gap: 12px;
+}
+
+.btn-generate,
+.btn-reset {
+    min-height: 46px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.btn-generate {
+    color: #ffffff;
+
+    background: #16a05d;
+}
+
+.btn-generate:hover {
+    background: #12864e;
+
+    transform: translateY(-1px);
+}
+
+.btn-reset {
+    color: #ffffff;
+
+    background: #8a99a8;
+}
+
+.btn-reset:hover {
+    background: #707f8f;
+}
+
+
+/* =========================================================
+   CURRENT PROFILE GRAPH
+========================================================= */
+
+.profile-display {
+    display: flex;
+    flex-direction: column;
+
+    gap: 18px;
+}
+
+.current-plot {
+    width: 100%;
+    height: 345px;
+    min-height: 345px;
+}
+
+
+/* =========================================================
+   DATA PREVIEW
+========================================================= */
+
+.data-preview {
+    overflow: hidden;
+
+    border: 1px solid #d8e2ed;
+
+    border-radius: 10px;
+}
+
+.data-preview-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 13px;
+
+    background: #eef5fc;
+
+    color: #164997;
+
+    font-size: 12px;
+}
+
+.data-preview-header span {
+    color: #718096;
+
+    font-size: 11px;
+}
+
+.data-preview table {
+    margin: 0;
+
+    font-size: 11px;
+}
+
+.data-preview th {
+    background: #f5f8fb;
+
+    font-weight: 600;
+}
+
+.data-preview th,
+.data-preview td {
+    padding: 4px 8px;
+
+    text-align: center;
+
+    border-color: #d8e2ed;
+}
+
+
+/* =========================================================
+   EXPORT
+========================================================= */
+
+.btn-export {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+
+    width: 100%;
+
+    min-height: 44px;
+
+    margin-bottom: 12px;
+
+    border: none;
+    border-radius: 8px;
+
+    color: #ffffff;
+
+    font-family: "Poppins", sans-serif;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.btn-csv {
+    background: #16a05d;
+}
+
+.btn-csv:hover {
+    background: #12864e;
+}
+
+.btn-excel {
+    background: #ef3438;
+}
+
+.btn-excel:hover {
+    background: #d82b30;
+}
+
+.excel-option {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+
+    margin: 14px 0 20px;
+
+    color: #4c5969;
+
+    font-size: 11px;
+}
+
+.excel-option input {
+    accent-color: #1765c0;
+}
+
+
+/* =========================================================
+   PROFILE INFORMATION
+========================================================= */
+
+.profile-information {
+    margin-top: 10px;
+
+    padding: 13px;
+
+    background: #f7f9fc;
+
+    border: 1px solid #dce5ef;
+
+    border-radius: 12px;
+}
+
+.profile-info-title {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    margin-bottom: 12px;
+
+    color: #164997;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid #e0e6ed;
+
+    color: #6b7787;
+
+    font-size: 11px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-row strong {
+    color: #303944;
+
+    font-weight: 700;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.success-message {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    margin-top: 17px;
+
+    padding: 12px;
+
+    background: #eaf9ef;
+
+    border: 1px solid #b9e4c7;
+
+    border-radius: 9px;
+
+    color: #15733d;
+
+    font-size: 11px;
+}
+
+.success-message > i {
+    font-size: 20px;
+}
+
+.success-message div {
+    display: flex;
+    flex-direction: column;
+}
+
+.success-message strong {
+    margin-bottom: 2px;
+}
+
+
+/* =========================================================
+   EXAMPLE PROFILES
+========================================================= */
+
+.example-section {
+    width: min(1400px, 94%);
+
+    margin: 0 auto 50px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 18px;
+
+    color: #164997;
+
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.example-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   EXAMPLE CARD
+========================================================= */
+
+.example-profile {
+    position: relative;
+
+    height: 185px;
+    min-height: 185px;
+
+    padding: 18px 14px 10px;
+
+    background: #ffffff;
+
+    border: 1px solid #dce5f0;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    cursor: pointer;
+
+    transition: all 0.25s ease;
+}
+
+.example-profile:hover {
+    transform: translateY(-4px);
+
+    border-color: #1d70d6;
+
+    box-shadow:
+        0 10px 25px rgba(22, 73, 151, 0.12);
+}
+
+.example-profile.active {
+    border-color: #1d70d6;
+
+    box-shadow:
+        0 10px 25px rgba(22, 73, 151, 0.15);
+}
+
+.example-profile h3 {
+    position: relative;
+
+    z-index: 5;
+
+    margin: 0 0 4px;
+
+    text-align: center;
+
+    color: #29313b;
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.example-number {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 30px;
+    height: 30px;
+
+    border-radius: 50%;
+
+    background: #edf5ff;
+
+    color: #164997;
+
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MINI PLOTS
+========================================================= */
+
+.mini-plot {
+    position: absolute;
+
+    top: 48px;
+    left: 10px;
+    right: 10px;
+
+    width: calc(100% - 20px);
+
+    height: 80px !important;
+    min-height: 80px !important;
+    max-height: 80px !important;
+
+    overflow: hidden;
+}
+
+.mini-plot .plotly,
+.mini-plot .js-plotly-plot,
+.mini-plot .plot-container,
+.mini-plot .svg-container {
+    width: 100% !important;
+    height: 80px !important;
+    max-height: 80px !important;
+}
+
+.example-profile p {
+    position: absolute;
+
+    left: 8px;
+    right: 8px;
+    bottom: 11px;
+
+    z-index: 5;
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #6c7888;
+
+    font-size: 10px;
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   RESEARCH NOTE
+========================================================= */
+
+.profile-note-section {
+    width: min(1400px, 94%);
+
+    margin: 0 auto 50px;
+}
+
+.profile-note {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 25px 30px;
+
+    background: #f1f7ff;
+
+    border: 1px solid #cfe1f8;
+
+    border-radius: 16px;
+}
+
+.note-icon {
+    flex-shrink: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 58px;
+    height: 58px;
+
+    background: #ffffff;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 5px 15px rgba(22, 73, 151, 0.08);
+
+    color: #164997;
+
+    font-size: 25px;
+}
+
+.profile-note-label {
+    margin-bottom: 4px;
+
+    color: #164997;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+}
+
+.profile-note h3 {
+    margin: 0 0 5px;
+
+    color: #29313b;
+
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.profile-note p {
+    margin: 0;
+
+    color: #647185;
+
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1200px) {
+
+    .generator-grid {
+        grid-template-columns:
+            1fr 1.3fr;
+    }
+
+    .generator-grid .generator-card:nth-child(3) {
+        grid-column: 1 / -1;
+    }
+
+    .example-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+}
+
+
+@media (max-width: 900px) {
+
+    .generator-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .generator-grid .generator-card:nth-child(3) {
+        grid-column: auto;
+    }
+
+    .example-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .profile-hero h1 {
+        font-size: 32px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .profile-page {
+        padding-top: 80px;
+    }
+
+    .profile-hero {
+        padding-top: 30px;
+    }
+
+    .profile-hero h1 {
+        font-size: 27px;
+    }
+
+    .two-column-form,
+    .dynamic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .generator-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .example-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-note {
+        align-items: flex-start;
+
+        padding: 20px;
+    }
+
+    .note-icon {
+        width: 48px;
+        height: 48px;
+
+        font-size: 21px;
+    }
+}

@@ -1,0 +1,871 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#ffffff;
+}
+
+/* ===============================
+   NAVBAR
+=================================*/
+
+.navbar{
+    background:#0B3D91;
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    padding:0;
+}
+
+.navbar-nav .nav-item{
+    margin:0 8px;
+}
+
+.navbar-nav .nav-link{
+    color:#fff !important;
+    font-size:0.92rem;
+    font-weight:500;
+    transition:.3s;
+}
+
+.navbar-nav .nav-link:hover{
+    color:#ffc107 !important;
+}
+
+/* ======================================
+   Desktop Dropdown Animation
+====================================== */
+
+@media (min-width:992px){
+
+.dropdown-menu{
+
+    display:block;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(12px);
+
+    transition:
+    opacity .25s ease,
+    transform .25s ease;
+
+    border:none;
+    border-radius:12px;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.15);
+
+}
+
+.dropdown:hover>.dropdown-menu{
+
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+
+}
+
+}
+
+.dropdown-menu{
+
+    min-width:260px;
+
+}
+
+.dropdown-item{
+
+    padding:10px 18px;
+    font-size:.95rem;
+
+}
+
+.dropdown-item:hover{
+
+    background:#0B3D91;
+    color:white;
+
+}
+
+.dropdown:hover>.dropdown-menu{
+    display:block;
+}
+
+/* ===============================
+   HERO (Homepage)
+=================================*/
+
+.hero{
+    height:620px;
+    margin-top:70px; /* pushes hero below fixed navbar, matches .navbar min-height */
+    background:url("../images/homepage/hero.png") center center no-repeat;
+    background-size:cover;
+    position:relative;
+    display:flex;
+    align-items:center;
+}
+
+.overlay{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.30);
+}
+
+.hero .container{
+    position:relative;
+    z-index:2;
+    color:white;
+}
+
+.hero h1{
+    font-size:60px;
+    font-weight:700;
+}
+
+.hero h3{
+    margin-top:15px;
+    font-weight:400;
+}
+
+.hero p{
+    font-size:22px;
+    margin-top:15px;
+}
+
+.research{
+    margin-top:25px;
+    font-size:22px;
+    line-height:40px;
+}
+
+.profile-img{
+    width:280px;
+    height:320px;
+    object-fit:cover;
+    object-position:top center;
+    border-radius:50%;
+    border:4px solid white;
+}
+
+.btn{
+    margin-right:15px;
+    margin-top:25px;
+    padding:14px 35px;
+    font-size:18px;
+    border-radius:50px;
+}
+
+/* ===============================
+   RESEARCH SECTION
+=================================*/
+
+.research-section{
+    padding:90px 0;
+    background:#ffffff;
+}
+
+.section-title{
+    font-size:42px;
+    font-weight:700;
+    color:#0B3D91;
+    margin-bottom:15px;
+}
+
+.section-subtitle{
+    font-size:20px;
+    color:#666;
+    max-width:700px;
+    margin:0 auto 40px;
+}
+
+.research-card{
+    background:white;
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    transition:.4s;
+    height:100%;
+    text-align:center;
+}
+
+.research-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 20px 40px rgba(0,0,0,.18);
+}
+
+.icon{
+    font-size:55px;
+    margin-bottom:20px;
+}
+
+.research-card h4{
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:18px;
+}
+
+.research-card p{
+    font-size:16px;
+    line-height:1.7;
+    color:#666;
+    margin-bottom:25px;
+}
+
+/* ===============================
+   RESPONSIVE
+=================================*/
+
+@media (max-width:992px){
+
+    .hero{
+        height:auto;
+        padding:60px 0;
+        text-align:center;
+    }
+
+    .hero h1{
+        font-size:40px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .profile-img{
+        margin-top:30px;
+    }
+
+    .section-title{
+        font-size:32px;
+    }
+
+    .section-subtitle{
+        font-size:17px;
+    }
+}
+
+
+.social-links{
+    margin-top:20px;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+}
+
+.social-links a{
+    width:44px;
+    height:44px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:rgba(255,255,255,0.15);
+    border:1px solid rgba(255,255,255,0.4);
+    border-radius:50%;
+    color:#ffffff;
+    transition:.3s;
+}
+
+.social-links a:hover{
+    background:#ffffff;
+    color:#0b3d91;
+    transform:translateY(-4px);
+}
+
+/*==================================================
+FOOTER
+==================================================*/
+
+.site-footer{
+
+    background:#0B3D91;
+
+    color:#fff;
+
+    padding:70px 0 25px;
+
+    margin-top:90px;
+
+}
+
+.site-footer h4,
+.site-footer h5{
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.site-footer p{
+
+    color:#d9d9d9;
+
+    line-height:1.9;
+
+}
+
+.site-footer ul{
+
+    list-style:none;
+
+    padding:0;
+
+}
+
+.site-footer ul li{
+
+    margin-bottom:12px;
+
+}
+
+.site-footer a{
+
+    color:#d9d9d9;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.site-footer a:hover{
+
+    color:#FFD54F;
+
+}
+
+.footer-icons{
+
+    margin-top:20px;
+
+}
+
+.footer-icons a{
+
+    display:inline-flex;
+
+    width:42px;
+
+    height:42px;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.15);
+
+    margin-right:10px;
+
+    font-size:18px;
+
+    transition:.3s;
+
+}
+
+.footer-icons a:hover{
+
+    background:#FFD54F;
+
+    color:#0B3D91;
+
+}
+
+.site-footer hr{
+
+    border-color:rgba(255,255,255,.15);
+
+    margin:40px 0 20px;
+
+}
+
+/* ===========================================
+   Technical Skills Page
+=========================================== */
+
+.skills-section{
+    padding:70px 0 90px;
+}
+
+.skill-category{
+    background:#ffffff;
+    border:1px solid #eef0f3;
+    border-radius:16px;
+    padding:32px 30px;
+    margin-bottom:28px;
+    box-shadow:0 6px 20px rgba(0,0,0,.05);
+    transition:.3s;
+    height:100%;
+}
+
+.skill-category:hover{
+    box-shadow:0 14px 32px rgba(0,0,0,.1);
+    transform:translateY(-4px);
+}
+
+.skill-category-icon{
+    font-size:36px;
+    margin-bottom:14px;
+    display:inline-block;
+}
+
+.skill-category h4{
+    font-size:21px;
+    font-weight:700;
+    color:#0b3d91;
+    margin-bottom:18px;
+}
+
+.skill-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skill-tag{
+    display:inline-block;
+    background:#eef2fb;
+    color:#0b3d91;
+    font-size:13.5px;
+    font-weight:600;
+    padding:7px 16px;
+    border-radius:20px;
+    border:1px solid #d8e2f8;
+    transition:.25s;
+}
+
+.skill-tag:hover{
+    background:#0b3d91;
+    color:#ffffff;
+    transform:translateY(-2px);
+}
+
+@media (max-width:768px){
+    .skill-category{
+        padding:26px 22px;
+    }
+    .skill-category h4{
+        font-size:19px;
+    }
+}
+
+/*======================================================
+ACADEMIC HIGHLIGHTS
+======================================================*/
+
+.academic-highlights{
+
+padding:90px 0;
+
+background:#f7f9fc;
+
+}
+
+.section-title{
+
+font-size:48px;
+
+font-weight:700;
+
+color:#0B3D91;
+
+margin-bottom:15px;
+
+}
+
+.section-subtitle{
+
+font-size:18px;
+
+color:#666;
+
+max-width:760px;
+
+margin:auto;
+
+line-height:1.8;
+
+margin-bottom:60px;
+
+}
+
+/*------------------------------------*/
+
+.achievement-card{
+
+background:#fff;
+
+border-radius:22px;
+
+padding:35px;
+
+height:100%;
+
+display:flex;
+
+align-items:flex-start;
+
+gap:25px;
+
+box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+transition:.35s;
+
+border-left:6px solid #0B3D91;
+
+}
+
+.achievement-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 22px 45px rgba(0,0,0,.15);
+
+}
+
+/*------------------------------------*/
+
+.achievement-icon{
+
+width:80px;
+
+height:80px;
+
+border-radius:50%;
+
+background:#edf3ff;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+flex-shrink:0;
+
+}
+
+.achievement-icon i{
+
+font-size:34px;
+
+color:#0B3D91;
+
+}
+
+/*------------------------------------*/
+
+.achievement-content{
+
+flex:1;
+
+}
+
+.achievement-content h3{
+
+font-size:30px;
+
+font-weight:700;
+
+color:#0B3D91;
+
+margin:12px 0;
+
+line-height:1.25;
+
+}
+
+.achievement-content p{
+
+font-size:16px;
+
+color:#666;
+
+line-height:1.8;
+
+margin-top:15px;
+
+margin-bottom:20px;
+
+}
+
+/*------------------------------------*/
+
+.achievement-badge{
+
+display:inline-block;
+
+padding:8px 18px;
+
+background:#e8f1ff;
+
+color:#0B3D91;
+
+font-size:14px;
+
+font-weight:600;
+
+border-radius:30px;
+
+margin-bottom:10px;
+
+}
+
+/*------------------------------------*/
+
+.achievement-tags{
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:10px;
+
+margin-bottom:22px;
+
+}
+
+.achievement-tags span{
+
+padding:8px 18px;
+
+background:#f1f3f8;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:600;
+
+color:#555;
+
+}
+
+/*------------------------------------*/
+
+.achievement-card .btn{
+
+padding:11px 28px;
+
+border-radius:50px;
+
+font-weight:600;
+
+font-size:15px;
+
+transition:.3s;
+
+}
+
+.achievement-card .btn:hover{
+
+transform:translateY(-3px);
+
+}
+
+/*------------------------------------*/
+
+.btn-warning{
+
+color:#fff !important;
+
+}
+
+.btn-warning:hover{
+
+color:#fff !important;
+
+}
+
+/*------------------------------------*/
+
+@media(max-width:992px){
+
+.achievement-card{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.achievement-icon{
+
+margin:auto;
+
+}
+
+.achievement-tags{
+
+justify-content:center;
+
+}
+
+.section-title{
+
+font-size:38px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.section-title{
+
+font-size:32px;
+
+}
+
+.section-subtitle{
+
+font-size:16px;
+
+}
+
+.achievement-content h3{
+
+font-size:24px;
+
+}
+
+}
+
+/* ======================================================
+   GLOBAL RESEARCH REACH
+====================================================== */
+
+.global-reach {
+    padding: 90px 0;
+    background: #f7f9fc;
+}
+
+.reach-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 18px;
+    margin-bottom: 18px;
+
+    background: #eaf2ff;
+    color: #0d47a1;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.global-reach h2 {
+    color: #0d47a1;
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.reach-subtitle {
+    max-width: 700px;
+    margin: 0 auto;
+
+    color: #6c757d;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+
+/* Statistics Cards */
+
+.reach-card {
+    height: 100%;
+    padding: 35px 25px;
+
+    background: #ffffff;
+
+    border: 1px solid #e8edf5;
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s ease;
+}
+
+.reach-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow: 0 18px 45px rgba(13, 71, 161, 0.12);
+}
+
+.reach-card i {
+    display: block;
+
+    margin-bottom: 15px;
+
+    color: #0d47a1;
+
+    font-size: 32px;
+}
+
+.reach-card h3 {
+    margin-bottom: 6px;
+
+    color: #0d47a1;
+
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.reach-card p {
+    margin: 0;
+
+    color: #6c757d;
+
+    font-size: 15px;
+    font-weight: 500;
+}
+
+
+/* Coming Soon label in hobbies dropdown */
+.coming-soon-label {
+    display: inline-block;
+    margin-left: 6px;
+    padding: 2px 6px;
+    border-radius: 5px;
+    background: #eef3fb;
+    color: #164997;
+    font-size: 9px;
+    font-weight: 600;
+    vertical-align: middle;
+}
+
+/* Keep dropdown items neatly aligned */
+.dropdown-menu .dropdown-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .global-reach {
+        padding: 65px 0;
+    }
+
+    .global-reach h2 {
+        font-size: 30px;
+    }
+
+}

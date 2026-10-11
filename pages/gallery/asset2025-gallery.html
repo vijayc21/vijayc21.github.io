@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Conference Gallery | Vijay Kumar Chauhan</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+
+    <!-- Gallery CSS -->
+    <link rel="stylesheet" href="../../assets/css/conference-gallery.css">
+
+</head>
+
+<body>
+
+<!-- =======================================================
+Navbar
+======================================================= -->
+
+<div id="navbar-pages"></div>
+
+<!-- =======================================================
+PAGE HEADER
+======================================================= -->
+
+<section class="page-header">
+
+    <div class="container">
+
+        <h1>
+            ASSET-2025 Gallery
+        </h1>
+
+        <p>
+
+            A collection of photographs from the ASSET-2025
+            conference held at IIT Guwahati, India.
+
+    </div>
+
+</section>
+
+
+<div class="container py-5">
+
+
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+
+<img src="../../assets/images/conferences/asset2025/photo1.jpg"
+     class="img-fluid rounded shadow">
+
+</div>
+
+<div class="col-lg-4">
+
+<img src="../../assets/images/conferences/asset2025/photo2.jpg"
+     class="img-fluid rounded shadow">
+
+</div>
+
+<div class="col-lg-4">
+
+<img src="../../assets/images/conference/asset2025/photo3.jpg"
+     class="img-fluid rounded shadow">
+
+</div>
+
+<div class="col-lg-4">
+
+<img src="../../assets/images/conference/asset2025/photo4.jpg"
+     class="img-fluid rounded shadow">
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- =======================================================
+Footer
+======================================================= -->
+
+<div id="footer"></div>
+
+
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Shared Components -->
+
+<script src="../../assets/js/include.js"></script>
+
+
+
+<script>
+
+document.addEventListener("DOMContentLoaded",function(){
+
+const papers=document.querySelectorAll(".publication-card").length;
+
+document.getElementById("pub-total").textContent=papers;
+
+document.getElementById("totalPapers").textContent=papers;
+
+});
+
+</script>
+
+</body>
+
+</html>

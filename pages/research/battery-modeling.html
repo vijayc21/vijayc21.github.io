@@ -1,0 +1,2355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Battery Modeling research by Vijay Kumar Chauhan including P2D electrochemical models, 2RC equivalent circuit models, SOC estimation, Adaptive Kalman Filter, OCV-SOC lookup tables and Digital Twin for Battery Management Systems.">
+
+    <meta name="keywords"
+          content="Battery Modeling, Lithium-ion Battery, P2D Model, 2RC Model, ECM, Battery Management System, SOC Estimation, Adaptive Kalman Filter, Digital Twin">
+
+    <meta name="author"
+          content="Vijay Kumar Chauhan">
+
+    <title>
+
+        Battery Modeling | Vijay Kumar Chauhan
+
+    </title>
+
+    <!-- Bootstrap -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap Icons -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet"
+          href="../../assets/css/style.css">
+
+    <!-- Page CSS -->
+
+    <link rel="stylesheet"
+          href="../../assets/css/battery-modeling.css">
+
+    <!-- Favicon -->
+
+    <link rel="icon"
+          href="../../assets/images/logo/iitk.png">
+
+</head>
+
+<body>
+
+<!-- =======================================================
+Navbar
+======================================================= -->
+
+<div id="navbar-pages"></div>
+
+
+
+
+<!-- =======================================================
+Hero Section
+======================================================= -->
+
+<section class="modeling-hero">
+
+    <div class="container">
+
+        <!-- Badge -->
+
+        <div class="text-center">
+
+            <span class="hero-badge">
+
+                Battery Modeling for Advanced Battery Management Systems
+
+            </span>
+
+        </div>
+
+        <!-- Main Heading -->
+
+        <div class="row justify-content-center">
+
+            <div class="col-xl-11 text-center">
+
+                <h1>
+
+                    Physics-Based and Equivalent Circuit Modeling
+                    of Lithium-Ion Batteries
+
+                </h1>
+
+            </div>
+
+        </div>
+
+        <!-- Description -->
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-9">
+
+                <p class="hero-description">
+
+                    Battery modeling provides the foundation for intelligent Battery
+                    Management Systems (BMS) by enabling accurate prediction of battery
+                    voltage, temperature, State of Charge (SOC), heat generation,
+                    electrochemical behaviour and battery degradation. This research
+                    integrates experimentally identified electrochemical models,
+                    equivalent circuit models, adaptive Kalman filtering and Digital
+                    Twin methodologies to develop accurate real-time battery models
+                    for next-generation electric vehicle applications.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Tags -->
+
+        <div class="hero-tags justify-content-center">
+
+            <span>P2D Model</span>
+
+            <span>2RC ECM</span>
+
+            <span>Heat Generation</span>
+
+            <span>SOC Estimation</span>
+
+            <span>Adaptive Kalman Filter</span>
+
+            <span>Digital Twin</span>
+
+        </div>
+
+        <!-- Hero Image -->
+
+        <div class="row mt-5">
+
+            <div class="col-12 text-center">
+
+                <img src="../../assets/images/battery-modeling/hero-model.png"
+                     class="img-fluid hero-image-large"
+                     alt="Battery Modeling">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =======================================================
+Introduction
+======================================================= -->
+
+<section class="overview-section" id="introduction">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+
+                Battery Modeling Overview
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                Battery models serve as virtual representations of lithium-ion cells,
+                enabling accurate prediction of electrical, thermal and
+                electrochemical behaviour for Battery Management Systems,
+                digital twins and electric vehicle applications.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row align-items-center g-5">
+
+            <!-- Left Image -->
+
+            <div class="col-lg-5">
+
+                <img src="../../assets/images/battery-modeling/battery-model-classification.png"
+                     class="img-fluid rounded shadow-lg section-image"
+                     alt="Battery Model Classification">
+
+            </div>
+
+
+
+            <!-- Right Content -->
+
+            <div class="col-lg-7">
+
+                <span class="algorithm-badge">
+
+                    Battery Modeling
+
+                </span>
+
+                <h3>
+
+                    Why Battery Modeling?
+
+                </h3>
+
+                <p>
+
+                    Modern Battery Management Systems require reliable mathematical
+                    models to estimate internal battery states that cannot be measured
+                    directly. Battery models provide a computational framework for
+                    predicting terminal voltage, State of Charge (SOC), temperature,
+                    heat generation, degradation and electrochemical dynamics under
+                    realistic operating conditions.
+
+                </p>
+
+                <p>
+
+                    Depending on the required balance between computational efficiency
+                    and prediction accuracy, battery models can be broadly classified
+                    into physics-based electrochemical models and simplified equivalent
+                    circuit models. Both approaches are extensively investigated in
+                    this research for battery thermal management and advanced state
+                    estimation.
+
+                </p>
+
+
+
+                <div class="topic-tags">
+
+                    <span>Electrochemical Models</span>
+
+                    <span>Equivalent Circuit Models</span>
+
+                    <span>Battery Management System</span>
+
+                    <span>Digital Twin</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =======================================================
+Research Workflow
+======================================================= -->
+
+<section class="workflow-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+
+                Battery Modeling Workflow
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                Overall methodology adopted for developing accurate battery models
+                and state estimation algorithms.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="workflow-container">
+
+            <div class="workflow-item">
+
+                <i class="bi bi-battery-charging"></i>
+
+                <h5>
+
+                    Battery Testing
+
+                </h5>
+
+                <p>
+
+                    OCV & HPPC Experiments
+
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-arrow">
+
+                <i class="bi bi-arrow-right"></i>
+
+            </div>
+
+
+
+            <div class="workflow-item">
+
+                <i class="bi bi-sliders"></i>
+
+                <h5>
+
+                    Parameter Identification
+
+                </h5>
+
+                <p>
+
+                    Temperature-dependent Model Parameters
+
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-arrow">
+
+                <i class="bi bi-arrow-right"></i>
+
+            </div>
+
+
+
+            <div class="workflow-item">
+
+                <i class="bi bi-diagram-3-fill"></i>
+
+                <h5>
+
+                    Battery Model
+
+                </h5>
+
+                <p>
+
+                    P2D & 2RC Equivalent Circuit Models
+
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-arrow">
+
+                <i class="bi bi-arrow-right"></i>
+
+            </div>
+
+
+
+            <div class="workflow-item">
+
+                <i class="bi bi-cpu-fill"></i>
+
+                <h5>
+
+                    State Estimation
+
+                </h5>
+
+                <p>
+
+                    Hybrid AKF–OCV–LUT Framework
+
+                </p>
+
+            </div>
+
+
+
+            <div class="workflow-arrow">
+
+                <i class="bi bi-arrow-right"></i>
+
+            </div>
+
+
+
+            <div class="workflow-item">
+
+                <i class="bi bi-car-front-fill"></i>
+
+                <h5>
+
+                    Battery Management System
+
+                </h5>
+
+                <p>
+
+                    SOC Prediction & Digital Twin
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =======================================================
+Battery Model Classification
+======================================================= -->
+
+<section class="classification-section">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title">
+
+                Battery Model Classification
+
+            </h2>
+
+            <p class="section-subtitle">
+
+                Lithium-ion battery models can be broadly classified into
+                physics-based electrochemical models and equivalent circuit
+                models depending on the desired balance between prediction
+                accuracy and computational efficiency.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =======================================================
+Physics-Based Electrochemical Model
+======================================================= -->
+
+<div class="container">
+
+<div class="row align-items-center g-5 mb-5 flex-lg-row-reverse">
+
+    <!-- Image -->
+
+    <div class="col-lg-5">
+
+        <img src="../../assets/images/battery-modeling/p2d-model.png"
+             class="img-fluid rounded shadow-lg section-image"
+             alt="Pseudo Two Dimensional Model">
+
+    </div>
+
+    <!-- Content -->
+
+    <div class="col-lg-7">
+
+        <span class="algorithm-badge">
+
+            Physics-Based Modeling
+
+        </span>
+
+        <h3>
+
+            Pseudo Two-Dimensional (P2D) Electrochemical Model
+
+        </h3>
+
+        <p>
+
+            The Pseudo Two-Dimensional (P2D) model, developed by Doyle,
+            Fuller and Newman, is one of the most comprehensive
+            electrochemical models for lithium-ion batteries. The model
+            simultaneously solves lithium diffusion in solid particles,
+            ionic transport in the electrolyte, charge conservation and
+            electrochemical reaction kinetics occurring at the
+            electrode–electrolyte interface.
+
+        </p>
+
+        <p>
+
+            Unlike simplified battery models, the P2D framework predicts
+            internal electrochemical variables including lithium
+            concentration, electrolyte concentration, reaction current
+            density, overpotential, terminal voltage and distributed heat
+            generation. Coupling the electrochemical equations with thermal
+            models enables accurate prediction of battery temperature and
+            heat generation during realistic EV drive cycles.
+
+        </p>
+
+        <div class="topic-tags">
+
+            <span>P2D</span>
+
+            <span>Electrochemistry</span>
+
+            <span>Heat Generation</span>
+
+            <span>COMSOL</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- =======================================================
+GOVERNING EQUATIONS
+======================================================= -->
+
+<section class="governing-section py-5">
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <div class="text-center mb-5">
+
+            <span class="algorithm-badge">
+
+                Mathematical Framework
+
+            </span>
+
+            <h2 class="section-title mt-3">
+
+                Governing Equations of the P2D Model
+
+            </h2>
+
+            <p class="section-subtitle mx-auto">
+
+                The Pseudo Two-Dimensional (P2D) electrochemical model is
+                governed by coupled nonlinear partial differential equations
+                describing lithium transport, charge conservation,
+                electrochemical kinetics, heat generation and thermal energy
+                conservation within lithium-ion batteries.
+
+            </p>
+
+        </div>
+
+        <!-- Equation Figure -->
+
+        <div class="row justify-content-center">
+
+            <div class="col-lg-11">
+
+                <div class="equation-figure">
+
+                    <img src="../../assets/images/battery-modeling/P2D_Equation.png"
+                         class="img-fluid"
+                         alt="Governing Equations of the P2D Model">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- =======================================================
+Applications of P2D
+======================================================= -->
+
+<section class="feature-section">
+
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-3">
+
+<div class="facility-card">
+
+<i class="bi bi-diagram-3-fill"></i>
+
+<h5>
+
+Electrochemical Physics
+
+</h5>
+
+<p>
+
+Captures lithium diffusion and reaction kinetics inside
+electrodes.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="facility-card">
+
+<i class="bi bi-thermometer-half"></i>
+
+<h5>
+
+Thermal Coupling
+
+</h5>
+
+<p>
+
+Predicts voltage, temperature and heat generation
+simultaneously.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="facility-card">
+
+<i class="bi bi-lightning-charge-fill"></i>
+
+<h5>
+
+Heat Generation
+
+</h5>
+
+<p>
+
+Suitable for entropy, irreversible and total heat
+generation analysis.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="facility-card">
+
+<i class="bi bi-car-front-fill"></i>
+
+<h5>
+
+EV Drive Cycles
+
+</h5>
+
+<p>
+
+Validated under FUDS, US06, WLTP and realistic driving
+conditions.
+
+</p>
+
+</div>
+
+</div>                                                                                                                                                                 
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =======================================================
+Equivalent Circuit Model
+======================================================= -->
+
+<div class="container">
+
+<div class="row align-items-center g-5 mb-5">
+
+    <!-- Image -->
+
+    <div class="col-lg-5">
+
+        <img src="../../assets/images/battery-modeling/2rc-model.png"
+             class="img-fluid rounded shadow-lg section-image"
+             alt="Second Order ECM">
+
+    </div>
+
+    <!-- Content -->
+
+    <div class="col-lg-7">
+
+        <span class="algorithm-badge">
+
+            Equivalent Circuit Modeling
+
+        </span>
+
+        <h3>
+
+            Temperature-Dependent Second-Order RC (2RC) Model
+
+        </h3>
+
+        <p>
+
+            Equivalent Circuit Models (ECMs) simplify complex
+            electrochemical behaviour using electrical circuit elements
+            such as resistors, capacitors and voltage sources. Their low
+            computational complexity makes them highly suitable for
+            real-time Battery Management Systems.
+
+        </p>
+
+        <p>
+
+            In this research, a temperature-dependent second-order
+            Thevenin (2RC) equivalent circuit model was developed using
+            Hybrid Pulse Power Characterization (HPPC) and Open Circuit
+            Voltage (OCV) measurements performed between 15 °C and 45 °C.
+            The model accurately represents instantaneous ohmic behaviour
+            together with short-term and long-term polarization effects,
+            providing reliable voltage prediction under dynamic operating
+            conditions.
+
+        </p>
+
+        <div class="topic-tags">
+
+            <span>2RC ECM</span>
+
+            <span>HPPC</span>
+
+            <span>Real-Time BMS</span>
+
+            <span>Temperature Dependent</span>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+
+
+<!-- =======================================================
+Advantages of 2RC ECM
+======================================================= -->
+
+<section class="feature-section mb-5">
+
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-3">
+
+<div class="facility-card">
+
+<i class="bi bi-speedometer2"></i>
+
+<h5>
+
+Fast Computation
+
+</h5>
+
+<p>
+
+Low computational complexity suitable for embedded
+Battery Management Systems.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="facility-card">
+
+<i class="bi bi-cpu-fill"></i>
+
+<h5>
+
+Real-Time Estimation
+
+</h5>
+
+<p>
+
+Supports online estimation of battery voltage and
+State of Charge.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="facility-card">
+
+<i class="bi bi-graph-up-arrow"></i>
+
+<h5>
+
+High Accuracy
+
+</h5>
+
+<p>
+
+Captures transient polarization behaviour using dual
+RC networks.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="col-md-6 col-lg-3">
+
+<div class="facility-card">
+
+<i class="bi bi-thermometer-sun"></i>
+
+<h5>
+
+Temperature Aware
+
+</h5>
+
+<p>
+
+Model parameters vary with operating temperature,
+improving prediction accuracy.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =======================================================
+Parameter Identification
+======================================================= -->
+
+<section class="parameter-section">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Temperature-Dependent Parameter Identification
+
+</h2>
+
+<p class="section-subtitle">
+
+Accurate equivalent circuit models require reliable model
+parameters identified under different operating temperatures.
+Hybrid Pulse Power Characterization (HPPC) and Open Circuit
+Voltage (OCV) experiments were performed to obtain
+temperature-dependent electrical parameters and OCV–SOC
+relationships for the second-order equivalent circuit model.
+
+</p>
+
+</div>
+
+
+
+<div class="row align-items-center g-5 flex-lg-row-reverse">
+
+<div class="col-lg-5">
+
+<img src="../../assets/images/battery-modeling/hppc-test.jpeg"
+class="img-fluid rounded shadow-lg section-image"
+alt="HPPC Test">
+
+</div>
+
+
+
+<div class="col-lg-7">
+
+<span class="algorithm-badge">
+
+Experimental Characterization
+
+</span>
+
+<h3>
+
+Hybrid Pulse Power Characterization (HPPC)
+
+</h3>
+
+<p>
+
+Hybrid Pulse Power Characterization (HPPC) experiments were
+conducted over a temperature range of <strong>15°C to 45°C</strong>
+to identify the temperature-dependent parameters of the
+second-order equivalent circuit model. The tests capture
+battery response under dynamic current pulses, enabling
+accurate estimation of ohmic resistance and polarization
+parameters.
+
+</p>
+
+<p>
+
+The identified parameters include instantaneous resistance
+(R₀), polarization resistances (R₁ and R₂), polarization
+capacitances (C₁ and C₂), and the Open Circuit Voltage (OCV)
+curve required for state estimation under varying operating
+conditions.
+
+</p>
+
+<div class="topic-tags">
+
+<span>HPPC Test</span>
+
+<span>R₀</span>
+
+<span>R₁-C₁</span>
+
+<span>R₂-C₂</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =======================================================
+Parameter Cards
+======================================================= -->
+
+<section class="feature-section">
+
+<div class="container">
+
+<div class="row g-4">
+
+<div class="col-md-4">
+
+<div class="facility-card">
+
+<i class="bi bi-lightning-charge-fill"></i>
+
+<h5>
+
+Ohmic Resistance
+
+</h5>
+
+<p>
+
+Captures instantaneous voltage drop caused by internal
+electrical resistance.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+<div class="facility-card">
+
+<i class="bi bi-arrow-repeat"></i>
+
+<h5>
+
+Polarization Dynamics
+
+</h5>
+
+<p>
+
+Dual RC branches model electrochemical polarization
+effects during transient battery operation.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-4">
+
+<div class="facility-card">
+
+<i class="bi bi-thermometer-half"></i>
+
+<h5>
+
+Temperature Dependence
+
+</h5>
+
+<p>
+
+All model parameters are experimentally identified as
+functions of operating temperature.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =======================================================
+OCV Lookup Table
+======================================================= -->
+
+<section class="lookup-section">
+
+<div class="container">
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-5">
+
+<img src="../../assets/images/battery-modeling/ocv-soc.jpg"
+class="img-fluid rounded shadow-lg section-image"
+alt="OCV Lookup Table">
+
+</div>
+
+
+
+<div class="col-lg-7">
+
+<span class="algorithm-badge">
+
+OCV-Based Correction
+
+</span>
+
+<h3>
+
+OCV–SOC–Temperature Lookup Table
+
+</h3>
+
+<p>
+
+Equilibrium Open Circuit Voltage (OCV) measurements were
+performed over the temperature range of
+<strong>15°C–45°C</strong>
+to construct temperature-dependent lookup tables. These
+lookup tables provide an accurate relationship between
+battery State of Charge (SOC), Open Circuit Voltage (OCV),
+and operating temperature.
+
+</p>
+
+<p>
+
+The lookup tables are integrated into the Hybrid Adaptive
+Kalman Filter to correct accumulated estimation drift during
+battery rest periods, thereby improving long-term SOC
+prediction accuracy.
+
+</p>
+
+<div class="topic-tags">
+
+<span>OCV</span>
+
+<span>SOC</span>
+
+<span>Lookup Table</span>
+
+<span>Temperature</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =======================================================
+SOC Estimation Framework
+======================================================= -->
+
+<section class="workflow-section">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Hybrid AKF–OCV–LUT Framework
+
+</h2>
+
+<p class="section-subtitle">
+
+A temperature-dependent state estimation framework developed
+for accurate State of Charge prediction under realistic
+electric vehicle operating conditions.
+
+</p>
+
+</div>
+
+
+
+
+
+<div class="text-center mb-5">
+
+<img src="../../assets/images/battery-modeling/akf-framework.png"
+class="img-fluid workflow-image"
+alt="Hybrid AKF Framework">
+
+</div>
+
+
+
+
+
+<div class="row g-4">
+
+<div class="col-md-3">
+
+<div class="facility-card">
+
+<i class="bi bi-battery-half"></i>
+
+<h5>
+
+2RC Model
+
+</h5>
+
+<p>
+
+Predicts battery terminal voltage using experimentally
+identified equivalent circuit parameters.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-3">
+
+<div class="facility-card">
+
+<i class="bi bi-cpu-fill"></i>
+
+<h5>
+
+Adaptive Kalman Filter
+
+</h5>
+
+<p>
+
+Provides recursive estimation of battery State of Charge
+under dynamic operating conditions.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-3">
+
+<div class="facility-card">
+
+<i class="bi bi-table"></i>
+
+<h5>
+
+OCV Lookup Table
+
+</h5>
+
+<p>
+
+Corrects estimation drift using temperature-dependent
+Open Circuit Voltage measurements.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-3">
+
+<div class="facility-card">
+
+<i class="bi bi-speedometer2"></i>
+
+<h5>
+
+SOC Prediction
+
+</h5>
+
+<p>
+
+Accurate real-time State of Charge estimation for Battery
+Management Systems.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =======================================================
+SOC Estimation Results
+======================================================= -->
+
+<section class="results-section">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+SOC Estimation Performance
+
+</h2>
+
+<p class="section-subtitle">
+
+The proposed Hybrid Adaptive Kalman Filter–OCV Lookup Table
+framework significantly improves State-of-Charge estimation
+accuracy under realistic electric vehicle operating conditions.
+
+</p>
+
+</div>
+
+
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-5">
+
+<img src="../../assets/images/battery-modeling/soc-estimation.png"
+class="img-fluid rounded shadow-lg section-image"
+alt="SOC Estimation">
+
+</div>
+
+
+
+<div class="col-lg-7">
+
+<span class="algorithm-badge">
+
+SOC Estimation
+
+</span>
+
+<h3>
+
+Hybrid AKF–OCV–LUT Results
+
+</h3>
+
+<p>
+
+The proposed Hybrid Adaptive Kalman Filter–OCV Lookup Table
+framework combines model-based estimation with
+temperature-dependent OCV correction to minimize estimation
+drift during long-term operation.
+
+</p>
+
+<p>
+
+Compared with conventional Adaptive Kalman Filter and
+standalone OCV lookup methods, the proposed framework
+achieved approximately
+<strong>39–42% improvement</strong>
+in State-of-Charge estimation accuracy under customized
+electric vehicle drive cycles.
+
+</p>
+
+<div class="topic-tags">
+
+<span>SOC Prediction</span>
+
+<span>39–42% Improvement</span>
+
+<span>Adaptive Kalman Filter</span>
+
+<span>OCV Correction</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =======================================================
+Voltage Prediction
+======================================================= -->
+
+<section class="feature-section">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Voltage Prediction Performance
+
+</h2>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-lg-4">
+
+<div class="facility-card">
+
+<i class="bi bi-graph-up-arrow"></i>
+
+<h5>
+
+High Prediction Accuracy
+
+</h5>
+
+<p>
+
+Root Mean Square Error remained below
+<strong>0.02 V</strong>
+for all validation drive cycles.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-4">
+
+<div class="facility-card">
+
+<i class="bi bi-lightning-charge-fill"></i>
+
+<h5>
+
+Dynamic Current Tracking
+
+</h5>
+
+<p>
+
+Accurately predicts terminal voltage under rapidly
+changing EV current profiles.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+<div class="col-lg-4">
+
+<div class="facility-card">
+
+<i class="bi bi-check-circle-fill"></i>
+
+<h5>
+
+Experimental Validation
+
+</h5>
+
+<p>
+
+Excellent agreement between measured and predicted
+terminal voltage.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =======================================================
+Drive Cycle Validation
+======================================================= -->
+
+<section class="validation-section">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Drive Cycle Validation
+
+</h2>
+
+<p class="section-subtitle">
+
+Validation performed under multiple standardized
+electric vehicle driving conditions.
+
+</p>
+
+</div>
+
+
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-3">
+
+<div class="validation-card">
+
+<i class="bi bi-car-front-fill"></i>
+
+<h4>
+
+FUDS
+
+</h4>
+
+<p>
+
+Urban driving cycle used for parameter
+identification and validation.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+
+<div class="validation-card">
+
+<i class="bi bi-speedometer2"></i>
+
+<h4>
+
+US06
+
+</h4>
+
+<p>
+
+Aggressive high-power drive cycle
+validation.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+
+<div class="validation-card">
+
+<i class="bi bi-ev-front-fill"></i>
+
+<h4>
+
+WLTP
+
+</h4>
+
+<p>
+
+Worldwide harmonized light-duty
+vehicle cycle.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+
+<div class="validation-card">
+
+<i class="bi bi-arrow-repeat"></i>
+
+<h4>
+
+Customized Cycle
+
+</h4>
+
+<p>
+
+Driving, charging and rest periods
+for practical EV operation.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =======================================================
+Aging Analysis
+======================================================= -->
+
+<section class="aging-section">
+
+<div class="container">
+
+<div class="row align-items-center g-5 flex-lg-row-reverse">
+
+<div class="col-lg-5">
+
+<img src="../../assets/images/battery-modeling/aging.png"
+class="img-fluid rounded shadow-lg section-image"
+alt="Battery Aging">
+
+</div>
+
+
+
+<div class="col-lg-7">
+
+<span class="algorithm-badge">
+
+Battery Aging
+
+</span>
+
+<h3>
+
+Aging-Aware SOC Estimation
+
+</h3>
+
+<p>
+
+Battery degradation alters equivalent circuit parameters,
+leading to estimation errors if aging is neglected.
+The proposed framework incorporates aging-induced parameter
+variation, enabling reliable SOC estimation over the
+battery lifetime.
+
+</p>
+
+<p>
+
+Simulation results up to
+<strong>3000 aging cycles</strong>
+demonstrate stable voltage prediction and robust SOC
+tracking despite gradual degradation.
+
+</p>
+
+<div class="topic-tags">
+
+<span>3000 Cycles</span>
+
+<span>Capacity Fade</span>
+
+<span>SOH</span>
+
+<span>Aging Aware</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =======================================================
+Key Contributions
+======================================================= -->
+
+<section class="feature-section">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Research Contributions
+
+</h2>
+
+</div>
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-4">
+
+<div class="facility-card">
+
+<i class="bi bi-battery-half"></i>
+
+<h5>
+
+Temperature-Dependent 2RC Model
+
+</h5>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="facility-card">
+
+<i class="bi bi-cpu-fill"></i>
+
+<h5>
+
+Hybrid AKF–OCV–LUT Framework
+
+</h5>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="facility-card">
+
+<i class="bi bi-graph-up-arrow"></i>
+
+<h5>
+
+Accurate SOC Estimation
+
+</h5>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="facility-card">
+
+<i class="bi bi-lightning-charge-fill"></i>
+
+<h5>
+
+Drive Cycle Validation
+
+</h5>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="facility-card">
+
+<i class="bi bi-clock-history"></i>
+
+<h5>
+
+Aging-Aware Modeling
+
+</h5>
+
+</div>
+
+</div>
+
+
+
+<div class="col-md-6 col-lg-4">
+
+<div class="facility-card">
+
+<i class="bi bi-diagram-3-fill"></i>
+
+<h5>
+
+Digital Twin Ready
+
+</h5>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- =======================================================
+Digital Twin
+======================================================= -->
+
+<section class="digital-twin-section">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Battery Digital Twin
+
+</h2>
+
+<p class="section-subtitle">
+
+Digital Twin technology combines experimental measurements,
+physics-based battery models and artificial intelligence to
+create a virtual representation of a battery capable of
+real-time monitoring, prediction and decision-making.
+
+</p>
+
+</div>
+
+
+
+<div class="row align-items-center g-5">
+
+<div class="col-lg-5">
+
+<img src="../../assets/images/battery-modeling/digital-twin.png"
+class="img-fluid rounded shadow-lg section-image"
+alt="Battery Digital Twin">
+
+</div>
+
+
+
+<div class="col-lg-7">
+
+<span class="algorithm-badge">
+
+Next Generation Battery Management
+
+</span>
+
+<h3>
+
+Digital Twin Enabled Battery Management Systems
+
+</h3>
+
+<p>
+
+Digital Twin technology enables continuous synchronization
+between physical batteries and virtual battery models.
+Combining experimentally validated equivalent circuit models,
+electrochemical models and machine learning algorithms
+provides accurate prediction of battery behaviour under
+dynamic operating conditions.
+
+</p>
+
+<p>
+
+The proposed battery modelling framework provides the
+foundation for future Digital Twin applications including
+real-time battery monitoring, predictive maintenance,
+remaining useful life estimation, intelligent charging and
+autonomous Battery Management Systems.
+
+</p>
+
+
+
+<div class="topic-tags">
+
+<span>Digital Twin</span>
+
+<span>Real-Time Monitoring</span>
+
+<span>Predictive Maintenance</span>
+
+<span>Battery Management System</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =======================================================
+Future Scope
+======================================================= -->
+
+<section class="future-section bg-light">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Future Research Directions
+
+</h2>
+
+<p class="section-subtitle">
+
+Future developments integrating electrochemical modelling,
+artificial intelligence and digital twins for next-generation
+battery systems.
+
+</p>
+
+</div>
+
+
+
+<div class="row g-4">
+
+<div class="col-md-6 col-lg-3">
+
+<div class="future-card">
+
+<i class="bi bi-cpu-fill"></i>
+
+<h4>
+
+Physics-Informed AI
+
+</h4>
+
+<p>
+
+Integration of electrochemical battery models with
+machine learning for robust prediction.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+
+<div class="future-card">
+
+<i class="bi bi-diagram-3-fill"></i>
+
+<h4>
+
+Digital Twins
+
+</h4>
+
+<p>
+
+Virtual battery replicas enabling intelligent
+monitoring and diagnostics.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+
+<div class="future-card">
+
+<i class="bi bi-battery-charging"></i>
+
+<h4>
+
+Fast Charging
+
+</h4>
+
+<p>
+
+Model-based optimization for rapid charging
+without compromising battery safety.
+
+</p>
+
+</div>
+
+</div>
+
+
+
+
+
+<div class="col-md-6 col-lg-3">
+
+<div class="future-card">
+
+<i class="bi bi-robot"></i>
+
+<h4>
+
+Autonomous BMS
+
+</h4>
+
+<p>
+
+AI-driven Battery Management Systems for
+next-generation electric vehicles.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =======================================================
+Related Publications
+======================================================= -->
+
+<section class="publication-section">
+
+<div class="container">
+
+<div class="text-center mb-5">
+
+<h2 class="section-title">
+
+Related Publications
+
+</h2>
+
+<p class="section-subtitle">
+
+Research publications associated with battery modelling,
+state estimation and Battery Management Systems.
+
+</p>
+
+</div>
+
+
+
+<div class="row justify-content-center g-4">
+
+<!-- Paper 1 -->
+
+<div class="col-md-6 col-lg-5">
+
+<div class="publication-card">
+
+<img src="../../assets/images/publications/paper6.png"
+class="img-fluid rounded publication-image"
+alt="Battery Modelling">
+
+<div class="publication-content">
+
+<span class="journal-badge">
+
+Journal Manuscript
+
+</span>
+
+<h4>
+
+High-Fidelity State-of-Charge Estimation of
+Lithium-Ion Batteries Using Hybrid Adaptive
+Kalman Filtering
+
+</h4>
+
+<p>
+
+Temperature-dependent 2RC equivalent circuit model
+combined with Hybrid AKF–OCV–LUT framework for
+accurate SOC estimation under realistic drive cycles.
+
+</p>
+
+<div class="topic-tags">
+
+<span>2RC ECM</span>
+
+<span>AKF</span>
+
+<span>SOC</span>
+
+<span>BMS</span>
+
+</div>
+
+<a href="../publications/publications.html"
+class="btn btn-primary mt-3">
+
+View Publication
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- Paper 2 -->
+
+<div class="col-md-6 col-lg-5">
+
+<div class="publication-card">
+
+<img src="../../assets/images/publications/paper3.png"
+class="img-fluid rounded publication-image"
+alt="Heat Generation">
+
+<div class="publication-content">
+
+<span class="journal-badge">
+
+Energy
+
+</span>
+
+<h4>
+
+Machine Learning Prediction of Heat
+Generation Rate
+
+</h4>
+
+<p>
+
+Experimental battery calorimetry integrated with
+machine learning models for accurate heat
+generation prediction.
+
+</p>
+
+<div class="topic-tags">
+
+<span>Machine Learning</span>
+
+<span>Heat Generation</span>
+
+<span>Battery Thermal</span>
+
+</div>
+
+<a href="../publications/publications.html"
+class="btn btn-primary mt-3">
+
+View Publication
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+
+
+<!-- =======================================================
+Call To Action
+======================================================= -->
+
+<section class="cta-section">
+
+<div class="container">
+
+<div class="cta-box text-center">
+
+<h2>
+
+Interested in Battery Modeling Research?
+
+</h2>
+
+<p>
+
+Explore my research on electrochemical modelling,
+Battery Thermal Management, Machine Learning,
+State Estimation and Battery Digital Twins.
+
+</p>
+
+<div class="mt-4">
+
+<a href="../research/research.html"
+class="btn btn-primary btn-lg me-3">
+
+Research Overview
+
+</a>
+
+<a href="../publications/publications.html"
+class="btn btn-outline-primary btn-lg">
+
+Research Publications
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- Footer -->
+
+<div id="footer"></div>
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Navbar & Footer Loader -->
+
+<script src="../../assets/js/include.js"></script>
+
+<!-- Page JS -->
+
+<script src="../../assets/js/script.js"></script>
+
+</body>
+</html>
