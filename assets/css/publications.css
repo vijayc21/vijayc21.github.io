@@ -483,6 +483,53 @@ justify-content:center;
 
 }
 
+
+/* Citation counts */
+.citation-count {
+    margin: 8px 0 0;
+    color: #d70819;
+    font-size: 1.0rem;
+    line-height: 1.5;
+}
+
+/* Journal impact and quartile badges */
+.journal-metrics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.journal-metric {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: #edf3ff;
+    color: #164194;
+    font-size: 1.0rem;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+
+.journal-metric.quartile {
+    background: #e8f7ef;
+    color: #147548;
+}
+
+@media (max-width: 991.98px) {
+    .journal-metrics {
+        justify-content: flex-start;
+    }
+
+    .citation-count {
+        text-align: left;
+    }
+}
+
+
 .impact-card{
 
     background:#ffffff;
